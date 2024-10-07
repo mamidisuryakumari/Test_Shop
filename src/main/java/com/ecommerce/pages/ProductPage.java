@@ -1,7 +1,11 @@
 package com.ecommerce.pages;
 
+import java.sql.Driver;
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 import com.ecommerce.utilities.Elements;
 import com.ecommerce.utilities.MouseActionsUtil;
@@ -23,13 +27,40 @@ public class ProductPage extends BasePage {
     private By product2Image = By.xpath("//*[@id=\"Blog1\"]/div[1]/div[2]/div[12]/div/div[1]");
     
     private By coriaMateSetProduct=By.xpath("//a[text()='Elegant Korai Floor Mats Set']");
+    private By productList=By.xpath("//div[@class='grid-posts']");
+    private By shoppingBagSymbol=By.xpath("(//a[@class='item_add'])[1]");
+    private By itemCountText=By.xpath("//span[@class='simpleCart_quantity']");
+
+    public boolean isPageLoaded() {
+        return driver.findElements(productList).size() > 0; 
+    }
+    public void clickOnShoppingBagSymbol() {
+    	MouseActionsUtil.moveToElement(driver, product1Image);
+    	Elements.doClick(driver, shoppingBagSymbol);
+    	
+    }
+    public List<WebElement> getProductsList() {
+        List<WebElement> products = driver.findElements(productList);
+        System.out.println( products.size()); // Debugging statement
+        return products;
+    }
+    public int getItemCount() {
+    int itemCount=Integer.parseInt(Elements.getText(driver, itemCountText));
+    return itemCount;
+    }
+    
+    public int getProductList() {
+    	int productListCount=Integer.parseInt(Elements.getText(driver, productList)) ;
+		return productListCount;
+    }
+  
     public CartPage clickOncoriaMateSetProduct() {
     	Elements.doClick(driver, coriaMateSetProduct);
     	return new CartPage(driver);
     }
-    public ProductPage actualProductPageTitle() {
-    	driver.getTitle();
-    	return this;
+    public String actualProductPageTitle() {
+    	String productPageTitle=driver.getTitle();
+    	return productPageTitle;
     }
     
     public ProductPage clickOnorayaProduct() {
