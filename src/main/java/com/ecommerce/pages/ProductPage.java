@@ -26,7 +26,7 @@ public class ProductPage extends BasePage {
     private By product1Image = By.xpath("//*[@id=\"Blog1\"]/div[1]/div[2]/div[1]/div/div[1]");
     private By product2Image = By.xpath("//*[@id=\"Blog1\"]/div[1]/div[2]/div[12]/div/div[1]");
     
-    private By coriaMateSetProduct=By.xpath("//a[text()='Elegant Korai Floor Mats Set']");
+    private By koraiMateSetProduct=By.xpath("//a[text()='Elegant Korai Floor Mats Set']");
     private By productList=By.xpath("//div[@class='grid-posts']");
     private By shoppingBagSymbol=By.xpath("(//a[@class='item_add'])[1]");
     private By itemCountText=By.xpath("//span[@class='simpleCart_quantity']");
@@ -55,7 +55,7 @@ public class ProductPage extends BasePage {
     }
   
     public CartPage clickOncoriaMateSetProduct() {
-    	Elements.doClick(driver, coriaMateSetProduct);
+    	Elements.doClick(driver, koraiMateSetProduct);
     	return new CartPage(driver);
     }
     public String actualProductPageTitle() {
@@ -101,7 +101,7 @@ public class ProductPage extends BasePage {
 	
 	public String itemLinkText()
 	{
-		String itemTextInProductPage = Elements.getText(driver, fancyCoolProduct);
+		String itemTextInProductPage = Elements.getText(driver, koraiMateSetProduct);
 		System.out.println(itemTextInProductPage);
 		return  itemTextInProductPage;
 		

@@ -2,6 +2,8 @@
 <section name="Workbench">
 	<section name="MavenProjectImportWizardPage">
 		<list key="rootDirectory">
+			<item value="C:\SuryaKumari\Automation\Automation_08102024"/>
+			<item value="C:\SuryaKumari\Automation\Automation_08102024\Test_Shop"/>
 			<item value="C:\SuryaKumari\Automation\TestShopBddFrameWork_18092024"/>
 			<item value="C:\SuryaKumari\Automation\NewBddFrameWork_18092024"/>
 		</list>
