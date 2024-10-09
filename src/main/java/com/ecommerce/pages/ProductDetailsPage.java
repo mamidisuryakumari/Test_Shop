@@ -16,6 +16,12 @@ public class ProductDetailsPage extends BasePage {
 	private By viewCartBtn = By.xpath("//a[@class='sora-cart-view']");
 	
 	private By add =By.xpath("//span[@class='add_product']");
+	private By productQuantity=By.xpath("//span[@class='simpleCart_quantity']");
+	
+	public int getProductsInShoppingBag() {
+		int products= Integer.parseInt(Elements.getText(driver, productQuantity));
+				return products;
+	}
 
 	public String getProductDetailsPageTitle() {
 		String productDetailsPageActualTitle = driver.getTitle();
