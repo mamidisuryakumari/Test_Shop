@@ -7,6 +7,7 @@ import com.ecommerce.pages.CartPage;
 import com.ecommerce.pages.ProductDetailsPage;
 import com.ecommerce.pages.ProductPage;
 import com.ecommerce.reports.ReportManager;
+import com.ecommerce.utilities.Elements;
 
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -28,11 +29,11 @@ public class CartPageSteps extends BaseTest {
 			System.out.println("Landed on product details page");
 			ReportManager.getTest().pass("User navigated to the product details page successfully");
 		} catch (AssertionError ae) {
-			System.out.println("Assertion failed" + ae.getMessage());
+			System.err.println("Assertion failed" + ae.getMessage());
 			ReportManager.getTest().fail("Failed to land on product details page");
 			throw ae;
 		} catch (Exception e) {
-			System.out.println("An error occured navigating to the product details page " + e.getMessage());
+			System.err.println("An error occured navigating to the product details page " + e.getMessage());
 			ReportManager.getTest().fail("An error occured while navigating to the product details page");
 			throw e;
 		}
@@ -54,11 +55,11 @@ public class CartPageSteps extends BaseTest {
 			System.out.println("item added to cart successfully");
 			ReportManager.getTest().pass("item added to cart successfully");
 		} catch (AssertionError ae) {
-			System.out.println("Assertion failed" + ae.getMessage());
+			System.err.println("Assertion failed" + ae.getMessage());
 			ReportManager.getTest().fail("Failed to item added to cat");
 			throw ae;
 		} catch (Exception e) {
-			System.out.println("An error occured navigating to the item added to the cart" + e.getMessage());
+			System.err.println("An error occured navigating to the item added to the cart" + e.getMessage());
 			ReportManager.getTest().fail("An error occured navigating to the item added to the cart");
 			throw e;
 		}
@@ -80,11 +81,11 @@ public class CartPageSteps extends BaseTest {
 			System.out.println("Landed on cart page");
 			ReportManager.getTest().pass("Navigated to the cart page successfully");
 		} catch (AssertionError ae) {
-			System.out.println("Assertion failed" + ae.getMessage());
+			System.err.println("Assertion failed" + ae.getMessage());
 			ReportManager.getTest().fail("An error occured while navigating to the cart page");
 			throw ae;
 		} catch (Exception e) {
-			System.out.println("An error occured while navigating to the cart page");
+			System.err.println("An error occured while navigating to the cart page");
 			ReportManager.getTest().fail("An error occured while navigating to the cart page");
 			throw e;
 		}
@@ -92,8 +93,47 @@ public class CartPageSteps extends BaseTest {
 
 	@Then("User should see item in cart")
 	public void user_should_see_item_in_to_cart() {
-		ReportManager.getTest().info("user should see itm in cart");
+		CartPage cartPage = new CartPage(driver);
+		String cartPageExpText = "You have 1 item(s) in your Cart.";
+		try {
+			Assert.assertEquals(cartPage.getActualCartPageText(), cartPageExpText);
+			System.out.println("Items are correctly displayed in the cart");
+			ReportManager.getTest().pass("User can see items in cart");
+		} catch (AssertionError ae) {
+			System.err.println("Assertion failed" + ae.getMessage());
+			ReportManager.getTest().fail("User cannot see items in cart");
+			throw ae;
+		} catch (Exception e) {
+			System.err.println("An error occurred while checking the cart" + e.getMessage());
+			ReportManager.getTest().fail("User cannot see items in cart");
+			throw e;
+		}
+	}
 
+	@When("User click on remove button")
+	public void user_click_on_remove_button() {
+		CartPage cartPage = new CartPage(driver);
+		cartPage.clickOnremoveBtn();
+		ReportManager.getTest().info("User clicked on remove button");
+	}
+
+	@Then("User should see item remove from the cart")
+	public void user_should_see_item_remove_from_the_cart() {
+		CartPage cartPage = new CartPage(driver);
+		String cartPageExpText = "You have 0 item(s) in your Cart.";
+		try {
+			Assert.assertEquals(cartPage.getActualCartPageText(), cartPageExpText);
+			System.out.println("Item was correctly removed from the cart");
+			ReportManager.getTest().pass("User can see the item removed from the cart");
+		} catch (AssertionError ae) {
+			System.err.println("Assertion failed: " + ae.getMessage());
+			ReportManager.getTest().fail("User cannot see the item removed from the cart");
+			throw ae;
+		} catch (Exception e) {
+			System.err.println("An error occurred while checking the cart" + e.getMessage());
+			ReportManager.getTest().fail("User cannot see the item removed from the cart");
+			throw e;
+		}
 	}
 
 }
