@@ -23,3 +23,4 @@ Then User navigated to the cart page
 And User should see item in cart
 When User click on remove button 
 Then User should see item remove from the cart
+
