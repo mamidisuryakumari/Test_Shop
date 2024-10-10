@@ -136,4 +136,29 @@ public class CartPageSteps extends BaseTest {
 		}
 	}
 	
+	@When("User click on add button")
+	public void user_click_on_add_button() {
+	    CartPage cartPage = new CartPage(driver);
+	    cartPage.clickOnaddBtn();
+	    ReportManager.getTest().info("Clicked on add button");
+	}
+
+	@Then("User should see item count increased in cart")
+	public void user_should_see_item_count_increased_in_cart() {
+		CartPage cartPage = new CartPage(driver);
+		String cartPageExpText = "You have 2 item(s) in your Cart.";
+		try {
+			Assert.assertEquals(cartPage.getActualCartPageText(), cartPageExpText);
+			System.out.println("Item count increased in cart");
+			ReportManager.getTest().pass("User can see item count increased in cart");
+		} catch (AssertionError ae) {
+			System.err.println("Assertion failed: " + ae.getMessage());
+			ReportManager.getTest().fail("User cannot see item count increased in cart");
+			throw ae;
+		} catch (Exception e) {
+			System.err.println("An error occurred while checking the cart" + e.getMessage());
+			ReportManager.getTest().fail("User cannot see item count increased in cart");
+			throw e;
+		}
+	}
 }
