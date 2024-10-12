@@ -22,7 +22,7 @@ public class CartPage extends BasePage {
 	private By checkoutBtn = By.xpath("//a[text()='Proceed to Checkout']");
 	private By cartItemsCount = By.xpath("//div[@class='simpleCart_items']");
 	public int actualProductCount;
-	private By itemQuantity = By.xpath("(//div[@class='item-quantity'])[1]");
+	private By itemQuantity = By.xpath("(//div[@class='item-quantity'])[2]");
 	private By cartPageTextFld = By.xpath("//h2[contains(text(),'You have')]");
 
 	public String getActualCartPageText() {

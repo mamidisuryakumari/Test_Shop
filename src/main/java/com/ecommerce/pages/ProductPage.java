@@ -30,6 +30,13 @@ public class ProductPage extends BasePage {
     private By productList=By.xpath("//div[@class='grid-posts']");
     private By shoppingBagSymbol=By.xpath("(//a[@class='item_add'])[1]");
     private By itemCountText=By.xpath("//span[@class='simpleCart_quantity']");
+    
+    private By shoppingBagSymbol1=By.xpath("//div[@class='sora-cart-details']");
+    
+    public ProductPage clickOnshoppingBagSymbol1() {
+    	MouseActionsUtil.moveToElement(driver, shoppingBagSymbol1);
+    	return this;
+    }
 
     public boolean isPageLoaded() {
         return driver.findElements(productList).size() > 0; 

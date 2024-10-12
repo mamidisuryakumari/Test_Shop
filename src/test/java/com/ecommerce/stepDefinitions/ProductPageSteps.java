@@ -71,8 +71,8 @@ public class ProductPageSteps extends BaseTest {
 		ReportManager.getTest().info("Click on shopping bag symbol");
 	}
 
-	@Then("I should see item added to the cart")
-	public void i_should_see_item_added_to_the_cart() {
+	@Then("User should see item added to the cart")
+	public void user_should_see_item_added_to_the_cart() {
 		ProductPage productPage = new ProductPage(driver);
 		int expectedItemCount = 1;
 		try {
@@ -89,6 +89,12 @@ public class ProductPageSteps extends BaseTest {
 			ReportManager.getTest().fail("An error occurred while adding item to the cart.");
 			throw e;
 		}
+		
+	}
+	@When("User click on checkout button")
+	public void user_click_on_checkout_button() {
+		ProductPage productPage = new ProductPage(driver);
+		productPage.clickOnshoppingBagSymbol1();
 	}
 
 }
