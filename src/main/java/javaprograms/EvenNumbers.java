@@ -27,32 +27,27 @@ public class EvenNumbers {
 		
 	}
 	
-	public void askAgain()
+	public String askAgain()
 	{
 		System.out.println("You want to Continue.. Y/N");
 		choice = scanner.next();
-		if(choice.equalsIgnoreCase("y"))
-		{
-			evenNumbers();
-		}
-		else
-		{
-			System.out.println("Thanks for checking Bye Bye!");
-			
-		}
+		
+		return choice;
 		
 		
 	}
 	
-	
-	
-
 	public static void main(String args[]){
 		
 		EvenNumbers evenNumbers = new EvenNumbers();
 		evenNumbers.evenNumbers();
-		System.err.println();
 		evenNumbers.askAgain();
+		while(evenNumbers.choice.equalsIgnoreCase("y"))
+		{
+			evenNumbers.evenNumbers();
+			evenNumbers.askAgain();
+		}
+		System.out.println("Thank you see you again Bye Bye");
 		
 	}
 }
