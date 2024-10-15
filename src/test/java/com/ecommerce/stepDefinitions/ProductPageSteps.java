@@ -96,5 +96,6 @@ public class ProductPageSteps extends BaseTest {
 		ProductPage productPage = new ProductPage(driver);
 		productPage.clickOnshoppingBagSymbol1();
 	}
+	
 
 }

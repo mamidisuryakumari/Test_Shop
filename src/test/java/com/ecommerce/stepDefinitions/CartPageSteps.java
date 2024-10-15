@@ -181,4 +181,42 @@ public class CartPageSteps extends BaseTest {
 		}
 
 	}
+	@When("User click on product1")
+	public void user_click_on_product1() {
+	    
+	}
+
+	@Then("User should see product1 added to cart")
+	public void user_should_see_product1_added_to_cart() {
+	    
+	}
+
+	@When("User click on navigate back button")
+	public void user_click_on_navigate_back_button() {
+	   
+	}
+
+	@Then("User should be navigated to product page")
+	public void user_should_be_navigated_to_product_page() {
+	   
+	}
+
+	@When("User click on product2")
+	public void user_click_on_product2() {
+	   
+	}
+
+	@Then("User should see two items added to cart")
+	public void user_should_see_two_items_added_to_cart() {
+	    
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }

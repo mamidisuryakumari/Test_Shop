@@ -32,6 +32,8 @@ public class ProductPage extends BasePage {
     private By itemCountText=By.xpath("//span[@class='simpleCart_quantity']");
     
     private By shoppingBagSymbol1=By.xpath("//div[@class='sora-cart-details']");
+    private By secreatTemptationLink=By.xpath("//a[contains(text(),'Secret Temptation Affair Deodorant Combo for Women')]");
+   
     
     public ProductPage clickOnshoppingBagSymbol1() {
     	MouseActionsUtil.moveToElement(driver, shoppingBagSymbol1);
