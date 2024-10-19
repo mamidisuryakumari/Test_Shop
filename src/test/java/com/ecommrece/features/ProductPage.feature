@@ -11,6 +11,7 @@ And Each product should display the name,price and image
 Scenario: User adds item to cart
 Given The user on the product page
 When The page loads
+And select the category from menu
 Then The user should see list of products
 And Each product should display the name,price and image
 When click on shoppingbag symbol

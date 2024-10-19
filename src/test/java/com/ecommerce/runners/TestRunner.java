@@ -8,11 +8,11 @@ import io.cucumber.junit.CucumberOptions;
 @RunWith(Cucumber.class)
 @CucumberOptions(features = "src/test/java/com/ecommrece/features", 
                  glue = {"com.ecommerce.stepDefinitions", "com.ecommerce.hooks"},
-                 tags = "@multipltproduct",
+                 tags = "@test2",
 
                  plugin = {"pretty", "html:target/cucumber-reports.html",
                 		 "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"},
-                 dryRun = true,
+                 dryRun = false,
                  monochrome = true
 )
 
