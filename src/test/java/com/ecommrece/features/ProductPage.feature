@@ -17,6 +17,7 @@ And Each product should display the name,price and image
 When click on shoppingbag symbol
 Then User should see item added to the cart
 
+
 @test3
 Scenario Outline: Verify user checkout process from the product page to the checkout page
   Given The user on the product page
