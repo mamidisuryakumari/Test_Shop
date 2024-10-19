@@ -13,7 +13,7 @@ import io.cucumber.java.en.When;
 public class ProductPageSteps extends BaseTest {
 
 	@Given("The user on the product page")
-	public void the_user_on_the_product_page() {
+	public void the_user_on_the_product_page() throws InterruptedException {
 
 		ProductPage productPage = new ProductPage(driver);
 		String expectedProductPageTitle = "ynrstore";
@@ -50,6 +50,14 @@ public class ProductPageSteps extends BaseTest {
 			throw e;
 		}
 
+	}
+	
+	@When("select the category from menu")
+	public void selectitemFromMenu()
+	{
+		ProductPage page = new ProductPage(driver);
+		page.moveToMenMenu();
+		page.moveToSubMenu();
 	}
 
 	@Then("The user should see list of products")
