@@ -37,15 +37,12 @@ public class ProductPage extends BasePage {
 	private By secreatTemptationLink = By
 			.xpath("//a[contains(text(),'Secret Temptation Affair Deodorant Combo for Women')]");
 
-	private By homeKitchenFld = By.xpath("(//div[@id='LinkList74']//a[@role='menuitem'][normalize-space()='Home & Kitchen']");
-	private By homeFurnishingFld = By.xpath("(//a[text()='Home Furnishing'])[1]");
+	private By hyperLinks=By.tagName("a");
 
-	public ProductPage moveHomeKitchen() throws InterruptedException {
+	public void countOfHyperLinks() {
+		List<WebElement> links=driver.findElements(hyperLinks);
+		System.out.println("Total number of hyper links "+ links.size());
 		
-		MouseActionsUtil.moveToElement(driver, homeKitchenFld);
-		Elements.doClick(driver, homeKitchenFld);
-		return this;
-		// MouseActionsUtil.moveToElement(driver, homeFurnishingFld);
 	}
 
 	public ProductPage clickOnshoppingBagSymbol1() {

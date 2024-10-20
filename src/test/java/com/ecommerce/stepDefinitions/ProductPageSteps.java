@@ -62,6 +62,8 @@ public class ProductPageSteps extends BaseTest {
 
 	@Then("The user should see list of products")
 	public void the_user_should_see_list_of_products() {
+		ProductPage page = new ProductPage(driver);
+		page.countOfHyperLinks();
 		ReportManager.getTest().info("Product list is displayed");
 	}
 

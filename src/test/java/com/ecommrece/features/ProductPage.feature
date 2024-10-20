@@ -4,6 +4,7 @@ Feature: Product page functionality
 Scenario:  User views the list of products
 Given The user on the product page
 When The page loads
+And select the category from menu
 Then The user should see list of products
 And Each product should display the name,price and image
 
@@ -16,12 +17,13 @@ Then The user should see list of products
 And Each product should display the name,price and image
 When click on shoppingbag symbol
 Then User should see item added to the cart
-When testAdded
+
 
 @test3
 Scenario Outline: Verify user checkout process from the product page to the checkout page
   Given The user on the product page
   When The page loads
+  And select the category from menu
   Then The user should see list of products
   And Each product should display the name,price and image
   When click on shoppingbag symbol

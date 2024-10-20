@@ -7,8 +7,6 @@ import com.ecommerce.pages.CartPage;
 import com.ecommerce.pages.ProductDetailsPage;
 import com.ecommerce.pages.ProductPage;
 import com.ecommerce.reports.ReportManager;
-import com.ecommerce.utilities.Elements;
-
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
