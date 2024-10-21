@@ -1,8 +1,13 @@
 Feature: Cart page functionality
+Background:
+Given The user on the product page
+When The page loads
+And select the category from menu
+Then The user should see list of products
+And Each product should display the name,price and image
 
 @test4
 Scenario: Add product to the cart
-Given The user on the product page
 When User click on product link
 Then User navigated to the product details page
 When User click on add to cart button

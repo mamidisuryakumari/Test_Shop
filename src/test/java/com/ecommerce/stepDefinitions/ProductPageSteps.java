@@ -58,13 +58,13 @@ public class ProductPageSteps extends BaseTest {
 		ProductPage page = new ProductPage(driver);
 		page.moveToMenMenu();
 		page.moveToSubMenu();
+		ReportManager.getTest().info("Category is selected");
 	}
 
 	@Then("The user should see list of products")
 	public void the_user_should_see_list_of_products() {
 		ProductPage page = new ProductPage(driver);
-		page.countOfHyperLinks();
-		ReportManager.getTest().info("Product list is displayed");
+						ReportManager.getTest().info("Product list is displayed");
 	}
 
 	@Then("Each product should display the name,price and image")
@@ -75,9 +75,10 @@ public class ProductPageSteps extends BaseTest {
 	}
 
 	@When("click on shoppingbag symbol")
-	public void click_on_shoppingbag_symbol() {
+	public void click_on_shoppingbag_symbol() throws InterruptedException {
 		ProductPage productPage = new ProductPage(driver);
-		productPage.clickOnShoppingBagSymbol();
+		Thread.sleep(3000);
+		productPage.clickOnproductPageShoppingBagSymbol();
 		ReportManager.getTest().info("Click on shopping bag symbol");
 	}
 
@@ -105,7 +106,14 @@ public class ProductPageSteps extends BaseTest {
 	public void user_click_on_checkout_button() {
 		ProductPage productPage = new ProductPage(driver);
 		productPage.clickOnshoppingBagSymbol1();
+		ReportManager.getTest().info("User clicked on checkout button successfully");
 	}
-	
+	@When("User click on product link")
+	public void user_click_on_product_link() {
+		ProductPage productPage = new ProductPage(driver);
+		productPage.clickOnStylishStonyStarkLink();
+		ReportManager.getTest().info("Clicked on product link");
+	}
+
 
 }
