@@ -4,7 +4,6 @@ import org.junit.Assert;
 
 import com.ecommerce.base.BaseTest;
 import com.ecommerce.pages.CheckoutPage;
-import com.ecommerce.pages.ConfirmationPage;
 import com.ecommerce.reports.ReportManager;
 
 import io.cucumber.java.en.Then;
