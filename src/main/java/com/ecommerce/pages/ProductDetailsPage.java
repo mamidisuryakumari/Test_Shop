@@ -25,6 +25,7 @@ public class ProductDetailsPage extends BasePage {
 
 	public String getProductDetailsPageTitle() {
 		String productDetailsPageActualTitle = driver.getTitle();
+		System.out.println(productDetailsPageActualTitle);
 				return productDetailsPageActualTitle;
 	}
 

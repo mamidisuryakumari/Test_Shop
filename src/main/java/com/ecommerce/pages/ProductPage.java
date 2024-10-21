@@ -3,6 +3,8 @@ package com.ecommerce.pages;
 import java.sql.Driver;
 import java.util.List;
 
+import javax.swing.plaf.basic.BasicInternalFrameTitlePane.MoveAction;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -29,7 +31,7 @@ public class ProductPage extends BasePage {
 	private By product2Image = By.xpath("//*[@id='Blog1']/div[1]/div[2]/div[12]/div/div[1]");
 
 	private By koraiMateSetProduct = By.xpath("//a[text()='Elegant Korai Floor Mats Set']");
-	private By productList = By.xpath("//div[@class='grid-posts']");
+	private By productList = By.xpath("//div[@id='main']");
 	private By shoppingBagSymbol = By.xpath("(//a[@class='item_add'])[1]");
 	private By itemCountText = By.xpath("//span[@class='simpleCart_quantity']");
 
@@ -38,6 +40,22 @@ public class ProductPage extends BasePage {
 			.xpath("//a[contains(text(),'Secret Temptation Affair Deodorant Combo for Women')]");
 
 	private By hyperLinks=By.tagName("a");
+	
+	private By productPageShoppingBagSymbol=By.xpath("(//i[@class='fa fa-shopping-bag'])[1]");
+	private By stylishStonyStarkImage=By.xpath("(//div[@class='post-image-wrap item_image'])[1]");
+	private By productPageCheckoutBtn=By.xpath("//span[text()='checkout']");
+	private By stylishStonyStarkLink=By.xpath("//a[contains(text(),'Stylish Tony Stark-Inspired Sunglasses (Men & Wome')]");
+	
+	public ProductPage clickOnStylishStonyStarkLink() {
+		Elements.doClick(driver, stylishStonyStarkLink);
+		return this;
+	}
+	
+	public ProductPage clickOnproductPageShoppingBagSymbol() {
+		MouseActionsUtil.moveToElement(driver, stylishStonyStarkImage);
+		Elements.doClick(driver, productPageShoppingBagSymbol);
+		return this;
+	}
 
 	public void countOfHyperLinks() {
 		List<WebElement> links=driver.findElements(hyperLinks);
@@ -47,6 +65,7 @@ public class ProductPage extends BasePage {
 
 	public ProductPage clickOnshoppingBagSymbol1() {
 		MouseActionsUtil.moveToElement(driver, shoppingBagSymbol1);
+		Elements.doClick(driver,productPageCheckoutBtn);
 		return this;
 	}
 	
