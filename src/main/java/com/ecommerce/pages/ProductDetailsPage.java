@@ -20,6 +20,7 @@ public class ProductDetailsPage extends BasePage {
 	
 	public int getProductsInShoppingBag() {
 		int products= Integer.parseInt(Elements.getText(driver, productQuantity));
+		System.out.println(products);
 				return products;
 	}
 
