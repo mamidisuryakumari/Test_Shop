@@ -6,7 +6,7 @@ And select the category from menu
 Then The user should see list of products
 And Each product should display the name,price and image
 
-@test4
+@addproduct
 Scenario: Add product to the cart
 When User click on product link
 Then User navigated to the product details page
