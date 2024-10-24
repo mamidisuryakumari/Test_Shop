@@ -1,8 +1,10 @@
 package com.ecommerce.stepDefinitions;
 
 import org.junit.Assert;
+import org.openqa.selenium.WebDriver;
 
 import com.ecommerce.base.BaseTest;
+import com.ecommerce.hooks.Hooks;
 import com.ecommerce.pages.ProductPage;
 import com.ecommerce.reports.ReportManager;
 
@@ -11,8 +13,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class ProductPageSteps extends BaseTest {
-
-	@Given("The user on the product page")
+		@Given("The user on the product page")
 	public void the_user_on_the_product_page() throws InterruptedException {
 
 		ProductPage productPage = new ProductPage(driver);
@@ -113,6 +114,49 @@ public class ProductPageSteps extends BaseTest {
 		ProductPage productPage = new ProductPage(driver);
 		productPage.clickOnStylishStonyStarkLink();
 		ReportManager.getTest().info("Clicked on product link");
+	}
+	
+	@When("User click on product1")
+	public void user_click_on_product1() {
+		ProductPage productPage = new ProductPage(driver);
+		productPage.clickOnProduct1();
+		ReportManager.getTest().info("Clicked on product1");
+	}
+	
+	@When("User click on product2")
+	public void user_click_on_product2() {
+		ProductPage productPage = new ProductPage(driver);
+		productPage.clickProduct2();
+		ReportManager.getTest().info("Clicked on product2");
+	}
+	@Then("User should be navigated to product page")
+	public void user_should_be_navigated_to_product_page() {
+		ProductPage productPage = new ProductPage(driver);
+		String expectedProductPageTitle = "ynrstore";
+
+		try {
+			Assert.assertEquals(productPage.getProductPageTitle(), expectedProductPageTitle);
+			System.out.println("User should be navigated back to the  product page");
+			ReportManager.getTest().pass("User successfully navigated back to the product page");
+		} catch (AssertionError ae) {
+			System.out.println("Assertion failed: " + ae.getMessage());
+			ReportManager.getTest().fail("Failed to navigating back to the product page");
+			throw ae;
+		} catch (Exception e) {
+			System.out.println("An error occured navigating back to the product page " + e.getMessage());
+			ReportManager.getTest().fail("An error occured while navigating back to the product page");
+			throw e;
+		}
+	}
+	@Then("The user notes the price of the product before purchase")
+	public void the_user_notes_the_price_of_the_product_before_purchase() {
+	   ProductPage productPage = new ProductPage(driver);
+//	   double expProductPrice=$40.00;
+	}
+	@Then("The price before purchase should be {string}")
+	public void the_price_before_purchase_should_be(String string) {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
 	}
 
 

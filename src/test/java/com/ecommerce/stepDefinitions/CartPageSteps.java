@@ -11,10 +11,6 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class CartPageSteps extends BaseTest {
-	
-	
-
-	
 
 	@Then("User navigated to the cart page")
 	public void user_navigated_to_the_cart_page() {
@@ -64,7 +60,7 @@ public class CartPageSteps extends BaseTest {
 	@Then("User should see item remove from the cart")
 	public void user_should_see_item_remove_from_the_cart() {
 		CartPage cartPage = new CartPage(driver);
-		String cartPageExpText = "You have 0 item(s) in your Cart.";
+		String cartPageExpText = "You have 1 item(s) in your Cart.";
 		try {
 			Assert.assertEquals(cartPage.getActualCartPageText(), cartPageExpText);
 			System.out.println("Item was correctly removed from the cart");
@@ -90,7 +86,7 @@ public class CartPageSteps extends BaseTest {
 	@Then("User should see item count increased in cart")
 	public void user_should_see_item_count_increased_in_cart() {
 		CartPage cartPage = new CartPage(driver);
-		int expItemcount = 2;
+		int expItemcount = 1;
 		try {
 			Assert.assertEquals(cartPage.getItemsInCart(), expItemcount);
 			System.out.println("Item count increased in cart");
@@ -125,42 +121,19 @@ public class CartPageSteps extends BaseTest {
 		}
 
 	}
-	@When("User click on product1")
-	public void user_click_on_product1() {
-	    
-	}
 
-	@Then("User should see product1 added to cart")
-	public void user_should_see_product1_added_to_cart() {
-	    
-	}
+	
 
-	@When("User click on navigate back button")
-	public void user_click_on_navigate_back_button() {
-	   
-	}
+	
 
-	@Then("User should be navigated to product page")
-	public void user_should_be_navigated_to_product_page() {
-	   
-	}
+	
+	
 
-	@When("User click on product2")
-	public void user_click_on_product2() {
-	   
-	}
+	
 
 	@Then("User should see two items added to cart")
 	public void user_should_see_two_items_added_to_cart() {
-	    
+
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 }

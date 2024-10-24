@@ -16,11 +16,9 @@ public class BaseTest {
 	
    
 	public static WebDriver setup() throws FileNotFoundException {
-		if (driver == null) {
-			loadProperties();
-			driver = DriverManager.initializeDriver(properties.getProperty("browserName"));
-			driver.get(properties.getProperty("baseUrl"));
-		}
+		loadProperties();
+		driver = DriverManager.initializeDriver(properties.getProperty("browserName"));
+		driver.get(properties.getProperty("baseUrl"));
 		return driver;
 
 	}

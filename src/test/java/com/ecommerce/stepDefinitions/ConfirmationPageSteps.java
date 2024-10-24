@@ -26,5 +26,14 @@ public class ConfirmationPageSteps extends BaseTest {
 			throw e;
 		}
 	}
-
+	@Then("The user should see the product price increase after purchase")
+	public void the_user_should_see_the_product_price_increase_after_purchase() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+	@Then("The price after purchase should be {string}")
+	public void the_price_after_purchase_should_be(String string) {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
 }
