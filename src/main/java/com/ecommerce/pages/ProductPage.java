@@ -1,9 +1,6 @@
 package com.ecommerce.pages;
 
-import java.sql.Driver;
 import java.util.List;
-
-import javax.swing.plaf.basic.BasicInternalFrameTitlePane.MoveAction;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -13,11 +10,16 @@ import com.ecommerce.utilities.Elements;
 import com.ecommerce.utilities.MouseActionsUtil;
 
 public class ProductPage extends BasePage {
-
+	
+	 
+	private int actualProductPrice;
 	public ProductPage(WebDriver driver) {
 		super(driver);
-	}
-
+		
+		
+		}
+	
+	String actualPricewithDollar;
 	private By menuItem = By.linkText("Men");
 	private By subMenuItem = By.linkText("Men Accessories");
 	private By fancyCoolProduct = By.xpath("//a[text()='Fancy Cool Product']");
@@ -29,13 +31,10 @@ public class ProductPage extends BasePage {
 	private By product1 = By.xpath("//a[text()='Vintage-Style Wallet for Men & Women']");
 	private By product2 = By.xpath("//a[text()='Stylish and Trendy Belts for Men']");
 	private By product1Image = By.xpath("//*[@id='Blog1']/div[2]/div/div[1]/div/div[1]");
-	private By product2Image = By.xpath("//*[@id='Blog1']/div[1]/div[2]/div[12]/div/div[1]");
-
-	private By koraiMateSetProduct = By.xpath("//a[text()='Elegant Korai Floor Mats Set']");
+	private By product2Image = By.xpath("//*[@id='Blog1']/div[1]/div[2]/div[12]/div/div[1]");private By koraiMateSetProduct = By.xpath("//a[text()='Elegant Korai Floor Mats Set']");
 	private By productList = By.xpath("//div[@id='main']");
 	private By shoppingBagSymbol = By.xpath("(//a[@class='item_add'])[1]");
 	private By itemCountText = By.xpath("//span[@class='simpleCart_quantity']");
-
 	private By shoppingBagSymbol1 = By.xpath("//div[@class='sora-cart-details']");
 	private By secreatTemptationLink = By
 			.xpath("//a[contains(text(),'Secret Temptation Affair Deodorant Combo for Women')]");
@@ -49,10 +48,43 @@ public class ProductPage extends BasePage {
 			.xpath("//a[contains(text(),'Stylish Tony Stark-Inspired Sunglasses (Men & Wome')]");
 	private By beforeProductPrice=By.xpath("(//span[@class='sora_product_price meta-price'])[1]");
 	
-	public double actualProductPriceBefore() {
-	double productPrice=Double.parseDouble(Elements.getText(driver, beforeProductPrice));
-	return productPrice;
+   
+	
+	
+	public int getActualProductPrice() {
+		return actualProductPrice;
 	}
+
+	public int setActualProductPrice(int actualProductPrice)
+	{
+		return this.actualProductPrice = actualProductPrice;
+	}
+	
+	public String actualProductPriceBefore() {
+	String actualPrice=Elements.getText(driver, beforeProductPrice);
+		//System.out.println(actualPrice);
+	return actualPrice;
+	}
+	 
+	public int productPrice() {
+	   
+		 actualPricewithDollar = Elements.getText(driver, beforeProductPrice);
+	    if (actualPricewithDollar != null && actualPricewithDollar.startsWith("$")) {
+	        try {
+	            String actualPrice = actualPricewithDollar.replace("$", "").trim();
+	            double actualProductPrice = Double.parseDouble(actualPrice);  // Parse as double
+	            int roundedPrice = (int) Math.round(actualProductPrice);      // Round and cast to int
+	            setActualProductPrice(roundedPrice);                          // Assuming setActualProductPrice accepts int
+	            return roundedPrice;
+	        } catch (NumberFormatException e) {
+	            System.out.println("Error parsing price: " + e.getMessage());
+	        }
+	    } else {
+	        System.out.println("Price format is invalid.");
+	    }
+	    return 0; // Default return if there is an error
+	}
+
 	public String getProductPageTitle() {
 	String actualProductPageTitle=driver.getTitle();
 	return actualProductPageTitle;
@@ -68,9 +100,9 @@ public class ProductPage extends BasePage {
 		return this;
 	}
 
-	public ProductPage clickOnStylishStonyStarkLink() {
+	public ProductDetailsPage clickOnStylishStonyStarkLink() {
 		Elements.doClick(driver, stylishStonyStarkLink);
-		return this;
+		return new ProductDetailsPage(driver);
 	}
 
 	public ProductPage clickOnproductPageShoppingBagSymbol() {
@@ -180,4 +212,7 @@ public class ProductPage extends BasePage {
 		return this;
 
 	}
+
+	
+	
 }

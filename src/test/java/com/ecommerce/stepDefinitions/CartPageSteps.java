@@ -15,6 +15,8 @@ public class CartPageSteps extends BaseTest {
 	@Then("User navigated to the cart page")
 	public void user_navigated_to_the_cart_page() {
 		CartPage cartPage = new CartPage(driver);
+		ProductPage page = new ProductPage(driver);
+		page.productPrice();
 		String ExpectedCartPageTitle = "My Cart";
 		try {
 			Assert.assertEquals(cartPage.getCartPageTitle(), ExpectedCartPageTitle);

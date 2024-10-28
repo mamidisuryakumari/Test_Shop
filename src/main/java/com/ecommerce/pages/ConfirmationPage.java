@@ -17,7 +17,6 @@ public class ConfirmationPage extends BasePage{
 	//private By orderDetails=By.xpath("(//td[@class='soraorderidsuccess'])[1]");
 	
 	
-	
 	public String getSucessmsg() {
 	String sucessMsg=Elements.getText(driver, sucessmsg);
 		System.out.println(Elements.getText(driver, sucessmsg));

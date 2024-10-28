@@ -1,6 +1,6 @@
 Feature: Product page functionality
 
-@Regression
+@Test1
 Scenario:  User views the list of products
 Given The user on the product page
 When The page loads

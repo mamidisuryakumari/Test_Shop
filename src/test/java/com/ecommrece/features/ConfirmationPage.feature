@@ -19,9 +19,9 @@ Feature: Confirmation page functionality
     Then User should see place ored button enabled
     When User click on place order button
     Then User navigated to order details page
-    And The user should see the product price increase after purchase
-    And The price before purchase should be "$40.00"
-    And The price after purchase should be "$50.00"
+    And The user should see the total price after purchase includes the product price and delivery charge
+
+   
 
     Examples: 
       | YourName | PhoneNumber | StreetName | EmailAddress            | Postcode | City      | State | Country | OrderNotes |
