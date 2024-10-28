@@ -35,7 +35,7 @@
 <a href="#"><span class="badge badge-primary">Automation Test Execution Report</span></a>
 </li>
 <li class="m-r-10">
-<a href="#"><span class="badge badge-primary">2024-10-22 15:24:10</span></a>
+<a href="#"><span class="badge badge-primary">2024-10-28 17:21:59</span></a>
 </li>
 </ul>
 </div>
@@ -79,7 +79,7 @@
 <li class="dropdown">
 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-tag"></i></a>
 <ul id="tag-toggle" class="dropdown-menu dropdown-md p-v-0">
-<a class="dropdown-item" href="#">@test4</a>
+<a class="dropdown-item" href="#">@happy-path</a>
 </ul>
 </li>
 </ul>
@@ -90,9 +90,9 @@
           tag=""
           device="">
           <div class="test-detail">
-            <p class="name">Product page functionality</p>
+            <p class="name">BMI Calculator</p>
             <p class="text-sm">
-              <span>3:24:10 pm</span> / <span>00:00:32:596</span>
+              <span>5:21:59 pm</span> / <span>00:01:55:563</span>
               <span class="badge pass-bg log float-right">Pass</span>
             </p>
           </div>
@@ -100,10 +100,10 @@
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-pass">Product page functionality</h5>
-<span class='badge badge-success'>10.22.2024 3:24:10 pm</span>
-<span class='badge badge-danger'>10.22.2024 3:24:43 pm</span>
-<span class='badge badge-default'>00:00:32:596</span>
+<h5 class="test-status text-pass">BMI Calculator</h5>
+<span class='badge badge-success'>10.28.2024 5:21:59 pm</span>
+<span class='badge badge-danger'>10.28.2024 5:23:55 pm</span>
+<span class='badge badge-default'>00:01:55:563</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
 <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
 <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
@@ -116,99 +116,59 @@
   <div class="card">
     <div class="card-header" role="tab">
       <div class="card-title">
-        <div class="node" id="2"><span class="badge log pass-bg mr-2">Pass</span>Verify checkout process from product details page to checkout page</div>
+        <div class="node" id="2"><span class="badge log pass-bg mr-2">Pass</span>Successful BMI Calculation</div>
       </div>
     </div>
         <div class="scenario_outline collapse">
             <div class="card-body l1">
               <div class="card-header">
                 <div class="card-title outline-child">
-                  <div class="node" id="3"><span class="badge log pass-bg mr-2">Pass</span>Verify checkout process from product details page to checkout page</div>
+                  <div class="node" id="3"><span class="badge log pass-bg mr-2">Pass</span>Successful BMI Calculation</div>
                 </div>
               </div>
               <div class="card-body mt-3 collapse">
                   <div class="step pass-bg">
-                    <span>Given The user on the product page</span>
+                    <span>Given The user on the homepge</span>
       <div>
       </div>
                   </div>
                   <div class="step pass-bg">
-                    <span>When The page loads</span>
+                    <span>When The user click on Practise selenium menu</span>
       <div>
       </div>
                   </div>
                   <div class="step pass-bg">
-                    <span>And select the category from menu</span>
+                    <span>Then The user scrolls down to page</span>
       <div>
       </div>
                   </div>
                   <div class="step pass-bg">
-                    <span>Then The user should see list of products</span>
+                    <span>When The user click on BMI calculator link</span>
       <div>
       </div>
                   </div>
                   <div class="step pass-bg">
-                    <span>And Each product should display the name,price and image</span>
+                    <span>Then User should be navigated to BMI calculator page</span>
       <div>
       </div>
                   </div>
                   <div class="step pass-bg">
-                    <span>When User click on product link</span>
+                    <span>When The user enter details "5","3","70","33"</span>
       <div>
       </div>
                   </div>
                   <div class="step pass-bg">
-                    <span>Then User navigated to the product details page</span>
+                    <span>And The user click on male button</span>
       <div>
       </div>
                   </div>
                   <div class="step pass-bg">
-                    <span>When User click on add to cart button</span>
+                    <span>And The user clicks on the Calculate BMI button</span>
       <div>
       </div>
                   </div>
                   <div class="step pass-bg">
-                    <span>And User should see item added to the cart</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>When User click on checkout button</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>Then User should navigated to the checkout page</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>When User enter address details "Surya"," 9963563515", "ST colony","Kumari.mudila@gmail.com","521321","Nandivada", "Ap","India", "test"</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User click on Upi tranfer button</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User click on confirm order button</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>Then User should see place ored button enabled</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>When User click on place order button</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>Then User navigated to order details page</span>
+                    <span>Then The system displays the correct BMI value with the category</span>
       <div>
       </div>
                   </div>
@@ -241,12 +201,12 @@
 <span class="meta">
 <span class='badge log pass-bg'>1</span>
 </span>
-<p class="name">@test4</p>
+<p class="name">@happy-path</p>
 <p class="duration text-sm">1 tests</p>
 </div>
 <div class="test-contents d-none">
 <div class="info">
-<h4>@test4</h4>
+<h4>@happy-path</h4>
 <span status="pass" class='badge log pass-bg'>1 passed</span>
 </div>
 <table class='table table-sm mt-4'>
@@ -260,11 +220,11 @@
 <tbody>
 <tr class="tag-test-status" status="pass">
 <td><span class="badge log pass-bg">Pass</span></td>
-<td>15:24:10 pm</td>
+<td>17:21:59 pm</td>
 <td>
-<a href="#" class="linked" test-id='1' id='3'>Verify checkout process from product details page to checkout page</a>
+<a href="#" class="linked" test-id='1' id='3'>Successful BMI Calculation</a>
 <div class="">
-<span class="badge badge-default">Product page functionality.Verify checkout process from product details page to checkout page</span>
+<span class="badge badge-default">BMI Calculator.Successful BMI Calculation</span>
 </div>
 </td>
 </tr>
@@ -285,13 +245,13 @@
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Started</p>
-<h3>2024-10-22 15:24:10</h3>
+<h3>2024-10-28 17:21:59</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Ended</p>
-<h3>2024-10-22 15:24:43</h3>
+<h3>2024-10-28 17:23:55</h3>
 </div></div>
 </div>
 <div class="col-md-3">
@@ -362,7 +322,7 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='100%'><b>17</b> steps passed</small></div>
+<div><small data-tooltip='100%'><b>9</b> steps passed</small></div>
 <div>
 <small data-tooltip='0%'><b>0</b> steps failed,
 <b>0</b> skipped, <b data-tooltip='%'>0</b> others
@@ -381,7 +341,7 @@
 </div></div>
 <script>
 var timeline = {
-"Product page functionality":32.596
+"BMI Calculator":115.563
 };
 </script>
 <div class="row">
@@ -391,7 +351,7 @@ var timeline = {
 <div class="card-body pb-0 pt-0"><table class="table table-sm table-bordered">
 <thead><tr class="bg-gray"><th>Name</th><th>Passed</th><th>Failed</th><th>Skipped</th><th>Others</th><th>Passed %</th></tr></thead><tbody>
 <tr>
-<td>@test4</td>
+<td>@happy-path</td>
 <td>1</td>
 <td>0</td>
 <td>0</td>
@@ -418,7 +378,7 @@ warningChild: 0,
 skipChild: 0,
 infoChild: 0,
 grandChildCount: 5,
-passGrandChild: 17,
+passGrandChild: 9,
 failGrandChild: 0,
 warningGrandChild: 0,
 skipGrandChild: 0,

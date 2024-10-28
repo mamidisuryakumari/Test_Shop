@@ -25,7 +25,7 @@ public class HOOKS111 {
 	public void setup(Scenario scenario) throws IOException {
 		this.scenario = scenario;
 		driver = DriverManager111.initDriver();
-		ReportManager.createTest(scenario.getName());
+	//	ReportManager.createTest(scenario.getName());
 		
 	}
 

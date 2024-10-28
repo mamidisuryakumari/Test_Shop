@@ -1,5 +1,6 @@
 package com.ecommerce.hooks;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 
 import org.openqa.selenium.OutputType;
@@ -18,19 +19,33 @@ import io.cucumber.java.Scenario;
 
 public class Hooks extends BaseTest{
 	
+	static WebDriver driver;
+	
 
 	@Before
 	public static void initDriver(Scenario scenario) throws IOException {
-	setup();
-		ReportManager.createTest(scenario.getName());
+	try {
+		driver = setup();
+	} catch (FileNotFoundException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+	// Retrieve tags from the scenario and pass to createTest
+    String[] tags = scenario.getSourceTagNames().toArray(new String[0]);
+    ReportManager.createTest(scenario.getName(), tags);
+		
+		
 	}
 
 	@After
 	public void tearDown() {
 		if (driver != null) {
-			driver.quit();
-			ReportManager.flush();
+		driver.quit();
+		driver = null;
+			
 		}
+		
+		ReportManager.flush();
 	}
 
 	@AfterStep
@@ -53,8 +68,7 @@ public class Hooks extends BaseTest{
 	}
 
 	
-	public static WebDriver getDriver()
-	{
-		return driver;
-	}
+	 public WebDriver getDriver() {
+	        return driver;
+	    }
 }

@@ -1,9 +1,6 @@
 package com.ecommerce.pages;
 
-import java.sql.Driver;
 import java.util.List;
-
-import javax.swing.plaf.basic.BasicInternalFrameTitlePane.MoveAction;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -13,10 +10,16 @@ import com.ecommerce.utilities.Elements;
 import com.ecommerce.utilities.MouseActionsUtil;
 
 public class ProductPage extends BasePage {
-
+	
+	 
+	private int actualProductPrice;
 	public ProductPage(WebDriver driver) {
 		super(driver);
-	}
+		
+		
+		}
+	
+	String actualPricewithDollar;
 	private By menuItem = By.linkText("Men");
 	private By subMenuItem = By.linkText("Men Accessories");
 	private By fancyCoolProduct = By.xpath("//a[text()='Fancy Cool Product']");
@@ -25,32 +28,83 @@ public class ProductPage extends BasePage {
 	private By orayaProduct = By.xpath("//a[contains(text(),'ORAYA 100% Natural Activated Charcoal Teeth Whiten')]");
 	private By addItemList = By.xpath("//a[@class='item_add']");
 	private By productNameList = By.xpath("//h2[@class='post-title item_name']");
-	private By product1 = By.xpath("//*[@id=\"Blog1\"]/div[1]/div[2]/div[1]/div/div[1]/a[2]");
-	private By product2 = By.xpath("//*[@id=\"Blog1\"]/div[1]/div[2]/div[2]/div/div[1]/a[2]");
+	private By product1 = By.xpath("//a[text()='Vintage-Style Wallet for Men & Women']");
+	private By product2 = By.xpath("//a[text()='Stylish and Trendy Belts for Men']");
 	private By product1Image = By.xpath("//*[@id='Blog1']/div[2]/div/div[1]/div/div[1]");
-	private By product2Image = By.xpath("//*[@id='Blog1']/div[1]/div[2]/div[12]/div/div[1]");
-
-	private By koraiMateSetProduct = By.xpath("//a[text()='Elegant Korai Floor Mats Set']");
+	private By product2Image = By.xpath("//*[@id='Blog1']/div[1]/div[2]/div[12]/div/div[1]");private By koraiMateSetProduct = By.xpath("//a[text()='Elegant Korai Floor Mats Set']");
 	private By productList = By.xpath("//div[@id='main']");
 	private By shoppingBagSymbol = By.xpath("(//a[@class='item_add'])[1]");
 	private By itemCountText = By.xpath("//span[@class='simpleCart_quantity']");
-
 	private By shoppingBagSymbol1 = By.xpath("//div[@class='sora-cart-details']");
 	private By secreatTemptationLink = By
 			.xpath("//a[contains(text(),'Secret Temptation Affair Deodorant Combo for Women')]");
 
-	private By hyperLinks=By.tagName("a");
+	private By hyperLinks = By.tagName("a");
+
+	private By productPageShoppingBagSymbol = By.xpath("(//i[@class='fa fa-shopping-bag'])[1]");
+	private By stylishStonyStarkImage = By.xpath("(//div[@class='post-image-wrap item_image'])[1]");
+	private By productPageCheckoutBtn = By.xpath("//span[text()='checkout']");
+	private By stylishStonyStarkLink = By
+			.xpath("//a[contains(text(),'Stylish Tony Stark-Inspired Sunglasses (Men & Wome')]");
+	private By beforeProductPrice=By.xpath("(//span[@class='sora_product_price meta-price'])[1]");
 	
-	private By productPageShoppingBagSymbol=By.xpath("(//i[@class='fa fa-shopping-bag'])[1]");
-	private By stylishStonyStarkImage=By.xpath("(//div[@class='post-image-wrap item_image'])[1]");
-	private By productPageCheckoutBtn=By.xpath("//span[text()='checkout']");
-	private By stylishStonyStarkLink=By.xpath("//a[contains(text(),'Stylish Tony Stark-Inspired Sunglasses (Men & Wome')]");
+   
 	
-	public ProductPage clickOnStylishStonyStarkLink() {
+	
+	public int getActualProductPrice() {
+		return actualProductPrice;
+	}
+
+	public int setActualProductPrice(int actualProductPrice)
+	{
+		return this.actualProductPrice = actualProductPrice;
+	}
+	
+	public String actualProductPriceBefore() {
+	String actualPrice=Elements.getText(driver, beforeProductPrice);
+		//System.out.println(actualPrice);
+	return actualPrice;
+	}
+	 
+	public int productPrice() {
+	   
+		 actualPricewithDollar = Elements.getText(driver, beforeProductPrice);
+	    if (actualPricewithDollar != null && actualPricewithDollar.startsWith("$")) {
+	        try {
+	            String actualPrice = actualPricewithDollar.replace("$", "").trim();
+	            double actualProductPrice = Double.parseDouble(actualPrice);  // Parse as double
+	            int roundedPrice = (int) Math.round(actualProductPrice);      // Round and cast to int
+	            setActualProductPrice(roundedPrice);                          // Assuming setActualProductPrice accepts int
+	            return roundedPrice;
+	        } catch (NumberFormatException e) {
+	            System.out.println("Error parsing price: " + e.getMessage());
+	        }
+	    } else {
+	        System.out.println("Price format is invalid.");
+	    }
+	    return 0; // Default return if there is an error
+	}
+
+	public String getProductPageTitle() {
+	String actualProductPageTitle=driver.getTitle();
+	return actualProductPageTitle;
+	}
+
+	public ProductPage clickOnProduct1() {
 		Elements.doClick(driver, stylishStonyStarkLink);
 		return this;
 	}
-	
+
+	public ProductPage clickProduct2() {
+		Elements.doClick(driver, product2);
+		return this;
+	}
+
+	public ProductDetailsPage clickOnStylishStonyStarkLink() {
+		Elements.doClick(driver, stylishStonyStarkLink);
+		return new ProductDetailsPage(driver);
+	}
+
 	public ProductPage clickOnproductPageShoppingBagSymbol() {
 		MouseActionsUtil.moveToElement(driver, stylishStonyStarkImage);
 		Elements.doClick(driver, productPageShoppingBagSymbol);
@@ -58,25 +112,23 @@ public class ProductPage extends BasePage {
 	}
 
 	public void countOfHyperLinks() {
-		List<WebElement> links=driver.findElements(hyperLinks);
-		System.out.println("Total number of hyper links "+ links.size());
-		
+		List<WebElement> links = driver.findElements(hyperLinks);
+		System.out.println("Total number of hyper links " + links.size());
+
 	}
 
 	public ProductPage clickOnshoppingBagSymbol1() {
 		MouseActionsUtil.moveToElement(driver, shoppingBagSymbol1);
-		Elements.doClick(driver,productPageCheckoutBtn);
+		Elements.doClick(driver, productPageCheckoutBtn);
 		return this;
 	}
-	
-	public void moveToMenMenu()
-	{
+
+	public void moveToMenMenu() {
 		MouseActionsUtil.moveToElement(driver, menuItem);
-		
+
 	}
-	
-	public void moveToSubMenu()
-	{
+
+	public void moveToSubMenu() {
 		MouseActionsUtil.moveToElement(driver, subMenuItem);
 		Elements.doClick(driver, subMenuItem);
 	}
@@ -130,16 +182,6 @@ public class ProductPage extends BasePage {
 		return Elements.getText(driver, productNameList);
 	}
 
-	public ProductPage clickOnProduct1() {
-		Elements.doClick(driver, fancyCoolProduct);
-		return this;
-	}
-
-	public ProductPage clickProduct2() {
-		Elements.doClick(driver, estanDentaCleanProduct);
-		return this;
-	}
-
 	public void clickOnProductLink(String product) {
 		clickOnEstaDentaCleanProductLink();
 		clickOnFancyCoolProductLink();
@@ -170,4 +212,7 @@ public class ProductPage extends BasePage {
 		return this;
 
 	}
+
+	
+	
 }

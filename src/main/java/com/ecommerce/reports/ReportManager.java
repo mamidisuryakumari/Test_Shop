@@ -1,6 +1,7 @@
 package com.ecommerce.reports;
 
 import java.io.File;
+import java.io.IOException;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
@@ -12,12 +13,14 @@ public class ReportManager {
 	    private static ExtentTest test;
 
 	    // Initialize ExtentReports if it is null
-	    public static ExtentReports getExtent() {
+	    public static ExtentReports getExtent() throws IOException {
 	        if (extent == null) {
 	            String path = System.getProperty("user.dir") + "/target/ExtentReport/ExtentReport.html"+CommonUtils.getCurrentDateTime();
 	            ExtentSparkReporter spark = new ExtentSparkReporter(new File(path));
+	        //    spark.loadXMLConfig("/src/test/resourses/extent-config.xml"); 
 	            extent = new ExtentReports();
 	            extent.attachReporter(spark);
+	            
 	        }
 	        return extent;
 	    }
@@ -31,11 +34,18 @@ public class ReportManager {
 	    }
 
 	    // Create a new test, ensure ExtentReports is initialized first
-	    public static ExtentTest createTest(String testName) {
+	    public static ExtentTest createTest(String testName, String[] tags) throws IOException{
 	        getExtent();  // Ensure that ExtentReports is initialized before creating a test
 	        test = extent.createTest(testName);
+	        
+	        // Adding tags to the test in the report
+	        for (String tag : tags) {
+	            test.assignCategory(tag);  // Assign tags to the ExtentTest instance
+	        }
+
 	        return test;
 	    }
+
 	 // Flush the ExtentReports
 	    public static void flush() {
 	        if (extent != null) {

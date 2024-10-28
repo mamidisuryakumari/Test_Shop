@@ -31,6 +31,24 @@ public class CheckoutPage extends BasePage {
 	private By placeOrderBtn = By.xpath("//input[@value='Place Order'] ");
 	private By grandTotal = By.xpath("//span[@class='simpleCart_grandTotal']");
 	
+private By beforePrice=By.xpath("(//span[@class='simpleCart_total'])[1]");
+	
+	public int actualPrice() {
+	String productPrice=	Elements.getText(driver, beforePrice);
+	int actualProductPrice=Integer.parseInt(productPrice);
+	return actualProductPrice;
+	}
+	
+	public int productPriceIncludeDeliveryCharge() {
+		int deviverCharge = 10;
+		String productPrice=	Elements.getText(driver, beforePrice);
+		int actualProductPrice=Integer.parseInt(productPrice);
+		int productPriceIncludeDeliverCharge = actualProductPrice + deviverCharge;
+		
+		System.out.println(productPriceIncludeDeliverCharge);
+		return productPriceIncludeDeliverCharge;
+	}
+	
 	public float getGrandTotal() {
 	    String totalCostString = Elements.getText(driver, grandTotal);
 	    totalCostString = totalCostString.replace("$", ""); // Remove the dollar sign

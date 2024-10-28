@@ -1,6 +1,6 @@
 Feature: Product page functionality
 
-@test1
+@Test1
 Scenario:  User views the list of products
 Given The user on the product page
 When The page loads
@@ -8,7 +8,7 @@ And select the category from menu
 Then The user should see list of products
 And Each product should display the name,price and image
 
-@test2
+@Regression
 Scenario: User adds item to cart
 Given The user on the product page
 When The page loads
@@ -19,7 +19,7 @@ When click on shoppingbag symbol
 Then User should see item added to the cart
 
 
-@test3
+@Regression
 Scenario Outline: Verify user checkout process from the product page to the checkout page
   Given The user on the product page
   When The page loads
