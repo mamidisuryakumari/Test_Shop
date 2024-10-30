@@ -1,9 +1,12 @@
 package com.ecommerce.pages;
 
+
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 import com.ecommerce.utilities.Elements;
+import com.ecommerce.utilities.Window;
 
 public class HomePage extends BasePage{
 
@@ -14,6 +17,14 @@ public class HomePage extends BasePage{
 	private By practiseSeleniumMenu = By.xpath("//a[text()='Practice Selenium']");
 	private By bmiCalculatorLink = By.xpath("//a[text()='BMI Calculator']");
 	private By practiseSeleniumMenu1=By.linkText("Practice Selenium");
+    private By windowHandleLink=By.xpath("//a[text()='Handle Multiple windows']");
+	
+	public WindowHandlePage clickOnWindowHandleLink() {
+		
+		Elements.doClick(driver, windowHandleLink);
+		return new WindowHandlePage(driver);
+	}
+	
 	
 	public String getHomePageTitle() {
 		String homePageTitle=driver.getTitle();

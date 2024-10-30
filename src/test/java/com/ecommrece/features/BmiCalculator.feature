@@ -1,6 +1,6 @@
 Feature: BMI Calculator
 
-@happy-path
+@happy-path1
 Scenario Outline: Successful BMI Calculation
 Given The user on the homepge
 When The user click on Practise selenium menu

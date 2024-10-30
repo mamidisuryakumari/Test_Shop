@@ -41,7 +41,7 @@ public class HomePageSteps extends BaseTest{
 	@When("The user click on Practise selenium menu")
 	public void the_user_click_on_practise_selenium_menu() throws InterruptedException {
 		 Thread.sleep(3000);
-	   homePage.clickOnBmiCalculatorLink();
+	   homePage.clickOnPractiseSeleniumMenu();
 	   ReportManager.getTest().info("User clicked on the practise selenimu menu");
 	  
 	}
@@ -53,7 +53,12 @@ public class HomePageSteps extends BaseTest{
 
 	@When("The user click on BMI calculator link")
 	public void the_user_click_on_bmi_calculator_link() {
-	    homePage.clickOnBmiCalculatorLink();
+	  //  homePage.clickOnBmiCalculatorLink();
+	   
+	}
+	@When("The user click on handle multiple windows link")
+	public void the_user_click_on_handle_multiple_windows() {
+	   homePage.clickOnWindowHandleLink();
 	}
 	
 }
