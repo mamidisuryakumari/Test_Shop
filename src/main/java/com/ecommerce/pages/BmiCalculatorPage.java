@@ -18,6 +18,30 @@ public class BmiCalculatorPage extends BasePage {
 	private By ageField = By.id("age");
 	private By calculateBMIBtn = By.id("calculateBtn");
 	private By resetBtn = By.id("resetBtn");
+	private By overWeightTextMsg=By.id("result");
+	private By heightErrorMsg=By.id("heightError");
+	private By weightErrorMsg=By.id("weightError");
+	private By calculateBMIBtn1=By.xpath("//button[text()='Calculate BMI']");
+	
+	public BmiCalculatorPage clickOnCalculateBMIBtn1() {
+		Elements.doClick(driver, calculateBMIBtn1);
+		return this;
+	}
+	
+	public String getWeightErrorMsg() {
+		String actualweightErrorMsg=Elements.getText(driver, weightErrorMsg);
+		return actualweightErrorMsg;
+	}
+	
+	public String getHeightErrorMsg() {
+		String actualHeightErrorMsg=Elements.getText(driver, heightErrorMsg);
+		return actualHeightErrorMsg;
+	}
+	
+	public String getOverWeightTextMsg() {
+		String actualOverWeightText=Elements.getText(driver, overWeightTextMsg);
+		return actualOverWeightText;
+	}
 
 	public String getBmiPageTitle() {
 		String bmiPageTitle = driver.getTitle();
