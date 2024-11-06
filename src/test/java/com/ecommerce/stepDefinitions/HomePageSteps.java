@@ -53,7 +53,8 @@ public class HomePageSteps extends BaseTest{
 
 	@When("The user click on BMI calculator link")
 	public void the_user_click_on_bmi_calculator_link() {
-	  //  homePage.clickOnBmiCalculatorLink();
+	  homePage.clickOnBmiCalculatorLink();
+	  ReportManager.getTest().info("User clicked on the BMI calculator link");
 	   
 	}
 	@When("The user click on handle multiple windows link")
