@@ -20,9 +20,6 @@ Feature: Confirmation page functionality
     When User click on place order button
     Then User navigated to order details page
     And The user should see the total price after purchase includes the product price and delivery charge
-
-   
-
-    Examples: 
+  Examples: 
       | YourName | PhoneNumber | StreetName | EmailAddress            | Postcode | City      | State | Country | OrderNotes |
       | Surya    |  9963563515 | ST colony  | Kumari.mudila@gmail.com |   521321 | Nandivada | AP    | India   | test       |

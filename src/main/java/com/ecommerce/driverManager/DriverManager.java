@@ -6,8 +6,6 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.safari.SafariDriver;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
-
 public class DriverManager {
 	
 	private static 	WebDriver driver;
@@ -17,6 +15,7 @@ public class DriverManager {
 		
 		switch(browserName.toLowerCase()) {
 		case "chrome" :
+	
 			driver = new ChromeDriver();
 			break;
 			
@@ -36,6 +35,7 @@ public class DriverManager {
 				throw new IllegalArgumentException("Browesr name is invalid :" +browserName );
 		}
 		driver.manage().window().maximize();
+		//return driver;
 		return driver;
 	}
 

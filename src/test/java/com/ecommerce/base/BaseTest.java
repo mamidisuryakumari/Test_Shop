@@ -13,14 +13,12 @@ public class BaseTest {
 	public static WebDriver driver;
 	protected static Properties properties;
 	private static String filePath = "./src/test/resources/config.properties";
-	
-   
+
 	public static WebDriver setup() throws FileNotFoundException {
 		loadProperties();
 		driver = DriverManager.initializeDriver(properties.getProperty("browserName"));
 		driver.get(properties.getProperty("baseUrl"));
 		return driver;
-
 	}
 
 	public static Properties loadProperties() throws FileNotFoundException {
@@ -34,7 +32,5 @@ public class BaseTest {
 		}
 		return properties;
 	}
-
-	
 
 }

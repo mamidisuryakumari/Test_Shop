@@ -3,6 +3,7 @@ package com.ecommerce.hooks;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
+import org.bson.internal.Base64;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
