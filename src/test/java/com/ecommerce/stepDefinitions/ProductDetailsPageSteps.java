@@ -10,10 +10,11 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class ProductDetailsPageSteps extends BaseTest{
+	ProductDetailsPage productDetailsPage = new ProductDetailsPage(driver);
 	@Then("User navigated to the product details page")
 	public void user_navigated_to_the_product_details_page() {
 		ProductDetailsPage productDetailsPage = new ProductDetailsPage(driver);
-		String exceptedProductdetailsPageTitle = "Stylish Tony Stark-Inspired Sunglasses (Men & Women) - Transparent Lenses";
+		String exceptedProductdetailsPageTitle = "Men's Comfortable, Shock-Absorbent & Slip-Resistant Formal Shoes";
 		try {
 			Assert.assertEquals(productDetailsPage.getProductDetailsPageTitle(), exceptedProductdetailsPageTitle);
 			System.out.println("Landed on product details page");
@@ -56,7 +57,7 @@ public class ProductDetailsPageSteps extends BaseTest{
 
 	@When("User click on view cart button")
 	public void user_click_on_view_cart_button() {
-		ProductDetailsPage productDetailsPage = new ProductDetailsPage(driver);
+		
 		productDetailsPage.ClickOnViewCartBtn();
 		ReportManager.getTest().info("Clicked on view cart button");
 	}

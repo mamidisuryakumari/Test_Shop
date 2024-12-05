@@ -18,7 +18,7 @@ public class HomePageSteps extends BaseTest{
 
 	@Given("The user on the homepge")
 	public void the_user_on_the_homepge() {
-	    homePage.clickOnPractiseSeleniumMenu();
+	  //  homePage.clickOnPractiseSeleniumMenu();
 	    String expectedHomePageTitle = "Software Testing Online";
 	    
 	    try {
@@ -36,7 +36,22 @@ public class HomePageSteps extends BaseTest{
 	    }
 	}
 
-	
+	@When("The user click on the Practise selenium menu")
+	public void the_user_click_on_the_practise_selenium_menu() {
+	   homePage.clickOnPractiseSeleniumMenu();
+	   ReportManager.getTest().info("The user clicked on the practise selenium button");
+	}
+
+	@Then("The user scrolls down to the page")
+	public void the_user_scrolls_down_to_the_page() {
+	    ReportManager.getTest().info("The user scrolls down to the page");
+	}
+
+	@When("The User click on the testshop link")
+	public void the_user_click_on_the_testshop_link() throws InterruptedException {
+		Thread.sleep(2000);
+	   homePage.clickOnTestShopLink();
+	}
 
 	@When("The user click on Practise selenium menu")
 	public void the_user_click_on_practise_selenium_menu() throws InterruptedException {

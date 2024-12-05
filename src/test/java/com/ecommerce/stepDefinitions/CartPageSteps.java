@@ -4,6 +4,7 @@ import org.junit.Assert;
 
 import com.ecommerce.base.BaseTest;
 import com.ecommerce.pages.CartPage;
+import com.ecommerce.pages.CheckoutPage;
 import com.ecommerce.pages.ProductDetailsPage;
 import com.ecommerce.pages.ProductPage;
 import com.ecommerce.reports.ReportManager;
@@ -11,12 +12,12 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class CartPageSteps extends BaseTest {
-
+	CartPage cartPage = new CartPage(driver);
+	ProductPage page = new ProductPage(driver);
 	@Then("User navigated to the cart page")
 	public void user_navigated_to_the_cart_page() {
-		CartPage cartPage = new CartPage(driver);
-		ProductPage page = new ProductPage(driver);
-		page.productPrice();
+		
+	//	page.productPrice();
 		String ExpectedCartPageTitle = "My Cart";
 		try {
 			Assert.assertEquals(cartPage.getCartPageTitle(), ExpectedCartPageTitle);
@@ -35,7 +36,7 @@ public class CartPageSteps extends BaseTest {
 
 	@Then("User should see item in cart")
 	public void user_should_see_item_in_to_cart() {
-		CartPage cartPage = new CartPage(driver);
+		
 		String cartPageExpText = "You have 1 item(s) in your Cart.";
 		try {
 			Assert.assertEquals(cartPage.getActualCartPageText(), cartPageExpText);
@@ -50,6 +51,11 @@ public class CartPageSteps extends BaseTest {
 			ReportManager.getTest().fail("User cannot see items in cart");
 			throw e;
 		}
+	}
+	@When("User click on proceed to checkout button")
+	public void user_click_on_proceed_to_checkout_button() {
+	   cartPage.clickOnProceedToCheckBtn();
+	   ReportManager.getTest().info("User clicked on proceed to checkout button");
 	}
 
 	@When("User click on remove button")
