@@ -18,6 +18,12 @@ public class HomePage extends BasePage{
 	private By bmiCalculatorLink = By.xpath("//a[text()='BMI Calculator']");
 	private By practiseSeleniumMenu1=By.linkText("Practice Selenium");
     private By windowHandleLink=By.xpath("//a[text()='Handle Multiple windows']");
+    private By testShopLink=By.xpath("//a[text()='Test Shop']");
+    
+    public ProductPage clickOnTestShopLink() {
+    	Elements.doClick(driver, testShopLink);
+		return new ProductPage(driver);
+    }
 	
 	public WindowHandlePage clickOnWindowHandleLink() {
 		

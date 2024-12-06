@@ -11,12 +11,45 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class ProductPageSteps extends BaseTest {
-	
+
 	ProductPage productPage = new ProductPage(driver);
+
+	@Then("The User should be navigated to the product page")
+	public void the_user_should_be_navigated_to_the_product_page() {
+		String expectedProductPageTitle = "ynrstore";
+
+		try {
+			Assert.assertEquals(productPage.actualProductPageTitle(), expectedProductPageTitle);
+			System.out.println("Landed on product page");
+			ReportManager.getTest().pass("User successfully navigated to the product page");
+		} catch (AssertionError ae) {
+			System.out.println("Assertion failed: " + ae.getMessage());
+			ReportManager.getTest().fail("Failed to land on product page");
+			throw ae;
+		} catch (Exception e) {
+			System.out.println("An error occured navigating to the product page " + e.getMessage());
+			ReportManager.getTest().fail("An error occured while navigating to the product page");
+			throw e;
+		}
+	}
+
+	@When("The User select men footware from men menu")
+	public void the_user_select_men_footware_from_men_menu() {
+		productPage.moveToMenMenu();
+		productPage.moveToSubMenu();
+		ReportManager.getTest().info("Category is selected");
+	}
+
+	@When("The User click on men comfortable product link")
+	public void the_user_click_on_men_comfortable_product_link() throws InterruptedException {
+		Thread.sleep(2000);
+		productPage.clickOnmensComfortablelink();
+		ReportManager.getTest().info("The user clicked on men comfortable link");
+	}
+
 	@Given("The user on the product page")
 	public void the_user_on_the_product_page() throws InterruptedException {
 
-		
 		String expectedProductPageTitle = "ynrstore";
 
 		try {
@@ -63,14 +96,14 @@ public class ProductPageSteps extends BaseTest {
 
 	@Then("The user should see list of products")
 	public void the_user_should_see_list_of_products() {
-		
+
 		ReportManager.getTest().info("Product list is displayed");
 	}
 
 	@Then("Each product should display the name,price and image")
 	public void each_product_should_display_the_name_price_and_image() throws InterruptedException {
 		productPage.productPrice();
-		
+
 		ReportManager.getTest().info("Each product should display the name,price and image");
 		Thread.sleep(5000);
 	}
@@ -155,17 +188,18 @@ public class ProductPageSteps extends BaseTest {
 	@Then("The user notes the price of the product before purchase")
 	public void the_user_notes_the_price_of_the_product_before_purchase() {
 		ProductPage productPage = new ProductPage(driver);
-	    int actualPrice=productPage.productPrice();
+		int actualPrice = productPage.productPrice();
 		productPage.actualProductPriceBefore();
-	//	String expProductPrice = "$40.00";
-		int expPrice=40;
-	//	Assert.assertEquals(productPage.actualProductPriceBefore().trim(), expProductPrice.trim());
+		// String expProductPrice = "$40.00";
+		int expPrice = 40;
+		// Assert.assertEquals(productPage.actualProductPriceBefore().trim(),
+		// expProductPrice.trim());
 		Assert.assertEquals(actualPrice, expPrice);
 	}
 
 	@Then("The price before purchase should be {string}")
 	public void the_price_before_purchase_should_be(String string) {
-		
+
 	}
 
 }

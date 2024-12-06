@@ -19,7 +19,7 @@ public class ProductPage extends BasePage {
 
 	String actualPricewithDollar;
 	private By menuItem = By.linkText("Men");
-	private By subMenuItem = By.linkText("Men Accessories");
+	private By subMenuItem = By.linkText("Men Footwear");
 	private By fancyCoolProduct = By.xpath("//a[text()='Fancy Cool Product']");
 	private By estanDentaCleanProduct = By
 			.xpath("//a[contains(text(),'ESTAN Denta Clean Herbal Tooth Paste with Mouth Wash')]");
@@ -46,6 +46,13 @@ public class ProductPage extends BasePage {
 	private By stylishStonyStarkLink = By
 			.xpath("//a[contains(text(),'Stylish Tony Stark-Inspired Sunglasses (Men & Wome')]");
 	private By beforeProductPrice = By.xpath("(//span[@class='sora_product_price meta-price'])[1]");
+	
+	private By mensComfortablelink=By.xpath("//a[contains(text(),\"Men's Comfortable\")]");
+	
+	public ProductDetailsPage clickOnmensComfortablelink() {
+		Elements.doClick(driver, mensComfortablelink);
+		return new ProductDetailsPage(driver);
+	}
 
 	public int getActualProductPrice() {
 		return actualProductPrice;
@@ -118,14 +125,16 @@ public class ProductPage extends BasePage {
 		return this;
 	}
 
-	public void moveToMenMenu() {
+	public ProductPage moveToMenMenu() {
 		MouseActionsUtil.moveToElement(driver, menuItem);
+		return this;
 
 	}
 
-	public void moveToSubMenu() {
+	public ProductPage moveToSubMenu() {
 		MouseActionsUtil.moveToElement(driver, subMenuItem);
 		Elements.doClick(driver, subMenuItem);
+		return this;
 	}
 
 	public boolean isPageLoaded() {

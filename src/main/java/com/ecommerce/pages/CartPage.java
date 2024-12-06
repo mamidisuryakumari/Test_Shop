@@ -24,6 +24,12 @@ public class CartPage extends BasePage {
 	public int actualProductCount;
 	private By itemQuantity = By.xpath("(//div[@class='item-quantity'])[2]");
 	private By cartPageTextFld = By.xpath("//h2[contains(text(),'You have')]");
+	private By proceedToCheckBtn=By.xpath("//a[text()='Proceed to Checkout']");
+	
+	public CheckoutPage clickOnProceedToCheckBtn() {
+		Elements.doClick(driver, proceedToCheckBtn);
+		return new CheckoutPage(driver);
+	}
 
 	public String getActualCartPageText() {
 		String cartPageText = Elements.getText(driver, cartPageTextFld);
