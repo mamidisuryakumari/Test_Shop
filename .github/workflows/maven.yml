@@ -45,16 +45,5 @@ jobs:
         name: Cucumber-Extent-Report
         path: target/cucumber-reports
 
-    - name: Send Teams Message
-      if: success() || failure()
-      uses: Test_Shop/teams-notify-build-status@v3
-      with: 
-        webhookUrl: ${{ secrets.TEAMS_WEBHOOK_URL }}
-        title: ISE UI Automation
-        message: Ran the E2E UI automated tests
-        titleBackgroundColor: ${{ job.status }}
-        status: ${{ job.status }}
-      env:
-        SHOULD_DISPLAY_ACTOR_LABEL: true
-        SHOULD_DISPLAY_VIEW_RUN_BUTTON: true
-        SHOULD_DISPLAY_VIEW_COMMIT_BUTTON: false
+   
+     
