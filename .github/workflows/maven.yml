@@ -52,7 +52,7 @@ jobs:
 
     - name: send teams message
       if: success() || failure()
-      uses: neonidin/teams-notify-build-status@v3
+      uses: Test_Shop/teams-notify-build-status@v3
       with: 
          webhookUrl: ${{ secrets.TEAMS_WEBHOOK_URL }}
          title: ISE UI Automation
