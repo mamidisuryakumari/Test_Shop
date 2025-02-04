@@ -1,8 +1,10 @@
 package com.ecommerce.stepDefinitions;
 
 import org.junit.Assert;
+import org.openqa.selenium.WebDriver;
 
 import com.ecommerce.base.BaseTest;
+import com.ecommerce.hooks.HOOKS111;
 import com.ecommerce.pages.ConfirmationPage;
 import com.ecommerce.pages.ProductPage;
 import com.ecommerce.reports.ReportManager;
@@ -10,7 +12,9 @@ import com.ecommerce.utilities.Constants;
 
 import io.cucumber.java.en.Then;
 
-public class ConfirmationPageSteps extends BaseTest {
+public class ConfirmationPageSteps {
+	
+	WebDriver driver = HOOKS111.getDriver();
 	
 	ConfirmationPage confirmationPage = new ConfirmationPage(driver);
 	ProductPage page = new ProductPage(driver);

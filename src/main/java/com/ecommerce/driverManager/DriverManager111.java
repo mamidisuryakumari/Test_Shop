@@ -2,6 +2,7 @@ package com.ecommerce.driverManager;
 
 import java.io.IOException;
 
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -10,17 +11,21 @@ import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.safari.SafariDriver;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.ecommerce.utilities.CommonUtils;
 
 public class DriverManager111 {
-	private static WebDriver driver;
+	
+	public static WebDriver driver;
+	private static final Logger log = LoggerFactory.getLogger(DriverManager111.class);
 	  
 	  
     public static WebDriver initDriver() throws IOException {
-        String browser =  CommonUtils.getProperties().getProperty("browser").toLowerCase();
+        String browser =  CommonUtils.getProperties().getProperty("browserName").toLowerCase();
         String os = System.getProperty("os.name").toLowerCase();
-       String url = CommonUtils.getProperties().getProperty("url");
+       String url = CommonUtils.getProperties().getProperty("baseUrl");
 
         // OS check with if-else condition
         if (os.contains("windows")) {
@@ -46,7 +51,7 @@ public class DriverManager111 {
         switch (browser) {
             case "chrome":
                 ChromeOptions chromeOptions = new ChromeOptions();
-                chromeOptions.addArguments("--incognito");
+            //    chromeOptions.addArguments("--incognito");
                 driver = new ChromeDriver(chromeOptions);
                 // Add more options as needed
                 return driver;

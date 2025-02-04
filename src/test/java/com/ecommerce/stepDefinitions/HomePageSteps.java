@@ -1,19 +1,17 @@
 package com.ecommerce.stepDefinitions;
 
 import org.junit.Assert;
-import org.testng.asserts.Assertion;
 
-import com.ecommerce.base.BaseTest;
+import com.ecommerce.driverManager.DriverManager111;
 import com.ecommerce.pages.HomePage;
 import com.ecommerce.reports.ReportManager;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import junit.framework.AssertionFailedError;
 
-public class HomePageSteps extends BaseTest{
-	
+public class HomePageSteps extends DriverManager111{
+//	WebDriver driver = HOOKS111.getDriver();
 	HomePage homePage = new HomePage(driver);
 
 	@Given("The user on the homepge")
@@ -73,7 +71,8 @@ public class HomePageSteps extends BaseTest{
 	   
 	}
 	@When("The user click on handle multiple windows link")
-	public void the_user_click_on_handle_multiple_windows() {
+	public void the_user_click_on_handle_multiple_windows() throws InterruptedException {
+		Thread.sleep(2000);
 	   homePage.clickOnWindowHandleLink();
 	}
 	

@@ -11,6 +11,7 @@ import org.openqa.selenium.WebDriver;
 import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.Status;
 import com.ecommerce.base.BaseTest;
+import com.ecommerce.driverManager.DriverManager111;
 import com.ecommerce.reports.ReportManager;
 
 import io.cucumber.java.After;
@@ -26,7 +27,8 @@ public class Hooks extends BaseTest{
 	@Before
 	public static void initDriver(Scenario scenario) throws IOException {
 	try {
-		driver = setup();
+		//driver = setup();
+		driver = DriverManager111.initDriver();
 	} catch (FileNotFoundException e) {
 		// TODO Auto-generated catch block
 		e.printStackTrace();

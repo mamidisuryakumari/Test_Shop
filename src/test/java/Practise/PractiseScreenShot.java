@@ -9,17 +9,24 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import com.ecommerce.utilities.CommonUtils;
+
 public class PractiseScreenShot {
 	public static void main(String[] args) throws IOException {
 		
-		WebDriver driver = new ChromeDriver();
-		driver.manage().window().maximize();
-		driver.get("https://www.softwaretestingonline.com");
+	//	WebDriver driver = new ChromeDriver();
+	//	driver.manage().window().maximize();
+	//	driver.get("https://www.softwaretestingonline.com");
 		
-		File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-		 FileUtils.copyFile(screenshot, new File("screenshot.png"));
+	//	File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+	//	 FileUtils.copyFile(screenshot, new File("screenshot.png"));
    
-		driver.quit();
+	//	driver.quit();
+		
+		CommonUtils.getCurrentDate();
+		System.out.println(CommonUtils.getCurrentDate());
+		CommonUtils.getFutureDay();
+		System.out.println(CommonUtils.getFutureDay());
 	}
 	public void screenShot() {
 		

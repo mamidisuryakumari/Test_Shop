@@ -1,15 +1,20 @@
 package com.ecommerce.stepDefinitions;
 
 import org.junit.Assert;
+import org.openqa.selenium.WebDriver;
 
 import com.ecommerce.base.BaseTest;
+import com.ecommerce.hooks.HOOKS111;
 import com.ecommerce.pages.CheckoutPage;
 import com.ecommerce.reports.ReportManager;
 
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class CheckoutSteps extends BaseTest {
+public class CheckoutSteps {
+	
+	WebDriver driver = HOOKS111.getDriver();
+	
 	@Then("User should navigated to the checkout page")
 	public void user_should_navigated_to_the_checkout_page() {
 		String expectedCheckoutPageTitle = "Checkout";
@@ -72,5 +77,12 @@ public class CheckoutSteps extends BaseTest {
 		Thread.sleep(5000);
 	}
 
-	
+	@When("User enter address details")
+	public void user_enter_address_details(io.cucumber.datatable.DataTable dataTable) {
+		CheckoutPage checkoutPage = new CheckoutPage(driver);
+		checkoutPage.enterName("surya");
+	//	checkoutPage.enterPhoneNumber(phoneNumber);
+	//	checkoutPage.enterStreeName(streetName);
+		
+	}
 }

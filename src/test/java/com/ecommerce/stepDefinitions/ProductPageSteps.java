@@ -1,18 +1,48 @@
 package com.ecommerce.stepDefinitions;
 
 import org.junit.Assert;
+import org.openqa.selenium.WebDriver;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-import com.ecommerce.base.BaseTest;
+import com.ecommerce.hooks.HOOKS111;
 import com.ecommerce.pages.ProductPage;
 import com.ecommerce.reports.ReportManager;
+import com.ecommerce.utilities.Elements;
 
+import Practise.ScreenShot;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class ProductPageSteps extends BaseTest {
+public class ProductPageSteps {
 
+	WebDriver driver = HOOKS111.getDriver();
+	private static Logger logger = LoggerFactory.getLogger(ProductPageSteps.class);
 	ProductPage productPage = new ProductPage(driver);
+
+	@Given("The user on the product page")
+	public void the_user_on_the_product_page() throws Exception {
+
+		String expectedProductPageTitle = "ynrstore";
+
+		try {
+			Assert.assertEquals(productPage.actualProductPageTitle(), expectedProductPageTitle);
+			logger.info("Landed on product page");
+			ReportManager.getTest().pass("User successfully navigated to the product page");
+			// ScreenShot.takeScreenShot(driver,"productpage");
+			// ScreenShot.takeScreenshotByUsingBytes(driver,"productpage");
+			ScreenShot.takeScreenshotByUsingBase64(driver, "productpage");
+		} catch (AssertionError ae) {
+			logger.warn("Assertion failed: " + ae.getMessage());
+			ReportManager.getTest().fail("Failed to land on product page");
+			throw ae;
+		} catch (Exception e) {
+			logger.error("An error occured navigating to the product page " + e.getMessage());
+			ReportManager.getTest().fail("An error occured while navigating to the product page");
+			throw e;
+		}
+	}
 
 	@Then("The User should be navigated to the product page")
 	public void the_user_should_be_navigated_to_the_product_page() {
@@ -45,26 +75,6 @@ public class ProductPageSteps extends BaseTest {
 		Thread.sleep(2000);
 		productPage.clickOnmensComfortablelink();
 		ReportManager.getTest().info("The user clicked on men comfortable link");
-	}
-
-	@Given("The user on the product page")
-	public void the_user_on_the_product_page() throws InterruptedException {
-
-		String expectedProductPageTitle = "ynrstore";
-
-		try {
-			Assert.assertEquals(productPage.actualProductPageTitle(), expectedProductPageTitle);
-			System.out.println("Landed on product page");
-			ReportManager.getTest().pass("User successfully navigated to the product page");
-		} catch (AssertionError ae) {
-			System.out.println("Assertion failed: " + ae.getMessage());
-			ReportManager.getTest().fail("Failed to land on product page");
-			throw ae;
-		} catch (Exception e) {
-			System.out.println("An error occured navigating to the product page " + e.getMessage());
-			ReportManager.getTest().fail("An error occured while navigating to the product page");
-			throw e;
-		}
 	}
 
 	@When("The page loads")
@@ -147,7 +157,8 @@ public class ProductPageSteps extends BaseTest {
 	@When("User click on product link")
 	public void user_click_on_product_link() {
 		ProductPage productPage = new ProductPage(driver);
-		productPage.clickOnStylishStonyStarkLink();
+		productPage.clickOnmensComfortablelink();
+		// productPage.clickOnStylishStonyStarkLink();
 		ReportManager.getTest().info("Clicked on product link");
 	}
 

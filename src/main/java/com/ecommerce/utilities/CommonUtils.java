@@ -1,6 +1,7 @@
 package com.ecommerce.utilities;
 
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
@@ -14,13 +15,27 @@ import java.util.Random;
 public class CommonUtils {
 	
 private static Properties configProperties;
+protected static Properties properties;
+private static String filePath = "./src/test/resources/config.properties";
 	
 	public static Properties getProperties() throws IOException
 	{
 		configProperties = new Properties();
-		FileInputStream fileInputStream = new FileInputStream(System.getProperty("user.dir")+"/src/test/resources/config.properties");
+		FileInputStream fileInputStream = new FileInputStream(System.getProperty("user.dir") + "./src/test/resources/config.properties");
 		configProperties.load(fileInputStream);
 		return configProperties;
+	}
+	
+	public static Properties loadProperties() throws FileNotFoundException {
+		properties = new Properties();
+		FileInputStream fileInputStream = new FileInputStream(filePath);
+		try {
+			properties.load(fileInputStream);
+			fileInputStream.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return properties;
 	}
 	public static int getRandomNumber(int min, int max) {
         if (min >= max) {
