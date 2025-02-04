@@ -4,8 +4,59 @@ on:
   push:
     branches: [ "main" ]
   pull_request:
-    branches: [ "main" ]
+    paths:
+      - 'src/**'
   workflow_dispatch:
+  schedule:
+    - cron: '30 6 * * 6,0'
+
+permissions:
+  contents: write
+  pages: write
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+
+    - name: Set up JDK 21
+      uses: actions/setup-java@v4
+      with:
+        java-version: '21'
+        distribution: 'temurin'
+        cache: maven
+
+    - name: Install Chrome
+      uses: browser-actions/setup-chrome@latest
+
+    - name: Verify Chrome Version
+      run: chrome --version
+
+    - name: Run Selenium BDD Tests with Maven
+      run: mvn -B clean test 
+
+    - name: Cucumber Github Pages Report
+      if: success() || failure()
+      uses: PavanMudigonda/html-reporter-github-pages@v1.2
+      with:
+        name: Selenium BDD CI with Maven
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    paths:
+      - 'src/**'
+  workflow_dispatch:
+  schedule:
+    - cron: '30 6 * * 6,0'
+
+permissions:
+  contents: write
+  pages: write
 
 jobs:
   build:
@@ -35,5 +86,25 @@ jobs:
       if: success() || failure()
       uses: actions/upload-artifact@v4
       with:
-        name: Cucumber-Extent-Report
-        path: target/cucumber-reports
+        test_results: target/cucumber-reports
+        keep_reports: 20
+        gh_pages: gh-pages # BRANCH NAME you like
+        subfolder: docs  #Level 1 Folder Structure you like
+        tool_name: cucumber # Level 2 Folder Structure you like
+        workflow_name: selenium # Level 3 Folder Structure you like
+        env: CI # Level 4 Folder Structure you like
+
+   -name: send teams message
+    if: success() || failure()
+    uses: neonidin/teams-notify-build-status@v3
+    with: 
+      webhookUrl: ${{ secrets.TEAMS_WEBHOOK_URL }}
+      title: ISE UI Automation
+      message: Ran the E2E UI automated tests
+      titleBackgroundColor: ${{ job.status }}
+      status: ${{ job.status }}
+    env:
+    SHOULD_DISPLAY-ACTOR_LABEL: true
+    SHOULD_DISPLAY_VIEW_RUN_BUTTON: true
+    SHOULD_DISPLAY_VIEW_COMMIT_BUTTON: false
+    
