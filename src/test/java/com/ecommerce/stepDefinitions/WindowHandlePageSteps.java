@@ -18,9 +18,11 @@ public class WindowHandlePageSteps extends BaseTest {
 	}
 
 	@When("The user click on open single window button")
-	public void the_user_click_on_open_single_window_button() {
+	public void the_user_click_on_open_single_window_button() throws InterruptedException {
 		
-		windowHandlePage.switchToChildWindow();
+	windowHandlePage.switchToChildWindow();
+	//	Thread.sleep(5000);
+		windowHandlePage.switchToChildWindow1();
 		
 
 	}
@@ -42,4 +44,4 @@ public class WindowHandlePageSteps extends BaseTest {
 	}
 
 	
-}
+}  

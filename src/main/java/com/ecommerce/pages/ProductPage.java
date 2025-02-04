@@ -9,13 +9,16 @@ import org.openqa.selenium.WebElement;
 import com.ecommerce.utilities.Elements;
 import com.ecommerce.utilities.MouseActionsUtil;
 
-public class ProductPage extends BasePage {
-
-	private int actualProductPrice;
+public class ProductPage extends BasePage{
 
 	public ProductPage(WebDriver driver) {
 		super(driver);
-	}
+			}
+
+	private int actualProductPrice;
+	
+
+   
 
 	String actualPricewithDollar;
 	private By menuItem = By.linkText("Men");
@@ -169,6 +172,9 @@ public class ProductPage extends BasePage {
 	}
 
 	public String actualProductPageTitle() {
+		 if (driver == null) {
+		        throw new RuntimeException("WebDriver instance is null in ProductPage.");
+		    }
 		String productPageTitle = driver.getTitle();
 		return productPageTitle;
 	}

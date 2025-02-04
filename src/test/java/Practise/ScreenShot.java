@@ -1,29 +1,58 @@
 package Practise;
 
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.Base64;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 
 public class ScreenShot {
-	WebDriver driver;
 
-	public static void main(String args[]) throws IOException {
-		WebDriver driver = new ChromeDriver();
-		driver.manage().window().maximize();
-		driver.get("https://www.softwaretestingonline.com");
-		ScreenShot screenShot = new ScreenShot();
-
-	screenShot.screenshot(driver, "screenshot");
+	public static String takeScreenShot(WebDriver driver, String screenShotName) throws IOException {
+		String destination = "./Screenshots/" + screenShotName + ".png";
+		try {
+			File sourse = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+			FileUtils.copyFile(sourse, new File(destination));
+		} catch (Exception e) {
+		System.out.println("Screenshot Failed"+screenShotName);	
+		}
+		return destination;
 	}
-
-	public void screenshot(WebDriver driver,String screenshot) throws IOException {
-		String destination="./screenshots/"+screenshot+".png";
-		File Sourse=((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-		FileUtils.copyFile(Sourse, new File(destination));
+	
+	public static String takeScreenshotByUsingBytes(WebDriver driver,String screenshotName) throws IOException {
+		
+		String destination = "./Screenshots/" + screenshotName + ".png";
+		try {
+			byte[] byteArr=((TakesScreenshot)driver).getScreenshotAs(OutputType.BYTES);
+			File destFile=new File(destination);
+			FileOutputStream fos=new FileOutputStream(destFile);
+			fos.write(byteArr);
+			fos.close();
+		} catch (Exception e) {
+			
+		}
+		
+		return destination;
 	}
+	
+	public static String takeScreenshotByUsingBase64(WebDriver driver,String screenshotName) throws IOException {
+		String destination="./Screenshots"+screenshotName+".png";
+		try {
+			String base64Code=((TakesScreenshot)driver).getScreenshotAs(OutputType.BASE64);
+			byte[] byteArr=Base64.getDecoder().decode(base64Code);
+			File destFile=new File(destination);
+			FileOutputStream fos=new FileOutputStream(destFile);
+			fos.write(byteArr);
+			fos.close();	
+		} catch (Exception e) {
+			
+		}
+		
+		return destination;
+	}
+	
 }

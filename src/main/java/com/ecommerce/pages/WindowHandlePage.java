@@ -48,6 +48,11 @@ public class WindowHandlePage extends BasePage {
 		}
 		return this;
 	}
+	
+	public WindowHandlePage switchToChildWindow1() {
+		Window.switchToWindow(driver, singleWindowButton);
+		return this;
+	}
 	public WindowHandlePage switchToGoogleWindow() {
 		String parentWindow=driver.getWindowHandle();
 		System.out.println(parentWindow);
@@ -62,5 +67,7 @@ public class WindowHandlePage extends BasePage {
 		}
 		return this;
 	}
+
+	
 	
 }

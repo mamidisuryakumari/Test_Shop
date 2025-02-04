@@ -31,3 +31,18 @@ Feature: End to end functionality
     Examples: 
       | YourName | PhoneNumber | StreetName | EmailAddress            | Postcode | City      | State | Country | OrderNotes |
       | Surya    |  9963563515 | ST colony  | Kumari.mudila@gmail.com |   521321 | Nandivada | Ap    | India   | test       |
+
+  @Test02
+  Scenario: Item added to cart
+    Given The user on the product page
+    When select the category from menu
+    Then The user should see list of products
+    When User click on product link
+    Then User navigated to the product details page
+    When User click on add to cart button
+    Then User should see item add to cart
+    When User click on view cart button
+    Then User navigated to the cart page
+    And User should see item in cart
+
+ 

@@ -1,6 +1,6 @@
 Feature: Product details page functionality
 
-@Regression
+  @Regression
   Scenario Outline: Verify checkout process from product details page to checkout page
     Given The user on the product page
     When The page loads

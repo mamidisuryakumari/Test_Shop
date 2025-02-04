@@ -1,21 +1,26 @@
 package com.ecommerce.stepDefinitions;
 
 import org.junit.Assert;
+import org.openqa.selenium.WebDriver;
 
 import com.ecommerce.base.BaseTest;
+import com.ecommerce.hooks.HOOKS111;
 import com.ecommerce.pages.CartPage;
-import com.ecommerce.pages.CheckoutPage;
-import com.ecommerce.pages.ProductDetailsPage;
 import com.ecommerce.pages.ProductPage;
 import com.ecommerce.reports.ReportManager;
+
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class CartPageSteps extends BaseTest {
+public class CartPageSteps{
+	
+	WebDriver driver = HOOKS111.getDriver();
+	
 	CartPage cartPage = new CartPage(driver);
 	ProductPage page = new ProductPage(driver);
+	
 	@Then("User navigated to the cart page")
-	public void user_navigated_to_the_cart_page() {
+	public void user_navigated_to_the_cart_page() throws Exception {
 		
 	//	page.productPrice();
 		String ExpectedCartPageTitle = "My Cart";
@@ -23,6 +28,7 @@ public class CartPageSteps extends BaseTest {
 			Assert.assertEquals(cartPage.getCartPageTitle(), ExpectedCartPageTitle);
 			System.out.println("Landed on cart page");
 			ReportManager.getTest().pass("Navigated to the cart page successfully");
+		//	ScreenShot.takeScreenShot(driver,"Cartpage");
 		} catch (AssertionError ae) {
 			System.err.println("Assertion failed" + ae.getMessage());
 			ReportManager.getTest().fail("An error occured while navigating to the cart page");
