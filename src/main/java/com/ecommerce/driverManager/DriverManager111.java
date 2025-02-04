@@ -51,7 +51,7 @@ public class DriverManager111 {
         switch (browser) {
             case "chrome":
                 ChromeOptions chromeOptions = new ChromeOptions();
-            //    chromeOptions.addArguments("--incognito");
+                chromeOptions.addArguments("--incognito");
                 driver = new ChromeDriver(chromeOptions);
                 // Add more options as needed
                 return driver;
