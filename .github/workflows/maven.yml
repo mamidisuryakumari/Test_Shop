@@ -43,7 +43,7 @@ jobs:
       uses: PavanMudigonda/html-reporter-github-pages@v1.2
       with:
         name: Cucumber-Report
-        test_results: target/
+        test_results: target/cucumber-reports
         gh_pages: gh-pages
         subfolder: docs  
         tool_name: cucumber 
