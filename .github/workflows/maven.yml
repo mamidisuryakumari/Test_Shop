@@ -40,7 +40,7 @@ jobs:
 
     - name: Upload Cucumber Report
       if: success() || failure()
-      uses: Test_Shop/html-reporter-github-pages@v1.2
+      uses: PavanMudigonda/html-reporter-github-pages@v1.2
       with:
         name: Cucumber-Report
         test_results: target/
