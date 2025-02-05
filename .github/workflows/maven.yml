@@ -40,10 +40,11 @@ jobs:
 
     - name: Upload Cucumber Report
       if: success() || failure()
-      uses: actions/upload-artifact@v4
+      uses: Test_Shop/html-reporter-github-pages@v1.2
       with:
         name: Cucumber-Report
-        path: target/
+        test_results: target/
+        gh_pages: gh-pages
 
    
      
