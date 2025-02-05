@@ -45,6 +45,10 @@ jobs:
         name: Cucumber-Report
         test_results: target/
         gh_pages: gh-pages
+        subfolder: docs  
+        tool_name: cucumber 
+        workflow_name: selenium 
+        env: CI 
 
    
      
