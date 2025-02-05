@@ -42,8 +42,8 @@ jobs:
       if: success() || failure()
       uses: actions/upload-artifact@v4
       with:
-        name: Cucumber-Extent-Report
-        path: target/cucumber-reports
+        name: Cucumber-Report
+        path: target/
 
    
      
