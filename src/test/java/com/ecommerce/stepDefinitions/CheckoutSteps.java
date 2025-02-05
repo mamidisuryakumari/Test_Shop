@@ -4,7 +4,7 @@ import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 
 import com.ecommerce.base.BaseTest;
-import com.ecommerce.hooks.HOOKS111;
+import com.ecommerce.hooks.Hooks;
 import com.ecommerce.pages.CheckoutPage;
 import com.ecommerce.reports.ReportManager;
 
@@ -13,7 +13,7 @@ import io.cucumber.java.en.When;
 
 public class CheckoutSteps {
 	
-	WebDriver driver = HOOKS111.getDriver();
+	WebDriver driver = Hooks.getDriver();
 	
 	@Then("User should navigated to the checkout page")
 	public void user_should_navigated_to_the_checkout_page() {

@@ -4,7 +4,7 @@ import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 
 import com.ecommerce.base.BaseTest;
-import com.ecommerce.hooks.HOOKS111;
+import com.ecommerce.hooks.Hooks;
 import com.ecommerce.pages.CartPage;
 import com.ecommerce.pages.ProductPage;
 import com.ecommerce.reports.ReportManager;
@@ -14,7 +14,7 @@ import io.cucumber.java.en.When;
 
 public class CartPageSteps{
 	
-	WebDriver driver = HOOKS111.getDriver();
+	WebDriver driver = Hooks.getDriver();
 	
 	CartPage cartPage = new CartPage(driver);
 	ProductPage page = new ProductPage(driver);

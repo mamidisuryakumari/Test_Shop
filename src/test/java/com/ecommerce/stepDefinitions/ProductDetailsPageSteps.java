@@ -3,7 +3,8 @@ package com.ecommerce.stepDefinitions;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 
-import com.ecommerce.hooks.HOOKS111;
+
+import com.ecommerce.hooks.Hooks;
 import com.ecommerce.pages.ProductDetailsPage;
 import com.ecommerce.reports.ReportManager;
 
@@ -12,7 +13,7 @@ import io.cucumber.java.en.When;
 
 public class ProductDetailsPageSteps {
 	
-	WebDriver driver = HOOKS111.getDriver();
+	WebDriver driver = Hooks.getDriver();
 	
 	ProductDetailsPage productDetailsPage = new ProductDetailsPage(driver);
 	

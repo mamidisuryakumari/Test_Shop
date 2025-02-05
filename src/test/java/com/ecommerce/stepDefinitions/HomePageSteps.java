@@ -1,8 +1,10 @@
 package com.ecommerce.stepDefinitions;
 
 import org.junit.Assert;
+import org.openqa.selenium.WebDriver;
 
-import com.ecommerce.driverManager.DriverManager111;
+import com.ecommerce.driverManager.DriverManager;
+import com.ecommerce.hooks.Hooks;
 import com.ecommerce.pages.HomePage;
 import com.ecommerce.reports.ReportManager;
 
@@ -10,8 +12,8 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class HomePageSteps extends DriverManager111{
-//	WebDriver driver = HOOKS111.getDriver();
+public class HomePageSteps extends DriverManager{
+	WebDriver driver = Hooks.getDriver();
 	HomePage homePage = new HomePage(driver);
 
 	@Given("The user on the homepge")

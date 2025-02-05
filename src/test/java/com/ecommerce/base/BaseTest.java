@@ -2,11 +2,10 @@ package com.ecommerce.base;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.sql.DriverManager;
 import java.util.Properties;
 
 import org.openqa.selenium.WebDriver;
-
-import com.ecommerce.driverManager.DriverManager;
 
 public class BaseTest {
 
@@ -16,7 +15,7 @@ public class BaseTest {
 
 	public static WebDriver setup() throws FileNotFoundException {
 		loadProperties();
-		driver = DriverManager.initializeDriver(properties.getProperty("browserName"));
+	//	driver = DriverManager.initDriver()(properties.getProperty("browserName"));
 		driver.get(properties.getProperty("baseUrl"));
 		return driver;
 	}

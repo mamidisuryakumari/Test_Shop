@@ -35,7 +35,7 @@
 <a href="#"><span class="badge badge-primary">Automation Test Execution Report</span></a>
 </li>
 <li class="m-r-10">
-<a href="#"><span class="badge badge-primary">2024-12-17 12:42:08</span></a>
+<a href="#"><span class="badge badge-primary">2025-02-05 15:02:11</span></a>
 </li>
 </ul>
 </div>
@@ -84,7 +84,7 @@
 <li class="dropdown">
 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-tag"></i></a>
 <ul id="tag-toggle" class="dropdown-menu dropdown-md p-v-0">
-<a class="dropdown-item" href="#">@Test01</a>
+<a class="dropdown-item" href="#">@TestCICD</a>
 </ul>
 </li>
 </ul>
@@ -95,9 +95,9 @@
           tag=""
           device="">
           <div class="test-detail">
-            <p class="name">End to end functionality</p>
+            <p class="name">Product page functionality</p>
             <p class="text-sm">
-              <span>12:42:09 pm</span> / <span>00:01:10:549</span>
+              <span>3:02:12 pm</span> / <span>00:00:06:436</span>
               <span class="badge fail-bg log float-right">Fail</span>
             </p>
           </div>
@@ -105,10 +105,10 @@
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-fail">End to end functionality</h5>
-<span class='badge badge-success'>12.17.2024 12:42:09 pm</span>
-<span class='badge badge-danger'>12.17.2024 12:43:20 pm</span>
-<span class='badge badge-default'>00:01:10:549</span>
+<h5 class="test-status text-fail">Product page functionality</h5>
+<span class='badge badge-success'>02.05.2025 3:02:12 pm</span>
+<span class='badge badge-danger'>02.05.2025 3:02:18 pm</span>
+<span class='badge badge-default'>00:00:06:436</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
 <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
 <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
@@ -121,143 +121,29 @@
   <div class="card">
     <div class="card-header" role="tab">
       <div class="card-title">
-        <div class="node" id="2"><span class="badge log fail-bg mr-2">Fail</span>Verify the user is item purchased from mens footwear</div>
+        <div class="node" id="2"><span class="badge log fail-bg mr-2">Fail</span>User views the list of products</div>
           <div class="status-avatar float-right mr-4">
             <i class="fa fa-paperclip"></i>
           </div>
       </div>
     </div>
-        <div class="scenario_outline ">
-            <div class="card-body l1">
-              <div class="card-header">
-                <div class="card-title outline-child">
-                  <div class="node" id="3"><span class="badge log fail-bg mr-2">Fail</span>Verify the user is item purchased from mens footwear</div>
-                    <div class="status-avatar float-right">
-                      <i class="fa fa-paperclip"></i>
-                    </div>
-                </div>
-              </div>
-              <div class="card-body mt-3 ">
-                  <div class="step pass-bg">
-                    <span>Given The user on the homepge</span>
+        <div class="">
+          <div class="card-body">
+              <div class="step fail-bg" title="com.ecommerce.stepDefinitions.ProductPageSteps.the_user_on_the_product_page()">
+                <span>Given The user on the product page</span>
       <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>When The user click on the Practise selenium menu</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>Then The user scrolls down to the page</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>When The User click on the testshop link</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>Then The User should be navigated to the product page</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>When The User select men footware from men menu</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>Then The user should see list of products</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>When The User click on men comfortable product link</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>Then User navigated to the product details page</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>When User click on add to cart button</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User should see item added to the cart</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>When User click on view cart button</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>Then User navigated to the cart page</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User should see item in cart</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>When User click on proceed to checkout button</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>Then User should navigated to the checkout page</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>When User enter address details "Surya"," 9963563515", "ST colony","Kumari.mudila@gmail.com","521321","Nandivada", "Ap","India", "test"</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User click on Upi tranfer button</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User click on confirm order button</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>Then User should see place ored button enabled</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>When User click on place order button</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step fail-bg">
-                    <span>Then User navigated to order details page</span>
-      <div>
-        <textarea disabled class="code-block">org.junit.ComparisonFailure: expected:<[]> but was:<[THANK SURYA. WE RECEIVED YOUR ODER.]>
+        <textarea disabled class="code-block">org.junit.ComparisonFailure: expected:<[Software Testing Onlin]e> but was:<[ynrstor]e>
 	at org.junit.Assert.assertEquals(Assert.java:117)
 	at org.junit.Assert.assertEquals(Assert.java:146)
-	at com.ecommerce.stepDefinitions.ConfirmationPageSteps.user_navigated_to_order_details_page(ConfirmationPageSteps.java:28)
-	at ✽.User navigated to order details page(file:///C:/SuryaKumari/Automation/Automation_06122024/Test_Shop/src/test/java/com/ecommrece/features/EndToEnd.feature:26)
+	at com.ecommerce.stepDefinitions.ProductPageSteps.the_user_on_the_product_page(ProductPageSteps.java:30)
+	at ✽.The user on the product page(file:///C:/SuryaKumari/Automation/Automation_05022020/Test_Shop/src/test/java/com/ecommrece/features/ProductPage.feature:5)
 </textarea>
       
       </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>com.ecommerce.hooks.Hooks.actionAfterEachStep(io.cucumber.java.Scenario)</span>
-      <div>Verify the user is item purchased from mens footwear
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>com.ecommerce.hooks.Hooks.actionAfterEachStep(io.cucumber.java.Scenario)</span>
+      <div>User views the list of products
           <div class="row mb-3"><div class="col-md-3">
     
 
@@ -269,24 +155,28 @@
 </div>
       <div>
       </div>
-                  </div>
-                  <div class="step skip-bg">
-                    <span>Then The User should see place ored button enabled</span>
-      <div>Step skipped
-      </div>
-                  </div>
-                  <div class="step skip-bg">
-                    <span>When The User click on place order button</span>
-      <div>Step skipped
-      </div>
-                  </div>
-                  <div class="step skip-bg">
-                    <span>Then The User navigated to order details page</span>
-      <div>Step skipped
-      </div>
-                  </div>
               </div>
-            </div>
+              <div class="step skip-bg" title="com.ecommerce.stepDefinitions.ProductPageSteps.the_page_loads()">
+                <span>When The page loads</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="com.ecommerce.stepDefinitions.ProductPageSteps.selectitemFromMenu()">
+                <span>And select the category from menu</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="com.ecommerce.stepDefinitions.ProductPageSteps.the_user_should_see_list_of_products()">
+                <span>Then The user should see list of products</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="com.ecommerce.stepDefinitions.ProductPageSteps.each_product_should_display_the_name_price_and_image()">
+                <span>And Each product should display the name,price and image</span>
+      <div>Step skipped
+      </div>
+              </div>
+          </div>
         </div>
   </div>
 </div>
@@ -333,11 +223,11 @@
 <tbody>
 <tr class="tag-test-status" status="fail">
 <td><span class="badge log fail-bg">Fail</span></td>
-<td>12:43:19 pm</td>
+<td>15:02:17 pm</td>
 <td>
-<a href="#" class="linked" test-id='1' id='50'>Then User navigated to order details page</a>
+<a href="#" class="linked" test-id='1' id='5'>Given The user on the product page</a>
 <div class="">
-<span class="badge badge-default">End to end functionality.Verify the user is item purchased from mens footwear.Then User navigated to order details page</span>
+<span class="badge badge-default">Product page functionality.User views the list of products.Given The user on the product page</span>
 </div>
 </td>
 </tr>
@@ -366,12 +256,12 @@
 <span class="meta">
 <span class='badge log badge-danger'>1</span>
 </span>
-<p class="name">@Test01</p>
+<p class="name">@TestCICD</p>
 <p class="duration text-sm">1 tests</p>
 </div>
 <div class="test-contents d-none">
 <div class="info">
-<h4>@Test01</h4>
+<h4>@TestCICD</h4>
 <span status="fail" class='badge log badge-danger'>1 failed</span>
 </div>
 <table class='table table-sm mt-4'>
@@ -385,11 +275,11 @@
 <tbody>
 <tr class="tag-test-status" status="fail">
 <td><span class="badge log fail-bg">Fail</span></td>
-<td>12:42:09 pm</td>
+<td>15:02:12 pm</td>
 <td>
-<a href="#" class="linked" test-id='1' id='3'>Verify the user is item purchased from mens footwear</a>
+<a href="#" class="linked" test-id='1' id='2'>User views the list of products</a>
 <div class="">
-<span class="badge badge-default">End to end functionality.Verify the user is item purchased from mens footwear</span>
+<span class="badge badge-default">Product page functionality.User views the list of products</span>
 </div>
 </td>
 </tr>
@@ -410,13 +300,13 @@
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Started</p>
-<h3>2024-12-17 12:42:08</h3>
+<h3>2025-02-05 15:02:11</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Ended</p>
-<h3>2024-12-17 12:43:20</h3>
+<h3>2025-02-05 15:02:18</h3>
 </div></div>
 </div>
 <div class="col-md-3">
@@ -487,10 +377,10 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='84%'><b>22</b> steps passed</small></div>
+<div><small data-tooltip='16%'><b>1</b> steps passed</small></div>
 <div>
-<small data-tooltip='3%'><b>1</b> steps failed,
-<b>3</b> skipped, <b data-tooltip='%'>0</b> others
+<small data-tooltip='16%'><b>1</b> steps failed,
+<b>4</b> skipped, <b data-tooltip='%'>0</b> others
 </small>
 </div>
 </div>
@@ -506,7 +396,7 @@
 </div></div>
 <script>
 var timeline = {
-"End to end functionality":70.549
+"Product page functionality":6.436
 };
 </script>
 <div class="row">
@@ -516,7 +406,7 @@ var timeline = {
 <div class="card-body pb-0 pt-0"><table class="table table-sm table-bordered">
 <thead><tr class="bg-gray"><th>Name</th><th>Passed</th><th>Failed</th><th>Skipped</th><th>Others</th><th>Passed %</th></tr></thead><tbody>
 <tr>
-<td>@Test01</td>
+<td>@TestCICD</td>
 <td>0</td>
 <td>1</td>
 <td>0</td>
@@ -543,10 +433,10 @@ warningChild: 0,
 skipChild: 0,
 infoChild: 0,
 grandChildCount: 5,
-passGrandChild: 22,
+passGrandChild: 1,
 failGrandChild: 1,
 warningGrandChild: 0,
-skipGrandChild: 3,
+skipGrandChild: 4,
 infoGrandChild: 0,
 eventsCount: 5,
 };

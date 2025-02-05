@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.ecommerce.hooks.HOOKS111;
+import com.ecommerce.hooks.Hooks;
 import com.ecommerce.pages.ProductPage;
 import com.ecommerce.reports.ReportManager;
 import com.ecommerce.utilities.Elements;
@@ -17,7 +17,7 @@ import io.cucumber.java.en.When;
 
 public class ProductPageSteps {
 
-	WebDriver driver = HOOKS111.getDriver();
+	WebDriver driver = Hooks.getDriver();
 	private static Logger logger = LoggerFactory.getLogger(ProductPageSteps.class);
 	ProductPage productPage = new ProductPage(driver);
 
