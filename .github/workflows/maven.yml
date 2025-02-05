@@ -44,7 +44,7 @@ jobs:
       with:
         name: Cucumber-Report
         test_results: target/cucumber-reports
-        gh_pages: gh-pages
+        gh_pages: dev
         subfolder: docs  
         tool_name: cucumber 
         workflow_name: selenium 
