@@ -6,10 +6,10 @@ import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features = "src/test/java/com/ecommrece/features", 
+@CucumberOptions(features = "src/test/resources/com/ecommrece/features", 
                  glue = {"com.ecommerce.stepDefinitions", "com.ecommerce.hooks"},
                 		 tags = "@TestCICD",
-                 plugin = {"pretty", "html:target/cucumber-reports.html",
+                 plugin = {"pretty", "html:target/cucumber-reports/reports.html",
                 		 "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"},
                  dryRun = false,
                  monochrome = true

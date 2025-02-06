@@ -110,7 +110,9 @@
 				<artifactId>maven-surefire-plugin</artifactId>
 				<version>3.0.0-M7</version>
 				<configuration>
-					<skipTests>false</skipTests>
+					<includes>
+						<include>**/TestRunner.java</include>
+					</includes>
 				</configuration>
 			</plugin>
 
