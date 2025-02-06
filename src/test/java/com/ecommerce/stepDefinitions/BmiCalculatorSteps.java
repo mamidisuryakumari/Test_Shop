@@ -1,8 +1,10 @@
 package com.ecommerce.stepDefinitions;
 
 import org.junit.Assert;
+import org.openqa.selenium.WebDriver;
 
 import com.ecommerce.base.BaseTest;
+import com.ecommerce.hooks.Hooks;
 import com.ecommerce.pages.BmiCalculatorPage;
 import com.ecommerce.reports.ReportManager;
 import io.cucumber.java.en.Then;
@@ -10,6 +12,7 @@ import io.cucumber.java.en.When;
 
 public class BmiCalculatorSteps extends BaseTest {
 
+	WebDriver driver = Hooks.getDriver();
 	BmiCalculatorPage bmiCalculatorPage = new BmiCalculatorPage(driver);
 
 	@Then("User should be navigated to BMI calculator page")
