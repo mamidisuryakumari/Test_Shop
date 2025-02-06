@@ -42,8 +42,8 @@ jobs:
       if: success() || failure()
       uses: PavanMudigonda/html-reporter-github-pages@v1.2
       with:
-        name: Cucumber-Report
-        test_results: target/
+        name: Surifire-Report
+        test_results: target/surifire-reports
         gh_pages: gh-pages
 
    
