@@ -1,14 +1,16 @@
-package com.ecommerce.runners;
+ package com.ecommerce.runners;
 
 import org.junit.runner.RunWith;
 
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
+import io.cucumber.testng.AbstractTestNGCucumberTests;
+
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features = "src/test/resources/com/ecommrece/features", 
+@CucumberOptions(features = "src/test/resources/com/ecommerce/features", 
                  glue = {"com.ecommerce.stepDefinitions", "com.ecommerce.hooks"},
-                		 tags = "@TestCICD",
+                		 tags = "@form",
                  plugin = {"pretty", "html:target/cucumber-reports/reports.html",
                 		 "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"},
                  dryRun = false,
@@ -17,6 +19,6 @@ import io.cucumber.junit.CucumberOptions;
 
 
 
-public class TestRunner {
+public class TestRunner extends AbstractTestNGCucumberTests{
 	
 }

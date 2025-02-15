@@ -20,6 +20,8 @@ public class DriverManager {
 	
 	public static WebDriver driver;
 	private static final Logger log = LoggerFactory.getLogger(DriverManager.class);
+	
+//	private static ThreadLocal<WebDriver> driverThreadLocal = new ThreadLocal<>();
 	  
 	  
     public static WebDriver initDriver() throws IOException {
@@ -30,6 +32,7 @@ public class DriverManager {
         // OS check with if-else condition
         if (os.contains("windows")) {
             driver = initDriverForWindows(browser);
+        //    driverThreadLocal.set(new ChromeDriver());
         } else if (os.contains("mac")) {
             driver = initDriverForMac(browser);
         } else if (os.contains("linux")) {
@@ -52,6 +55,7 @@ public class DriverManager {
             case "chrome":
                 ChromeOptions chromeOptions = new ChromeOptions();
                 chromeOptions.addArguments("--incognito");
+           //     chromeOptions.addArguments("--headless=new");
                 driver = new ChromeDriver(chromeOptions);
                 // Add more options as needed
                 return driver;
@@ -90,7 +94,7 @@ public class DriverManager {
         switch (browser) {
             case "chrome":
                 ChromeOptions chromeOptions = new ChromeOptions();
-                chromeOptions.addArguments("--headless");
+             //   chromeOptions.addArguments("--headless");
                 return new ChromeDriver(chromeOptions);
             case "firefox":
                 FirefoxOptions firefoxOptions = new FirefoxOptions();

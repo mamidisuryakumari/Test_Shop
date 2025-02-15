@@ -1,9 +1,10 @@
 package com.ecommerce.utilities;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebDriver;
 
-public class Alert {
+public class AlertUtil {
 	private static boolean bStatus;
 	
 	//accept alert
@@ -30,6 +31,20 @@ public class Alert {
 		}
 		return false;
 	}
+	
+	
+	public static boolean isAlertPresent(WebDriver driver) {
+	    try {
+	        driver.switchTo().alert();
+	        System.out.println("Alert is present");
+	        return true;
+	    } catch (NoAlertPresentException e) {
+	    	System.out.println("Alert is not present");
+	        return false;
+	        
+	    }
+	}
+	
 
 
 //get alert message

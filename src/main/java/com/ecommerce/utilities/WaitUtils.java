@@ -19,7 +19,7 @@ public class WaitUtils {
 	// Wait for Element Visible
 	public static boolean waitForElementIsVisible(WebDriver driver, By locator, Duration timeout) {
 		try {
-	//		WebDriverWait wait = new WebDriverWait(driver, timeout);
+			WebDriverWait wait = new WebDriverWait(driver, timeout);
 			wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
 			bStatus = Verify.verifyElementIsVisible(driver, locator);
 			logger.info("Elememnt {} is visible with in the time period", locator);

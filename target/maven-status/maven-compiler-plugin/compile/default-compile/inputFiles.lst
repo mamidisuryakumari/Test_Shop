@@ -10,6 +10,8 @@ C:\SuryaKumari\Automation\Automation_06022025\Test_Shop\src\main\java\com\ecomme
 C:\SuryaKumari\Automation\Automation_06022025\Test_Shop\src\main\java\com\ecommerce\driverManager\DriverManager.java
 C:\SuryaKumari\Automation\Automation_06022025\Test_Shop\src\main\java\com\ecommerce\utilities\TableUtils.java
 C:\SuryaKumari\Automation\Automation_06022025\Test_Shop\src\main\java\com\ecommerce\pages\CartPage.java
+C:\SuryaKumari\Automation\Automation_06022025\Test_Shop\src\main\java\com\ecommerce\utilities\AlertUtil.java
+C:\SuryaKumari\Automation\Automation_06022025\Test_Shop\src\main\java\com\ecommerce\pages\AdvancedRegistrationFormPage.java
 C:\SuryaKumari\Automation\Automation_06022025\Test_Shop\src\main\java\com\ecommerce\utilities\ExtentReportUtils.java
 C:\SuryaKumari\Automation\Automation_06022025\Test_Shop\src\main\java\com\ecommerce\utilities\Window.java
 C:\SuryaKumari\Automation\Automation_06022025\Test_Shop\src\main\java\com\ecommerce\pages\ProductPage.java
@@ -27,7 +29,6 @@ C:\SuryaKumari\Automation\Automation_06022025\Test_Shop\src\main\java\com\ecomme
 C:\SuryaKumari\Automation\Automation_06022025\Test_Shop\src\main\java\com\ecommerce\utilities\Verify.java
 C:\SuryaKumari\Automation\Automation_06022025\Test_Shop\src\main\java\javaprograms\ReveseString.java
 C:\SuryaKumari\Automation\Automation_06022025\Test_Shop\src\main\java\com\ecommerce\utilities\DropdownUtil.java
-C:\SuryaKumari\Automation\Automation_06022025\Test_Shop\src\main\java\com\ecommerce\utilities\Alert.java
 C:\SuryaKumari\Automation\Automation_06022025\Test_Shop\src\main\java\com\ecommerce\reports\ReportManager.java
 C:\SuryaKumari\Automation\Automation_06022025\Test_Shop\src\main\java\com\ecommerce\utilities\MouseActionsUtil.java
 C:\SuryaKumari\Automation\Automation_06022025\Test_Shop\src\main\java\javaprograms\Myclass.java

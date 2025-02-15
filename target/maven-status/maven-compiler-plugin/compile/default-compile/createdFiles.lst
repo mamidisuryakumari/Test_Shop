@@ -2,7 +2,6 @@ com\ecommerce\pages\ProductPage.class
 com\ecommerce\pages\CheckoutPage.class
 com\ecommerce\utilities\TableUtils.class
 com\ecommerce\utilities\Verify.class
-com\ecommerce\utilities\Alert.class
 javaprograms\LargestNumber.class
 com\ecommerce\utilities\KeyBoardActionsUtil.class
 com\ecommerce\pages\DummyPage.class
@@ -17,6 +16,8 @@ com\ecommerce\pages\BmiCalculatorPage.class
 com\ecommerce\pages\ProductDetailsPage.class
 com\ecommerce\utilities\Constants.class
 com\ecommerce\pages\BusReservationPage.class
+com\ecommerce\utilities\AlertUtil.class
+com\ecommerce\pages\AdvancedRegistrationFormPage.class
 javaprograms\ReveseString.class
 javaprograms\Myclass.class
 javaprograms\Myclass$MyClass.class
