@@ -3,6 +3,7 @@ Practise\PractiseScreenShot.class
 com\ecommerce\stepDefinitions\CartPageSteps.class
 com\ecommerce\stepDefinitions\BmiCalculatorSteps.class
 com\ecommerce\stepDefinitions\ProductDetailsPageSteps.class
+com\ecommerce\stepDefinitions\AdvancedRegistrationFormSteps.class
 com\ecommerce\stepDefinitions\ConfirmationPageSteps.class
 com\ecommerce\stepDefinitions\HomePageSteps.class
 Practise\WindowaHandle.class

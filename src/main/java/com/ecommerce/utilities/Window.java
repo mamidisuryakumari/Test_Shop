@@ -24,6 +24,20 @@ public class Window {
 			}
 		}
 	}
+	
+	public static void switchToWindow1(WebDriver driver) {
+		String ParentWindow = driver.getWindowHandle();
+		System.out.println("Parent window id is:" + ParentWindow);
+			Set<String> windowHandles = driver.getWindowHandles();
+			for (String windowHandle : windowHandles) {
+				if (windowHandle != ParentWindow) {
+					driver.switchTo().window(windowHandle);
+					System.out.println(windowHandle);
+					break;
+				}
+			}
+		
+	}
 
 	// close window
 	public static void closeWindow(WebDriver driver, By locator) {
