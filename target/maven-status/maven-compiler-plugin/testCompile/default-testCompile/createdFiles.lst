@@ -1,0 +1,17 @@
+com\ecommerce\hooks\Hooks.class
+Practise\PractiseScreenShot.class
+com\ecommerce\stepDefinitions\CartPageSteps.class
+com\ecommerce\stepDefinitions\BmiCalculatorSteps.class
+com\ecommerce\stepDefinitions\ProductDetailsPageSteps.class
+com\ecommerce\stepDefinitions\AdvancedRegistrationFormSteps.class
+com\ecommerce\stepDefinitions\ConfirmationPageSteps.class
+com\ecommerce\stepDefinitions\HomePageSteps.class
+Practise\WindowaHandle.class
+com\ecommerce\runners\TestRunner.class
+Practise\Dropdown.class
+com\ecommerce\stepDefinitions\WindowHandlePageSteps.class
+Practise\ScreenShot.class
+com\ecommerce\base\BaseTest.class
+com\ecommerce\stepDefinitions\ProductPageSteps.class
+com\ecommerce\stepDefinitions\EndToEndSteps.class
+com\ecommerce\stepDefinitions\CheckoutSteps.class
