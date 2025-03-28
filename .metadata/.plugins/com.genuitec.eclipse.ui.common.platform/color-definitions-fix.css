@@ -113,6 +113,7 @@ IEclipsePreferences#ccw-core {
 		'ccw.preferences.editor_color.callableSPECIAL_FORM.bold=false'
 		'ccw.preferences.editor_color.JAVA_INSTANCE_METHOD=210,82,82'
 }
+
 IEclipsePreferences#com-adobe-flexide-as-core {
 	preferences:
 		'asCommentUnderline=false'
@@ -186,6 +187,7 @@ IEclipsePreferences#com-adobe-flexide-as-core {
 		'asInterfaceItalic=false'
 		'asBracketStrikethrough=false'
 }
+
 IEclipsePreferences#com-adobe-flexide-css-core {
 	preferences:
 		'cssNamespaceStrikethrough=false'
@@ -244,6 +246,7 @@ IEclipsePreferences#com-adobe-flexide-css-core {
 		'cssSelectorBold=false'
 		'cssSymbolBold=false'
 }
+
 IEclipsePreferences#com-adobe-flexide-mxml-core {
 	preferences:
 		'mxmlProcessingInstructionStrikethrough=false'
@@ -282,6 +285,7 @@ IEclipsePreferences#com-adobe-flexide-mxml-core {
 		'mxmlCommentColor=#C7DD0C'
 		'mxmlCommentBold=false'
 }
+
 IEclipsePreferences#com-axmor-eclipse-typescript-editor {
 	preferences:
 		'semanticHighlighting.ts_interface.enabled=true'
@@ -329,6 +333,7 @@ IEclipsePreferences#com-axmor-eclipse-typescript-editor {
 		'semanticHighlighting.ts_interface.italic=false'
 		'ts_string=255,198,0'
 }
+
 IEclipsePreferences#com-dubture-twig-ui {
 	preferences:
 		'editorColorHeredoc=#CCDF32 | null | null | false | null | null'
@@ -346,6 +351,7 @@ IEclipsePreferences#com-dubture-twig-ui {
 		'editorColorLineComment=#C7DD0C | null | null | false | null | null'
 		'editorColorNumber=#7FB347 | null | null | null | null | null'
 }
+
 IEclipsePreferences#com-genuitec-eclipse-sqlexplorer {
 	preferences:
 		'sql_columns=171,115,255'
@@ -356,6 +362,7 @@ IEclipsePreferences#com-genuitec-eclipse-sqlexplorer {
 		'sql_string=255,198,0'
 		'sql_table=49,132,255'
 }
+
 IEclipsePreferences#com-github-rustdt-ide-ui {
 	preferences:
 		'editor.coloring2.number#dark#=127,179,71'
@@ -383,6 +390,7 @@ IEclipsePreferences#com-github-rustdt-ide-ui {
 		'editor.coloring2.doc_comment=204,223,50'
 		'editor.coloring2.lifetime=255,255,255'
 }
+
 IEclipsePreferences#com-google-eclipse-protobuf-Protobuf {
 	preferences:
 		'com.google.eclipse.protobuf.Protobuf.syntaxColorer.tokenStyles.enumLiteralIndex.bgColor=25,29,31'
@@ -422,6 +430,7 @@ IEclipsePreferences#com-google-eclipse-protobuf-Protobuf {
 		'com.google.eclipse.protobuf.Protobuf.syntaxColorer.tokenStyles.enum.color=127,179,71'
 		'com.google.eclipse.protobuf.Protobuf.syntaxColorer.tokenStyles.message.color=210,82,82'
 }
+
 IEclipsePreferences#com-googlecode-goclipse-ui {
 	preferences:
 		'syntax_highlighting_value=127,179,71'
@@ -436,6 +445,7 @@ IEclipsePreferences#com-googlecode-goclipse-ui {
 		'syntax_highlighting_operator=216,216,216'
 		'syntax_highlighting_syntax_chars=216,216,216'
 }
+
 IEclipsePreferences#com-palantir-typescript {
 	preferences:
 		'syntaxColoring.numberLiteral.color=127,179,71'
@@ -447,6 +457,7 @@ IEclipsePreferences#com-palantir-typescript {
 		'syntaxColoring.identifier.color=216,216,216'
 		'syntaxColoring.punctuation.color=216,216,216'
 }
+
 IEclipsePreferences#com-powerflasher-fdt-ui {
 	preferences:
 		'com.powerflasher.fdt.ui.AS3SemanticHighlightGenerator.AS3.NamespaceModifier_bold=false'
@@ -777,6 +788,7 @@ IEclipsePreferences#com-powerflasher-fdt-ui {
 		'JAVADOC_KEYWORD_color=217,229,119'
 		'com.powerflasher.fdt.ui.mxml.mxmlHighlightGenerator.AS3.MXMLInlineAS3_bold=false'
 }
+
 IEclipsePreferences#com-puppetlabs-geppetto-module-dsl-Module {
 	preferences:
 		'com.puppetlabs.geppetto.module.dsl.Module.syntaxColorer.tokenStyles.default.color=216,216,216'
@@ -787,6 +799,7 @@ IEclipsePreferences#com-puppetlabs-geppetto-module-dsl-Module {
 		'com.puppetlabs.geppetto.module.dsl.Module.syntaxColorer.tokenStyles.string.color=255,198,0'
 		'com.puppetlabs.geppetto.module.dsl.Module.syntaxColorer.tokenStyles.punctuation.color=216,216,216'
 }
+
 IEclipsePreferences#com-puppetlabs-geppetto-pp-dsl-PP {
 	preferences:
 		'com.puppetlabs.geppetto.pp.dsl.PP.syntaxColorer.tokenStyles.doc_h5.color=204,223,50'
@@ -815,6 +828,7 @@ IEclipsePreferences#com-puppetlabs-geppetto-pp-dsl-PP {
 		'com.puppetlabs.geppetto.pp.dsl.PP.syntaxColorer.tokenStyles.doc_italic.color=204,223,50'
 		'com.puppetlabs.geppetto.pp.dsl.PP.syntaxColorer.tokenStyles.punctuation.color=216,216,216'
 }
+
 IEclipsePreferences#com-spket-js {
 	preferences:
 		'js_default=216,216,216'
@@ -833,6 +847,7 @@ IEclipsePreferences#com-spket-js {
 		'js_keyword=141,203,226'
 		'java_doc_keyword=217,229,119'
 }
+
 IEclipsePreferences#com-spket-xml {
 	preferences:
 		'xml_doctype=255,255,255'
@@ -844,6 +859,7 @@ IEclipsePreferences#com-spket-xml {
 		'xml_proc_instr=216,216,216'
 		'xml_cdata=216,216,216'
 }
+
 IEclipsePreferences#com-wolfram-eclipse-MEET {
 	preferences:
 		'syntaxcolor.private.non.system.symbol=190,214,255'
@@ -862,6 +878,7 @@ IEclipsePreferences#com-wolfram-eclipse-MEET {
 		'syntaxcolor.string.literal=255,198,0'
 		'syntaxcolor.live.bracket.matching.bold=false'
 }
+
 IEclipsePreferences#de-walware-statet-base-ui {
 	preferences:
 		'editors/optionsParameters.foreground=216,216,216'
@@ -870,6 +887,7 @@ IEclipsePreferences#de-walware-statet-base-ui {
 		'MatchingBrackets.color=65,65,4'
 		'editors/optionsProposals.background=25,29,31'
 }
+
 IEclipsePreferences#de-walware-statet-r-ui {
 	preferences:
 		'text_Rd_rdUnlistedTag.bold=false'
@@ -1003,6 +1021,7 @@ IEclipsePreferences#de-walware-statet-r-ui {
 		'text_R_rComment.italic=false'
 		'text_Rd_taskTag.strikethrough=false'
 }
+
 IEclipsePreferences#eclihx-ui {
 	preferences:
 		'hx_editor_comment_color=199,221,12'
@@ -1023,6 +1042,7 @@ IEclipsePreferences#eclihx-ui {
 		'hx_editor_brace_color=216,216,216'
 		'hx_editor_multiline_comment_color=199,221,12'
 }
+
 IEclipsePreferences#jp-gr-java_conf-ussiy-app-propedit {
 	preferences:
 		'separatorColor=216,216,216'
@@ -1031,6 +1051,7 @@ IEclipsePreferences#jp-gr-java_conf-ussiy-app-propedit {
 		'commentColor=199,221,12'
 		'valueColor=255,198,0'
 }
+
 IEclipsePreferences#jsonedit-core {
 	preferences:
 		'defaultColor=216,216,216'
@@ -1038,6 +1059,7 @@ IEclipsePreferences#jsonedit-core {
 		'stringColor=255,198,0'
 		'valueColor=190,214,255'
 }
+
 IEclipsePreferences#net-sf-eclipsefp-haskell-ui {
 	preferences:
 		'conColor=210,82,82'
@@ -1056,6 +1078,7 @@ IEclipsePreferences#net-sf-eclipsefp-haskell-ui {
 		'pragmaColor=199,221,12'
 		'stringColor=255,198,0'
 }
+
 IEclipsePreferences#net-sourceforge-texlipse {
 	preferences:
 		'spe.TexColor=255,255,255'
@@ -1073,6 +1096,7 @@ IEclipsePreferences#net-sourceforge-texlipse {
 		'crl.TexColor=121,171,255'
 		'slc.BibColor=199,221,12'
 }
+
 IEclipsePreferences#net-vtst-ow-eclipse-less-Less {
 	preferences:
 		'net.vtst.ow.eclipse.less.Less.syntaxColorer.tokenStyles.SELECTOR.color=255,255,255'
@@ -1091,6 +1115,7 @@ IEclipsePreferences#net-vtst-ow-eclipse-less-Less {
 		'net.vtst.ow.eclipse.less.Less.syntaxColorer.tokenStyles.STRING.color=255,198,0'
 		'net.vtst.ow.eclipse.less.Less.syntaxColorer.tokenStyles.AT_KEYWORD.color=141,203,226'
 }
+
 IEclipsePreferences#org-apache-ivyde-eclipse {
 	preferences:
 		'editor.color.string=255,198,0'
@@ -1099,6 +1124,7 @@ IEclipsePreferences#org-apache-ivyde-eclipse {
 		'editor.color.procInstr=255,255,255'
 		'editor.color.xmlComment=199,221,12'
 }
+
 IEclipsePreferences#org-cfeclipse-cfml {
 	preferences:
 		'cfscriptKeywordColor=141,203,226'
@@ -1130,6 +1156,7 @@ IEclipsePreferences#org-cfeclipse-cfml {
 		'cfcommentColor=199,221,12'
 		'stringColor=255,198,0'
 }
+
 IEclipsePreferences#org-chromium-debug-ui {
 	preferences:
 		'color_normal=216,216,216'
@@ -1139,6 +1166,7 @@ IEclipsePreferences#org-chromium-debug-ui {
 		'color_doc=204,223,50'
 		'color_keyword=141,203,226'
 }
+
 IEclipsePreferences#org-cloudsmith-geppetto-pp-dsl-PP {
 	preferences:
 		'org.cloudsmith.geppetto.pp.dsl.PP.syntaxColorer.tokenStyles.task.color=204,223,50'
@@ -1167,6 +1195,7 @@ IEclipsePreferences#org-cloudsmith-geppetto-pp-dsl-PP {
 		'org.cloudsmith.geppetto.pp.dsl.PP.syntaxColorer.tokenStyles.doc_h1.color=204,223,50'
 		'org.cloudsmith.geppetto.pp.dsl.PP.syntaxColorer.tokenStyles.spaces.color=216,216,216'
 }
+
 IEclipsePreferences#org-codehaus-groovy-eclipse-ui {
 	preferences:
 		'groovy.editor.highlight.groovykeywords.color=141,203,226'
@@ -1297,6 +1326,7 @@ IEclipsePreferences#org-codehaus-groovy-eclipse-ui {
 		'semanticHighlighting.abstractMethodInvocation.italic=false'
 		'semanticHighlighting.methodDeclarationName.italic=false'
 }
+
 IEclipsePreferences#org-dadacoalition-yedit {
 	preferences:
 		'colorDocumentPreference=216,216,216'
@@ -1310,6 +1340,7 @@ IEclipsePreferences#org-dadacoalition-yedit {
 		'colorConstantPreferences=255,255,255'
 		'colorScalarPreference=255,198,0'
 }
+
 IEclipsePreferences#org-eclipse-angularjs-ui {
 	preferences:
 		'angularExpression=#FFC600 | null | null | null | null | null'
@@ -1317,6 +1348,7 @@ IEclipsePreferences#org-eclipse-angularjs-ui {
 		'angularExpressionBorder=#D8D8D8 | null | null | null | null | null'
 		'directiveParameterName=#BED6FF | null | null | null | null | null'
 }
+
 IEclipsePreferences#org-eclipse-ant-ui {
 	preferences:
 		'org.eclipse.ant.ui.Color=203,78,78'
@@ -1331,12 +1363,14 @@ IEclipsePreferences#org-eclipse-ant-ui {
 		'org.eclipse.ant.ui.verboseColor=209,151,217'
 		'org.eclipse.ant.ui.warningColor=255,198,0'
 }
+
 IEclipsePreferences#org-eclipse-cdt-dsf-ui {
 	preferences:
 		'disassembly.addressColor=63,209,63'
 		'disassembly.codeBytesColor=218,29,67'
 		'disassembly.functionOffsetsColor=218,29,67'
 }
+
 IEclipsePreferences#org-eclipse-cdt-make-ui {
 	preferences:
 		'org.eclipse.cdt.make.ui.editor.comment=199,221,12'
@@ -1346,6 +1380,7 @@ IEclipsePreferences#org-eclipse-cdt-make-ui {
 		'org.eclipse.cdt.make.ui.editor.function=255,255,255'
 		'org.eclipse.cdt.make.ui.editor.keyword=141,203,226'
 }
+
 IEclipsePreferences#org-eclipse-cdt-ui {
 	preferences:
 		'asm_directive=141,203,226'
@@ -1490,6 +1525,7 @@ IEclipsePreferences#org-eclipse-cdt-ui {
 		'sourceHoverBackgroundColor=0,0,0'
 		'sourceHoverBackgroundColor.SystemDefault=false'
 }
+
 IEclipsePreferences#org-eclipse-datatools-sqltools-sqleditor {
 	preferences:
 		'Others=0,0,0,0,0,216,216,216'
@@ -1501,6 +1537,7 @@ IEclipsePreferences#org-eclipse-datatools-sqltools-sqleditor {
 		'Single-line comment=0,0,0,0,0,199,221,12'
 		'Single quoted string=0,0,0,0,0,255,198,0'
 }
+
 IEclipsePreferences#org-eclipse-debug-ui {
 	preferences:
 		'org.eclipse.debug.ui.Color=218,29,67'
@@ -1513,6 +1550,7 @@ IEclipsePreferences#org-eclipse-debug-ui {
 		'org.eclipse.debug.ui.inColor=216,216,216'
 		'org.eclipse.debug.ui.outColor=216,216,216'
 }
+
 IEclipsePreferences#org-eclipse-dltk-ruby-ui {
 	preferences:
 		'variable.pseudo_bold=false'
@@ -1632,6 +1670,7 @@ IEclipsePreferences#org-eclipse-dltk-ruby-ui {
 		'DLTK_string.eval_bold=false'
 		'DLTK_string_italic=false'
 }
+
 IEclipsePreferences#org-eclipse-dltk-tcl-ui {
 	preferences:
 		'tcl_variable_italic=false'
@@ -1721,6 +1760,7 @@ IEclipsePreferences#org-eclipse-dltk-tcl-ui {
 		'DLTK_comment_task_tag_underline=false'
 		'DLTK_string_italic=false'
 }
+
 IEclipsePreferences#org-eclipse-e4-CSS {
 	preferences:
 		'org.eclipse.e4.CSS.syntaxColorer.tokenStyles.number.bgColor='
@@ -1744,10 +1784,12 @@ IEclipsePreferences#org-eclipse-e4-CSS {
 		'org.eclipse.e4.CSS.syntaxColorer.tokenStyles.string.color=255,198,0'
 		'org.eclipse.e4.CSS.syntaxColorer.tokenStyles.ClassID.color=255,255,255'
 }
+
 IEclipsePreferences#org-eclipse-epp-mpc-ui {
 	preferences:
 		'native-borders=false'
 }
+
 IEclipsePreferences#org-eclipse-jdt-ui {
 	preferences:
 		'content_assist_completion_replacement_background=200,200,0'
@@ -1900,6 +1942,7 @@ IEclipsePreferences#org-eclipse-jdt-ui {
 		'semanticHighlighting.typeParameter.underline=false'
 		'sourceHoverBackgroundColor=0,0,0'
 }
+
 IEclipsePreferences#org-eclipse-jst-jsp-ui {
 	preferences:
 		'SCRIPT_AREA_BORDER=#D8D8D8 | null | null | null | null | null'
@@ -1911,6 +1954,7 @@ IEclipsePreferences#org-eclipse-jst-jsp-ui {
 		'tagAttributeName=#8DCBE2 | null | null | null | null | null'
 		'commentText=#C7DD0C | null | null | false | null | null'
 }
+
 IEclipsePreferences#org-eclipse-mylyn-wikitext-ui {
 	preferences:
 		'block-bc=font-family: monospace; color: #569cd6;'
@@ -1922,6 +1966,7 @@ IEclipsePreferences#org-eclipse-mylyn-wikitext-ui {
 		'block-h6=font-size: 80%; font-weight: bold; color: #118bbd;'
 		'phrase-code=font-family: monospace; color: #6d72f6;'
 }
+
 IEclipsePreferences#org-eclipse-pde-ui {
 	preferences:
 		'editor.color.default=216,216,216'
@@ -1943,6 +1988,7 @@ IEclipsePreferences#org-eclipse-pde-ui {
 		'editor.color.tag_bold=true'
 		'editor.color.xml_comment=199,221,12'
 }
+
 IEclipsePreferences#org-eclipse-php-ui {
 	preferences:
 		'semanticHighlighting.org.eclipse.php.internal.ui.editor.highlighters.FieldHighlighting.color=#BED6FF'
@@ -2036,16 +2082,19 @@ IEclipsePreferences#org-eclipse-php-ui {
 		'editorColorKeyword=#8DCBE2 | null | null | null | null | null'
 		'semanticHighlighting.org.eclipse.php.internal.ui.editor.highlighters.ConstantHighlighting.enabled=true'
 }
+
 IEclipsePreferences#org-eclipse-team-cvs-ui {
 	preferences:
 		'pref_console_message_color=216,216,216'
 		'pref_console_command_color=199,221,12'
 		'pref_console_error_color=210,82,82'
 }
+
 IEclipsePreferences#org-eclipse-tm-terminal-control {
 	preferences:
 		'TerminalPrefInvertColors=false'
 }
+
 IEclipsePreferences#org-eclipse-ui-editors {
 	preferences:
 		'AbstractTextEditor.Color.Background=25,29,31'
@@ -2096,10 +2145,12 @@ IEclipsePreferences#org-eclipse-ui-editors {
 		'spellingIndicationColor=253,170,211'
 		'writeOccurrenceIndicationColor=65,65,4'
 }
+
 IEclipsePreferences#org-eclipse-ui-genericeditor {
 	preferences:
 		'matchingBracketsColor=244,245,246'
 }
+
 IEclipsePreferences#org-eclipse-ui-workbench {
 	preferences:
 		'ACTIVE_HYPERLINK_COLOR=255,200,0'
@@ -2213,6 +2264,7 @@ IEclipsePreferences#org-eclipse-ui-workbench {
 		'org.eclipse.ui.editors.printMarginColor=62,70,76'
 		'org.eclipse.ui.showkeys.backgroundColor=182,190,195'
 }
+
 IEclipsePreferences#org-eclipse-wst-css-ui {
 	preferences:
 		'ATTRIBUTE_DELIM=#FFFFFF | null | null | null | null | null'
@@ -2237,6 +2289,7 @@ IEclipsePreferences#org-eclipse-wst-css-ui {
 		'NORMAL=#D8D8D8 | null | null | null | null | null'
 		'ATTRIBUTE_OPERATOR=#FFFFFF | null | null | null | null | null'
 }
+
 IEclipsePreferences#org-eclipse-wst-dtd-ui {
 	preferences:
 		'dtdKeyword=#8DCBE2 | null | null | null | null | null'
@@ -2248,6 +2301,7 @@ IEclipsePreferences#org-eclipse-wst-dtd-ui {
 		'dtdSymbol=#BED6FF | null | null | null | null | null'
 		'dtdComment=#C7DD0C | null | null | false | null | null'
 }
+
 IEclipsePreferences#org-eclipse-wst-html-ui {
 	preferences:
 		'doctypeExternalPubref=#FFFFFF | null | null | null | null | null'
@@ -2265,6 +2319,7 @@ IEclipsePreferences#org-eclipse-wst-html-ui {
 		'tagAttributeName=#BED6FF | null | null | null | null | null'
 		'xmlContent=#D8D8D8 | null | null | null | null | null'
 }
+
 IEclipsePreferences#org-eclipse-wst-jsdt-ui {
 	preferences:
 		'CONTENT_ASSIST_BACKGROUND_COLOR=46,52,56'
@@ -2306,6 +2361,7 @@ IEclipsePreferences#org-eclipse-wst-jsdt-ui {
 		'semanticHighlighting.methodDeclarationName.underline=false'
 		'tagName=255,255,255'
 }
+
 IEclipsePreferences#org-eclipse-wst-xml-ui {
 	preferences:
 		'doctypeExternalPubref=#FFFFFF | null | null | null | null | null'
@@ -2328,6 +2384,7 @@ IEclipsePreferences#org-eclipse-wst-xml-ui {
 		'cdataBorder=#FFFFFF | null | null | null | null | null'
 		'xmlContent=#D8D8D8 | null | null | null | null | null'
 }
+
 IEclipsePreferences#org-eclipse-wst-xsl-ui {
 	preferences:
 		'xsltagAttributeValue=#FFC600 | null | null | null | null | null'
@@ -2335,6 +2392,7 @@ IEclipsePreferences#org-eclipse-wst-xsl-ui {
 		'xsltagName=#BED6FF | null | null | null | null | null'
 		'xsltagAttributeName=#BED6FF | null | null | null | null | null'
 }
+
 IEclipsePreferences#org-eclipse-xtend-core-Xtend {
 	preferences:
 		'AbstractTextEditor.Color.Background=25,29,31'
@@ -2352,6 +2410,7 @@ IEclipsePreferences#org-eclipse-xtend-core-Xtend {
 		'org.eclipse.xtend.core.Xtend.syntaxColorer.tokenStyles.xbase.static.method.invocation.color=190,214,255'
 		'org.eclipse.xtend.core.Xtend.syntaxColorer.tokenStyles.xtend.richText.bgColor=39,44,48'
 }
+
 IEclipsePreferences#org-epic-perleditor {
 	preferences:
 		'taskIndicationColorBold=false'
@@ -2405,6 +2464,7 @@ IEclipsePreferences#org-epic-perleditor {
 		'numberColor=127,179,71'
 		'errorIndicationColor=210,82,82'
 }
+
 IEclipsePreferences#org-erlide-ui {
 	preferences:
 		'editor/colors/integercolor=127,179,71'
@@ -2430,6 +2490,7 @@ IEclipsePreferences#org-erlide-ui {
 		'editor/colors/defaultstyle=0'
 		'editor/colors/atomstyle=0'
 }
+
 IEclipsePreferences#org-jboss-ide-eclipse-freemarker {
 	preferences:
 		'color.oppositeRegion=65,65,4'
@@ -2441,6 +2502,7 @@ IEclipsePreferences#org-jboss-ide-eclipse-freemarker {
 		'color.directive=255,255,255'
 		'color.comment=199,221,12'
 }
+
 IEclipsePreferences#org-nodeclipse-enide-editors-gradle {
 	preferences:
 		'color_normal=216,216,216'
@@ -2450,6 +2512,7 @@ IEclipsePreferences#org-nodeclipse-enide-editors-gradle {
 		'color_doc=204,223,50'
 		'color_keyword=141,203,226'
 }
+
 IEclipsePreferences#org-nodeclipse-enide-editors-jade {
 	preferences:
 		'color_normal=216,216,216'
@@ -2459,6 +2522,7 @@ IEclipsePreferences#org-nodeclipse-enide-editors-jade {
 		'color_doc=204,223,50'
 		'color_keyword=141,203,226'
 }
+
 IEclipsePreferences#org-python-pydev {
 	preferences:
 		'STRING_COLOR=255,198,0'
@@ -2488,6 +2552,7 @@ IEclipsePreferences#org-python-pydev {
 		'SELF_STYLE=0'
 		'COMMENT_STYLE=0'
 }
+
 IEclipsePreferences#org-scala-ide-play2 {
 	preferences:
 		'template.plain.colour=216,216,216'
@@ -2524,6 +2589,7 @@ IEclipsePreferences#org-scala-ide-play2 {
 		'syntaxColouring.string.colour=255,198,0'
 		'syntaxColouring.xml.attributeName.colour=141,203,226'
 }
+
 IEclipsePreferences#org-scala-ide-sdt-core {
 	preferences:
 		'syntaxColoring.scaladocAnnotation.color=217,229,119'
@@ -2602,6 +2668,7 @@ IEclipsePreferences#org-scala-ide-sdt-core {
 		'syntaxColouring.xml.attributeName.colour=141,203,226'
 		'syntaxColoring.xml.processingInstruction.color=216,216,216'
 }
+
 IEclipsePreferences#org-sourceforge-jsonedit-core {
 	preferences:
 		'colorNull=216,216,216'
@@ -2609,6 +2676,7 @@ IEclipsePreferences#org-sourceforge-jsonedit-core {
 		'colorValue=190,214,255'
 		'colorString=255,198,0'
 }
+
 IEclipsePreferences#org-sweetlemonade-eclipse-json {
 	preferences:
 		'colorObjectBracket=121,171,255'
@@ -2642,6 +2710,7 @@ IEclipsePreferences#org-sweetlemonade-eclipse-json {
 		'colorStringStyle=0'
 		'colorNumberEnabled=true'
 }
+
 IEclipsePreferences#winterwell-markdown {
 	preferences:
 		'Pref_Default=216,216,216'

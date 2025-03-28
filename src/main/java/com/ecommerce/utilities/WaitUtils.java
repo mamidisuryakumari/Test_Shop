@@ -26,7 +26,10 @@ public class WaitUtils {
 			return true;
 		} catch (Exception e) {
 			logger.warn("Elememnt {} is not visible with in the time period.Exception: {}", locator, e.getMessage());
-		return false;
+		
+			throw e;
+		
+	
 		}
 	}
 
