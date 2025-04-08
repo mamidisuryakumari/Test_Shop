@@ -81,6 +81,7 @@ public class Elements {
 			bStatus = WaitUtils.waitForElementToBeClickable(driver, locator, Constants.maxWaitTime);
 			if (bStatus) {
 				JavascriptExecutor executor = (JavascriptExecutor) driver;
+			
 				executor.executeScript("arguments[0].click();" + getWebElement(driver, locator));
 				logger.info("Successfully clicked to the element {} :", locator);
 				return true;
