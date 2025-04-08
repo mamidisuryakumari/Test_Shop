@@ -12,97 +12,109 @@ import org.slf4j.LoggerFactory;
 
 public class WaitUtils {
 
-	private static WebDriverWait wait;
-	private static boolean bStatus;
 	private static final Logger logger = LoggerFactory.getLogger(WaitUtils.class);
 
 	// Wait for Element Visible
 	public static boolean waitForElementIsVisible(WebDriver driver, By locator, Duration timeout) {
+		if (driver == null || locator == null || timeout == null) {
+			logger.error("driver, locator, or timeout is null");
+			return false;
+		}
 		try {
 			WebDriverWait wait = new WebDriverWait(driver, timeout);
 			wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
-			bStatus = Verify.verifyElementIsVisible(driver, locator);
-			logger.info("Elememnt {} is visible with in the time period", locator);
+			logger.info("Element is visible with in the time period" + locator);
 			return true;
+		} catch (TimeoutException e) {
+			logger.error("Element  is not visible with in the time period" + locator, e);
+			return false;
 		} catch (Exception e) {
-			logger.warn("Elememnt {} is not visible with in the time period.Exception: {}", locator, e.getMessage());
-		
+			logger.error("An unexpected error occurred while waiting for element visibility", e);
 			throw e;
-		
-	
 		}
 	}
 
 	// wait for Element presence
 	public static boolean waitForElementIsPresence(WebDriver driver, By locator, Duration timeout) {
-		try {
-
-			WebDriverWait wait = new WebDriverWait(driver, timeout);
-			wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(locator));
-			return Verify.verifyElementIsVisible(driver, locator);
-		} catch (TimeoutException e) {
-			System.err.println("Element " + locator + "is not found with in the time period");
-		} catch (Exception e) {
-			System.err.println("An unexpected error occured:" + e.getMessage());
+		if (driver == null || locator == null || timeout == null) {
+			logger.error("driver, locator, or timeout is null");
+			return false;
 		}
-		return false;
+		try {
+			WebDriverWait wait = new WebDriverWait(driver, timeout);
+			wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+			logger.info("Element is present with in the time period" + locator);
+			return true;
+		} catch (TimeoutException e) {
+			logger.error("Element  is not present with in the time period" + locator, e);
+			return false;
+		} catch (Exception e) {
+			logger.error("An unexpected error occurred while waiting for element present", e);
+			throw e;
+		}
 	}
 
 	// wait for element to be clickable
 	public static boolean waitForElementToBeClickable(WebDriver driver, By locator, Duration timeout) {
+		if (driver == null || locator == null || timeout == null) {
+			logger.error("Driver,locator,timeout is null");
+			return false;
+		}
 		try {
 			WebDriverWait wait = new WebDriverWait(driver, timeout);
 			wait.until(ExpectedConditions.elementToBeClickable(locator));
-			return Verify.verifyElementIsVisible(driver, locator);
+			logger.info("Element is clickable with in the time period" + locator);
+			return true;
 		} catch (TimeoutException e) {
-			System.err.println("Element " + locator + "is not clickable with in the time period");
+			logger.error("Element is not clickable with in the time period" + e);
+			return false;
 		} catch (Exception e) {
-			System.err.println("An unexpected error occured:" + e.getMessage());
+			logger.error("An unexpected error occured while clicking the element" + e);
+			throw e;
 		}
-		return false;
 	}
 
 	// wait for element to be selected
 	public static boolean waitForElementToBeSelected(WebDriver driver, By locator, Duration timeout) {
+		if (driver == null || locator == null || timeout == null) {
+			logger.error("Driver,locator,timeout is null");
+			return false;
+		}
 		try {
 			WebDriverWait wait = new WebDriverWait(driver, timeout);
 			wait.until(ExpectedConditions.elementToBeSelected(locator));
-			return Verify.verifyElementIsVisible(driver, locator);
+			logger.info("Element is selected with in the time period" + locator);
+			return true;
 		} catch (TimeoutException e) {
-			System.err.println(" Element " + locator + "is not selected with in the time period");
+			logger.error(" Element is not selected with in the time period" + e);
+			return false;
 		} catch (Exception e) {
-			System.err.println("An unexpected error occured:" + e.getMessage());
+			logger.error("An unexpected error occured while selecting the element" + e);
+			throw e;
 		}
-		return false;
 	}
 
 	// Wait for alert
 	public static boolean waitForAlertIsPresent(WebDriver driver, By locator, Duration timeout) {
+		if (driver == null || locator == null || timeout == null) {
+			logger.error("Driver,locator,timeout is null");
+			return false;
+		}
 		try {
 			WebDriverWait wait = new WebDriverWait(driver, timeout);
 			wait.until(ExpectedConditions.alertIsPresent());
-			return Verify.verifyElementIsVisible(driver, locator);
-		} catch (TimeoutException e) {
-			System.err.println("Alert" + locator + "is not found with in the time period");
-		} catch (Exception e) {
-			System.err.println("An unexpected error occured:" + e.getMessage());
-		}
-		return false;
-	}
-
-	// Wait for Window
-	public static boolean waitForWindowIsPresent(WebDriver driver, By locator, Duration timeout) {
-		try {
-			WebDriverWait wait = new WebDriverWait(driver, timeout);
-			wait.until(ExpectedConditions.numberOfWindowsToBe(2));
-			Verify.verifyElementIsVisible(driver, locator);
+			logger.info("Alert is present" + locator);
 			return true;
 		} catch (TimeoutException e) {
-			System.err.println("Window" + locator + "is not found with in the time period");
+			logger.error("Alert is not present with in the time period" + e);
+			return false;
 		} catch (Exception e) {
-			System.err.println("An unexpected error occured:" + e.getMessage());
+			logger.error("An unexpected error occured while present alert" + e);
+			throw e;
 		}
-		return false;
+		
 	}
+
+	
 
 }
