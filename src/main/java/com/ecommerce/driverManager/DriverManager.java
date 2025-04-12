@@ -56,6 +56,7 @@ public class DriverManager {
                 ChromeOptions chromeOptions = new ChromeOptions();
                 chromeOptions.addArguments("--incognito");
            //     chromeOptions.addArguments("--headless=new");
+                
                 driver = new ChromeDriver(chromeOptions);
                 // Add more options as needed
                 return driver;

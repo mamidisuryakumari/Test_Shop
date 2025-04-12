@@ -26,18 +26,10 @@ public class AdvancedRegistrationFormPage extends BasePage {
 	public static By closeBtn = By.xpath("//button[text()='Close']");
 	public static By  clodeSymbol =By.xpath("//span[text()='×']");
 
-	public String getAdvancedRegistrationPageTitle() {
-		return driver.getTitle();
-	}
-
-	public void enterAdvancedFormRegistrationDetails(DataTable dataTable) {
-
-		
-
-	}
 	
-	public void clickOnRegisterBtn() {
-		Elements.doClick(driver, registerBtn);
-	}
+
+	
+	
+	
 
 }

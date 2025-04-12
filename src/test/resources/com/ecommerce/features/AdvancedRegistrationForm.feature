@@ -1,8 +1,8 @@
 Feature: Advanced registration form
 
-@form
-  Scenario: Verify advanced registration form
-    Given I am on advanced registration form page
+@form1
+  Scenario: Verify advanced registration form  
+  Given I am on advanced registration form page
     When I add below values in advanced registration form
       | FieldName | Value                   |
       | UserName  | Surya                   |

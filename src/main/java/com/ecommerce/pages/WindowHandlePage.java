@@ -50,7 +50,7 @@ public class WindowHandlePage extends BasePage {
 	}
 	
 	public WindowHandlePage switchToChildWindow1() {
-		Window.switchToWindow(driver, singleWindowButton);
+	//	Window.switchToWindow(driver, singleWindowButton);
 		return this;
 	}
 	public WindowHandlePage switchToGoogleWindow() {

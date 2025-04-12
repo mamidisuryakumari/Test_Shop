@@ -18,6 +18,8 @@ public class Example {
         driver.get("https://www.softwaretestingonline.com/2024/09/WebElements.html");
         By submitBtn = By.id("submitBtn");
         By resetBtn = By.xpath("//button[text()='Reset']");
+        
+    //    driver.findElement(By.id("submitBtn")).submit();
     //    Elements.moveToElement(driver, resetBtn);
         
         By textBox = By.id("textbox");
@@ -36,10 +38,10 @@ public class Example {
         
     //    DropdownUtil.selectByValue(driver, dropDown, "us");
         
-        By textBoxText = By.xpath("//label[text()='Text Box:']");
+   //     By textBoxText = By.xpath("//label[text()='Text Box:']");
         
         
-        System.out.println(Elements.getText(driver, textBoxText));
+  //      System.out.println(Elements.getText(driver, textBoxText));
         
         
 	}
