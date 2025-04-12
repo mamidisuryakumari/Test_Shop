@@ -9,25 +9,34 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class MouseActionsUtil {
-	private static boolean bstatus;
+	private static boolean bStatus;
 	static WebDriver driver;
 	private static final Logger logger = LoggerFactory.getLogger(MouseActionsUtil.class);
 
 
-	//move to element
-	
-	public static boolean moveToElement(WebDriver driver, By locator) {
-		bstatus=WaitUtils.waitForElementIsPresence(driver, locator, Constants.maxWaitTime);
-		if(bstatus) {
-	    Actions actions = new Actions(driver);
-	    WebElement element = driver.findElement(locator);
-	    actions.moveToElement(element).perform();
-	    return true;
-	}else {
-		return false;
-	}
-	
-	}
+	// move to element
+		public static boolean moveToElement(WebDriver driver, By locator) {
+			if (driver == null || locator == null) {
+				logger.error("Driver or locator is null");
+				return false;
+			}
+			try {
+				bStatus = WaitUtils.waitForElementIsVisible(driver, locator, Constants.maxWaitTime);
+				if (bStatus) {
+					WebElement element = Elements.getWebElement(driver, locator);
+					Actions actions = new Actions(driver);
+					actions.moveToElement(element).perform();
+					logger.info("Successfully moved to the element" + locator);
+					return true;
+				} else {
+					logger.error("Element is not moved" + locator);
+					return false;
+				}
+			} catch (Exception e) {
+				logger.error("Exception occurred while moving to the element" + locator, e);
+				return false;
+			}
+		}
 	
 	public static void moveToElementAndClick(WebDriver driver, By locator) {
 	    try {

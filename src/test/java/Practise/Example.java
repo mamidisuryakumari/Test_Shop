@@ -1,5 +1,7 @@
 package Practise;
 
+import java.awt.Window;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -15,7 +17,8 @@ public class Example {
 		
 		WebDriverManager.chromedriver().setup(); 
         WebDriver driver = new ChromeDriver();
-        driver.get("https://www.softwaretestingonline.com/2024/09/WebElements.html");
+        driver.get("https://www.softwaretestingonline.com/2024/10/HandleMultipleWindows.html");
+        
         By submitBtn = By.id("submitBtn");
         By resetBtn = By.xpath("//button[text()='Reset']");
         
@@ -43,6 +46,11 @@ public class Example {
         
   //      System.out.println(Elements.getText(driver, textBoxText));
         
+        By windowHandle = By.xpath("//button[text()='Open Single Window']");
+        Elements.doClick(driver, windowHandle);
+        com.ecommerce.utilities.Window.switchToChildWindow(driver);
+        
+        System.out.println(driver.getTitle());
         
 	}
 

@@ -10,9 +10,15 @@ import java.util.Date;
 import java.util.Properties;
 import java.util.Random;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 
 
 public class CommonUtils {
+	
+	private static Logger logger = LoggerFactory.getLogger(CommonUtils.class);
+
 	
 private static Properties configProperties;
 protected static Properties properties;
@@ -46,56 +52,98 @@ private static String filePath = "./src/test/resources/config.properties";
     }
 	
 	public static LocalDate getCurrentDate() {
-		LocalDate date = LocalDate.now();
-		return date;
+	    try {
+	        return LocalDate.now();
+	    } catch (Exception e) {
+	        logger.error("An error occurred while getting the current date", e);
+	        return null;
+	    }
 	}
 
 	
 
 	public static int getCurrentDay() {
-
-		LocalDate date = LocalDate.now();
-		return date.getDayOfMonth();
-
-	}
+		try {
+			LocalDate date = LocalDate.now();
+			return date.getDayOfMonth();	
+		} catch (Exception e) {
+			logger.error("An error occurred while getting the current day", e);
+	        return 0;
+		}
+}
 	
 	public static int getCurrentMonth() {
-		LocalDate date = LocalDate.now();
-		return date.getMonthValue();
-	}
-
-	public static int getCurrentYear() {
-		LocalDate date = LocalDate.now();
-		return date.getYear();
-	}
-
-	public static String getCurrentMonthYear() {
-		LocalDate date = LocalDate.now();
-		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MMMM YYYY");
-		 return date.format(formatter);
+		
+		try {
+			LocalDate date = LocalDate.now();
+			return date.getMonthValue();
+		} catch (Exception e) {
+			logger.error("An error occurred while getting the current month", e);
+			return 0;
+		}
 		
 	}
 
+	public static int getCurrentYear() {
+		try {
+			LocalDate date = LocalDate.now();
+			return date.getYear();	
+		} catch (Exception e) {
+			logger.error("An error occurred while getting the current year", e);
+			return 0;
+		}
+		
+	}
+
+	public static String getCurrentMonthYear() {
+		try {
+			LocalDate date = LocalDate.now();
+			DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MMMM YYYY");
+			 return date.format(formatter);
+		} catch (Exception e) {
+			logger.error("An error occurred while getting the current month and year", e);
+			return null;
+		}
+		
+		}
+
 
 	public static int getFutureDay() {
-		LocalDate date = LocalDate.now().plusDays(Constants.TWO_WEEKS);
-		return date.getDayOfMonth();
-	}
+		try {
+			LocalDate date = LocalDate.now().plusDays(Constants.TWO_WEEKS);
+			return date.getDayOfMonth();
+		} catch (Exception e) {
+			logger.error("An error occurred while getting the future day", e);
+			return 0;
+		}
+		}
 	public static String getFutureMonthYear() {
-		LocalDate date = LocalDate.now().plusDays(Constants.TWO_WEEKS);
-		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MMMM yyyy");
+		try {
+			LocalDate date = LocalDate.now().plusDays(Constants.TWO_WEEKS);
+			DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MMMM yyyy");
+			return date.format(formatter);
+		} catch (Exception e) {
+			logger.error("An error occurred while getting the future month and year", e);
+			return null;
+		}
+		
 
-	return date.format(formatter);
+	
 		
 	}
 	public static String getCurrentDateTime()
 	{
+		try {
+			 String dateName = new SimpleDateFormat("yyyy-MMMM-dd_hhmmss").format(new Date());
+			 return dateName;	
+		} catch (Exception e) {
+			logger.error("An error occurred while getting the current date and tine", e);
+			return null;
+		}
 		
-		 String dateName = new SimpleDateFormat("yyyy-MMMM-dd_hhmmss").format(new Date());
-		 return dateName;
-		 
-		 
-	}
+		}
+	
+	
 	
 
 }
