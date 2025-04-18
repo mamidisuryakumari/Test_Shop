@@ -5,42 +5,34 @@ import org.openqa.selenium.WebDriver;
 
 import com.ecommerce.utilities.Elements;
 
-public class ProductDetailsPage extends BasePage {
+public class ProductDetailsPage {
+
+	private WebDriver driver;
 
 	public ProductDetailsPage(WebDriver driver) {
-		super(driver);
-		
+		this.driver = driver;
 	}
 
-	private By addProductBtn = By.xpath("//span[@class='add_product']");
-	private By viewCartBtn = By.xpath("//a[@class='sora-cart-view']");
+	private static By addToCartBtn = By.xpath("//span[@class='add_product']");
+	private static By viewCartBtn = By.linkText("View Cart");
 	
-	private By add =By.xpath("//span[@class='add_product']");
-	private By productQuantity=By.xpath("//span[@class='simpleCart_quantity']");
+	private static By firstProductText = By.xpath("//h1[contains(text(),'Traditional Ethnic Long Sequins Embroidered Anarkali Gown')]");
 	
-	public int getProductsInShoppingBag() {
-		int products= Integer.parseInt(Elements.getText(driver, productQuantity));
-		System.out.println(products);
-				return products;
+	public String getFirstProductText() {
+		System.out.println(Elements.getText(driver, firstProductText));
+	return	Elements.getText(driver, firstProductText);
 	}
 
 	public String getProductDetailsPageTitle() {
-		String productDetailsPageActualTitle = driver.getTitle();
-		System.out.println(productDetailsPageActualTitle);
-				return productDetailsPageActualTitle;
-	}
-
-	public ProductDetailsPage ClickOnAddProductBtn() {
-		Elements.doClick(driver, addProductBtn);
+		System.out.println(driver.getTitle());
+		return driver.getTitle();
 		
-		return this;
 	}
 
-	public CartPage ClickOnViewCartBtn() {
+	public CartPage addProductToCart() {
+		Elements.doClick(driver, addToCartBtn);
 		Elements.doClick(driver, viewCartBtn);
 		return new CartPage(driver);
 	}
-	
-	
 
 }

@@ -39,12 +39,12 @@ public class Hooks {
 
 	@After
 	public void tearDown() {
-		if (driver != null) {
-			driver.quit();
-			driver = null;
-}
+//		if (driver != null) {
+	//		driver.quit();
+		//	driver = null;
+//}
 
-		ReportManager.flush();
+	//	ReportManager.flush();
 	}
 
 	@AfterStep

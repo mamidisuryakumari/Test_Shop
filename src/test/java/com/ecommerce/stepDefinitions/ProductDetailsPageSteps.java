@@ -2,92 +2,104 @@ package com.ecommerce.stepDefinitions;
 
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
-
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.ecommerce.hooks.Hooks;
 import com.ecommerce.pages.ProductDetailsPage;
-import com.ecommerce.reports.ReportManager;
 
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class ProductDetailsPageSteps {
-	
+
 	WebDriver driver = Hooks.getDriver();
+	private static Logger log = LoggerFactory.getLogger(ProductDetailsPageSteps.class);
+
+	ProductDetailsPage prodcuDetailsPage = new ProductDetailsPage(driver);
 	
-	ProductDetailsPage productDetailsPage = new ProductDetailsPage(driver);
-	
-	@Then("User navigated to the product details page")
-	public void user_navigated_to_the_product_details_page() throws Exception {
-		ProductDetailsPage productDetailsPage = new ProductDetailsPage(driver);
-		String exceptedProductdetailsPageTitle = "Men's Comfortable, Shock-Absorbent & Slip-Resistant Formal Shoes";
+	@Then("I should be navigated to product details page")
+	public void i_should_be_navigated_to_product_details_page() {
+		String expectedProductDetailsPageTitle = "Xonique Fashion Women's Georgette Traditional Ethnic Long Sequins Embroidered Anarkali Gown";
 		try {
-			Assert.assertEquals(productDetailsPage.getProductDetailsPageTitle(), exceptedProductdetailsPageTitle);
-			System.out.println("Landed on product details page");
-			ReportManager.getTest().pass("User navigated to the product details page successfully");
-		//	ScreenShot.takeScreenShot(driver,"ProductdetailsPage");
+			Assert.assertEquals(prodcuDetailsPage.getProductDetailsPageTitle(), expectedProductDetailsPageTitle);
+			log.info("Product details page title is matched");
 		} catch (AssertionError ae) {
-			System.err.println("Assertion failed" + ae.getMessage());
-			ReportManager.getTest().fail("Failed to land on product details page");
+			log.error("Assertion failed while  product details page title", ae);
 			throw ae;
 		} catch (Exception e) {
-			System.err.println("An error occured navigating to the product details page " + e.getMessage());
-			ReportManager.getTest().fail("An error occured while navigating to the product details page");
+			log.error("An error occured while verifying the product details page title", e);
 			throw e;
 		}
 	}
-	@When("User click on add to cart button")
-	public void user_click_on_add_to_cart_button() {
-		ProductDetailsPage productDetailsPage = new ProductDetailsPage(driver);
-		productDetailsPage.ClickOnAddProductBtn();
-		ReportManager.getTest().info("Clicked on add to cart button");
-	}
+	
+	
 
-	@Then("User should see item add to cart")
-	public void i_should_see_item_add_to_cart() {
-		ProductDetailsPage procuDetailsPage = new ProductDetailsPage(driver);
-		int ExceptedProductsInShoppingBag = 1;
+	@Then("I should be navigated to product details page1")
+	public void i_should_be_navigated_to_product_details_page1() {
+		String expectedProductDetailsPageTitle = "Sejal's Anarkali Kurti";
 		try {
-			Assert.assertEquals(ExceptedProductsInShoppingBag, procuDetailsPage.getProductsInShoppingBag());
-			System.out.println("item added to cart successfully");
-			ReportManager.getTest().pass("item added to cart successfully");
+			Assert.assertEquals(prodcuDetailsPage.getProductDetailsPageTitle(), expectedProductDetailsPageTitle);
+			log.info("Product details page title is matched");
 		} catch (AssertionError ae) {
-			System.err.println("Assertion failed" + ae.getMessage());
-			ReportManager.getTest().fail("Failed to item added to cat");
+			log.error("Assertion failed while  product details page title", ae);
 			throw ae;
 		} catch (Exception e) {
-			System.err.println("An error occured navigating to the item added to the cart" + e.getMessage());
-			ReportManager.getTest().fail("An error occured navigating to the item added to the cart");
+			log.error("An error occured while verifying the product details page title", e);
 			throw e;
 		}
 	}
 
-	@When("User click on view cart button")
-	public void user_click_on_view_cart_button() {
-		
-		productDetailsPage.ClickOnViewCartBtn();
-		ReportManager.getTest().info("Clicked on view cart button");
-	}
-	@Then("User again navigated to the product details page")
-		public void user_again_navigated_to_the_product_details_page() {
-		ProductDetailsPage productDetailsPage = new ProductDetailsPage(driver);
-		String exceptedProductdetailsPageTitle = "Stylish and Trendy Belts for Men";
+
+
+	
+	@When("I add the first product to the cart")
+	public void i_add_the_first_product_to_the_cart() {
 		try {
-			Assert.assertEquals(productDetailsPage.getProductDetailsPageTitle(), exceptedProductdetailsPageTitle);
-			System.out.println("Landed on product details page");
-			ReportManager.getTest().pass("User navigated to the product details page successfully");
-		} catch (AssertionError ae) {
-			System.err.println("Assertion failed" + ae.getMessage());
-			ReportManager.getTest().fail("Failed to land on product details page");
-			throw ae;
+		prodcuDetailsPage.addProductToCart();
+		log.info("The first product is added to cart");
 		} catch (Exception e) {
-			System.err.println("An error occured navigating to the product details page " + e.getMessage());
-			ReportManager.getTest().fail("An error occured while navigating to the product details page");
+			log.error("An exception occured while add the first product", e);
 			throw e;
 		}
 	}
-	@When("User click on navigate back button")
-	public void user_click_on_navigate_back_button() {
-    driver.navigate().back();
+	
+	@When("I add the second product to the cart")
+	public void i_add_the_second_product_to_the_cart() {
+	  prodcuDetailsPage.addProductToCart();
 	}
+	
+	@Then("I should be navigated to the product details page")
+	public void i_should_be_navigated_to_the_product_details_page() {
+	  String exceptedProducttext = "Xonique Fashion Women's Georgette Traditional Ethnic Long Sequins Embroidered Anarkali Gown";
+	try {
+		Assert.assertEquals(prodcuDetailsPage.getProductDetailsPageTitle(), exceptedProducttext);
+		log.info("Text is matched");
+	} catch(AssertionError ae) {
+		log.error("Assertion failed" ,ae);
+		throw ae;
+	}
+	catch (Exception e) {
+		log.error("An unexcepted error occured while navigating product details page");
+		throw e;
+	}
+	}
+	
+
+	@When("I add the product to cart")
+	public void i_add_the_product_to_cart() {
+		try {
+			prodcuDetailsPage.addProductToCart();
+			log.info("Product is added to cart");
+		} catch (Exception e) {
+			log.error("An error occured while adding product to the cart");
+		}
+	}
+	
+	@When("I add the product to the cart")
+	public void i_add_the_product_to_the_cart() {
+	    prodcuDetailsPage.addProductToCart();
+	}
+
+
 }

@@ -75,29 +75,7 @@ public class Elements {
 
 	}
 
-	// move to element
-	public static boolean moveToElement(WebDriver driver, By locator) {
-		if (driver == null || locator == null) {
-			logger.error("Driver or locator is null");
-			return false;
-		}
-		try {
-			bStatus = WaitUtils.waitForElementIsVisible(driver, locator, Constants.maxWaitTime);
-			if (bStatus) {
-				WebElement element = getWebElement(driver, locator);
-				Actions actions = new Actions(driver);
-				actions.moveToElement(element).perform();
-				logger.info("Successfully moved to the element" + locator);
-				return true;
-			} else {
-				logger.error("Element is not moved" + locator);
-				return false;
-			}
-		} catch (Exception e) {
-			logger.error("Exception occurred while moving to the element" + locator, e);
-			return false;
-		}
-	}
+	
 
 	// Do click
 	public static boolean doClick(WebDriver driver, By locator) {

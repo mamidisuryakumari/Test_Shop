@@ -5,15 +5,14 @@ import org.openqa.selenium.WebDriver;
 
 import com.ecommerce.utilities.Elements;
 
-import io.cucumber.datatable.DataTable;
+public class AdvancedRegisterPages {
+	
+	private WebDriver driver;
 
-public class AdvancedRegistrationFormPage extends BasePage {
-
-	public AdvancedRegistrationFormPage(WebDriver driver) {
-		super(driver);
-		
+	public AdvancedRegisterPages(WebDriver driver) {
+		this.driver = driver;
 	}
-
+	
 	public static By userNameFld = By.id("username");
 	public static By passwordFld = By.id("password");
 	public static By emailFld = By.id("email");
@@ -25,11 +24,24 @@ public class AdvancedRegistrationFormPage extends BasePage {
 	public static By registrationSuccessfullMsg = By.xpath("//p[text()='Registration Successful!']");
 	public static By closeBtn = By.xpath("//button[text()='Close']");
 	public static By  clodeSymbol =By.xpath("//span[text()='×']");
+	
+	
+	public String getAdvancedRegisterTitle() {
+	return 	driver.getTitle();
+	}
 
 	
-
+public AdvancedRegisterPages enterDetails(String username, String password, String email) {
+	Elements.doSendKeys(driver, userNameFld, username);
+	Elements.doSendKeys(driver, passwordFld, password);
+	Elements.doSendKeys(driver, emailFld, email);
+	Elements.doClick(driver, femaleRadioBtn);
+	return this;
+}
 	
-	
-	
+public AdvancedRegisterPages clickOnRegisterBtn() {
+	Elements.doClick(driver, registerBtn);
+	return this;
+}
 
 }
