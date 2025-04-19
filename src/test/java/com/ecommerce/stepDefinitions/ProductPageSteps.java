@@ -6,6 +6,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.ecommerce.hooks.Hooks;
+import com.ecommerce.pages.CartPage;
+import com.ecommerce.pages.ProductDetailsPage;
 import com.ecommerce.pages.ProductPage;
 
 import io.cucumber.java.en.Given;
@@ -17,6 +19,8 @@ public class ProductPageSteps {
 	WebDriver driver = Hooks.getDriver();
 	private static Logger log = LoggerFactory.getLogger(ProductPageSteps.class);
 	ProductPage productPage = new ProductPage(driver);
+	ProductDetailsPage productDetailsPage = new ProductDetailsPage(driver);
+	CartPage cartPage = new CartPage(driver);
 
 	@Given("I am on the product page")
 	public void i_am_on_the_product_page() {
@@ -35,22 +39,39 @@ public class ProductPageSteps {
 		}
 	}
 
-	@When("I select a product from the Men's category")
-	public void i_select_a_product_from_the_men_s_category() {
+	@When("I select single product")
+	public void i_select_single_product() {
 		try {
-			productPage.selectProduct();
-			log.info("The product is selected from men's category");
+			productPage.selectSingleProduct();
+			log.error("Product is selected successfully");
 		} catch (Exception e) {
-			log.error("An exception error occured while selecting the produect", e);
+			log.error("An exception occured while selecting the product", e);
+			throw e;
+		}
+	}
+
+	@When("I select and add multiple products to the cart")
+	public void i_select_multiple_products() {
+		String exceptedCartPageTitle = "My Cart";
+		try {
+			productPage.selectFirstProduct();
+			productDetailsPage.addProductToCart();
+			productDetailsPage.navigateBackToProductPage();
+			productPage.selectSecondProduct();
+			productDetailsPage.addAndViewProductToCart();
+			Assert.assertEquals(cartPage.getCartPageTitle(), exceptedCartPageTitle);
+			log.info("Cart page title is matched");
+		} catch (AssertionError ae) {
+			log.info("Assertion failed", ae);
+			throw ae;
+		} catch (Exception e) {
+			log.error("An unexcepted error occured", e);
 			throw e;
 		}
 
 	}
 
-	
-	
-	
-	@When("I select first product from the Women's category")
+	@When("I select first product")
 	public void i_select_first_product_from_the_women_s_category() {
 		try {
 			productPage.selectFirstProduct();
@@ -60,58 +81,40 @@ public class ProductPageSteps {
 			throw e;
 		}
 	}
+
 	@When("I navigate back to product page")
 	public void i_navigate_back_to_product_page() {
-	  driver.navigate().back();
+		productDetailsPage.navigateBackToProductPage();
 	}
+
 	@Then("I should be navigated to product page")
 	public void i_should_be_navigated_to_product_page() {
-	  try {
-		
-	} catch (Exception e) {
-		
+		try {
+
+		} catch (Exception e) {
+
+		}
 	}
+
+	@When("I select second product")
+	public void i_select_second_product() {
+		productPage.selectSecondProduct2();
 	}
-	@When("I select second product from the Women's category")
-	public void i_select_second_product_from_the_women_s_category() {
-	 productPage.selectSecondProduct();
-	}
-	
-	
 
 	@When("I add multiple products to cart")
 	public void i_add_multiple_products_to_cart() {
-	   productPage.addMultipleProducts();
+		productPage.addMultipleProducts();
 	}
-	
 
-	@When("I select {string} from the Women's category")
+	@When("I select {string}")
 	public void i_select_from_the_women_s_category(String string) {
-	    productPage.selectFirstProduct();
+		productPage.selectFirstProduct();
 	}
+
+
+
 	
+
 	
-
-	@When("I select product from the Women's category")
-	public void i_select_product_from_the_women_s_category() throws InterruptedException {
-	  productPage.selectProductFromWomensCategeory();
-	}
-	@When("I add multiple products to the product to cart")
-	public void i_add_multiple_products_to_the_product_to_cart() {
-	   
-	}
-	@Then("I should see the multiple products added to the cart successfully")
-	public void i_should_see_the_multiple_products_added_to_the_cart_successfully() {
-	    
-	}
-
-
-
-
-
-
-
-
-
 
 }

@@ -14,10 +14,16 @@ public class CartPage {
 	}
 
 	private static By cartQuantity = By.xpath("//h2[text()='You have ']");
-	private static By itemQuantity = By.xpath("(//div[@class='item-quantity'])[2]");
+	private static By itemQuantity = By.xpath("(//span[@class='simpleCart_quantity'])[2]");
+	
+	public String getCartPageTitle() {
+		System.out.println(driver.getTitle());
+	return	driver.getTitle();
+	}
 
 	public int getItemQuantity() {
 		String itemQuantitytext =  Elements.getText(driver, itemQuantity);
+		
 	return 	Integer.parseInt(itemQuantitytext);
 	}
 	

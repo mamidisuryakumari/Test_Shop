@@ -13,5 +13,6 @@ public class Constants {
 	public static final long TWO_WEEKS = 14;
 	public static String expectedProductDetailsPageTitle = "ORAYA 100% Natural Activated Charcoal Teeth Whitening Powder &amp; Face, Hair";
 	
+	public static String productName = "Georgette Traditional Ethnic Long Sequins Embroidered Anarkali Gown";
 
 }

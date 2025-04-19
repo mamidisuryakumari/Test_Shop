@@ -66,7 +66,7 @@ public class ProductDetailsPageSteps {
 	
 	@When("I add the second product to the cart")
 	public void i_add_the_second_product_to_the_cart() {
-	  prodcuDetailsPage.addProductToCart();
+	  prodcuDetailsPage.addAndViewProductToCart();
 	}
 	
 	@Then("I should be navigated to the product details page")
@@ -89,7 +89,7 @@ public class ProductDetailsPageSteps {
 	@When("I add the product to cart")
 	public void i_add_the_product_to_cart() {
 		try {
-			prodcuDetailsPage.addProductToCart();
+			prodcuDetailsPage.addAndViewProductToCart();
 			log.info("Product is added to cart");
 		} catch (Exception e) {
 			log.error("An error occured while adding product to the cart");

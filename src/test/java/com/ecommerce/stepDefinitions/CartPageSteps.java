@@ -18,6 +18,7 @@ import io.cucumber.java.en.When;
 public class CartPageSteps {
 
 	WebDriver driver = Hooks.getDriver();
+	ProductDetailsPage productDetailsPage = new ProductDetailsPage(driver);
 	CartPage cartPage = new CartPage(driver);
 
 	private static Logger log = LoggerFactory.getLogger(CartPageSteps.class);
@@ -25,6 +26,22 @@ public class CartPageSteps {
 	@Then("I should see the product added to the cart successfully")
 	public void i_should_see_the_product_added_to_the_cart_successfully() {
 		int exceptedItemQuantity = 1;
+		try {
+			Assert.assertEquals(productDetailsPage.getItemQuantity(), exceptedItemQuantity);
+			log.info("The cart quantity is matched");
+		} catch (AssertionError ae) {
+			log.error("assertion failed ", ae);
+			throw ae;
+		} catch (Exception e) {
+			log.error("The cart quantity is not matched", e);
+			throw e;
+		}
+
+	}
+	
+	@Then("I should see the multiple products added to the cart successfully")
+	public void i_should_see_the_multiple_products_added_to_the_cart_successfully() {
+		int exceptedItemQuantity = 2;
 		try {
 			Assert.assertEquals(cartPage.getItemQuantity(), exceptedItemQuantity);
 			log.info("The cart quantity is matched");
@@ -35,7 +52,6 @@ public class CartPageSteps {
 			log.error("The cart quantity is not matched", e);
 			throw e;
 		}
-
 	}
 
 	
@@ -55,7 +71,17 @@ public class CartPageSteps {
 
 	@Then("I should see the {int} products added to the cart successfully")
 	public void i_should_see_the_products_added_to_the_cart_successfully(Integer int1) {
-
+		int exceptedItemQuantity = 2;
+		try {
+			Assert.assertEquals(cartPage.getItemQuantity(), exceptedItemQuantity);
+			log.info("The cart quantity is matched");
+		} catch (AssertionError ae) {
+			log.error("assertion failed ", ae);
+			throw ae;
+		} catch (Exception e) {
+			log.error("The cart quantity is not matched", e);
+			throw e;
+		}
 	}
 
 }

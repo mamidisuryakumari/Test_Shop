@@ -6,6 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import com.ecommerce.utilities.Constants;
 import com.ecommerce.utilities.Elements;
 import com.ecommerce.utilities.MouseActionsUtil;
 
@@ -19,7 +20,7 @@ public class ProductPage {
 
 	private By menMenu = By.linkText("Men");
 	private By menFootware = By.linkText("Men Footwear");
-	private By mensComfortableShoe = By.xpath("//a[contains(text(),'Shock-Absorbent')]");
+	private By productNameLink = By.xpath("//a[contains(normalize-space(text()),'" + Constants.productName + "')]");
 	private By addToCartBtn = By.xpath("//span[@class='add_product']");
 	private static By viewCartBtn = By.linkText("View Cart");
 
@@ -39,38 +40,85 @@ public class ProductPage {
 
 	}
 
-	public ProductDetailsPage selectProduct() {
+	public ProductDetailsPage selectSingleProduct() {
 
-		MouseActionsUtil.moveToElement(driver, menMenu);
-		MouseActionsUtil.moveToElement(driver, menFootware);
-		Elements.doClick(driver, menFootware);
-		Elements.doClick(driver, mensComfortableShoe);
+		MouseActionsUtil.moveToElement(driver, womenMenu);
+		MouseActionsUtil.moveToElement(driver, womenKurties);
+		Elements.doClick(driver, womenKurties);
+		List<WebElement> allProducts = driver.findElements(productTitles);
+		WebElement firstProduct = allProducts.get(0);
+		firstProduct.click();
 		return new ProductDetailsPage(driver);
 	}
+	
+	public ProductDetailsPage selectFirstProduct() {
+		MouseActionsUtil.moveToElement(driver, womenMenu);
+		MouseActionsUtil.moveToElement(driver, womenKurties);
+		Elements.doClick(driver, womenKurties);
+		List<WebElement> allProducts = driver.findElements(productTitles);
+		WebElement firstProduct = allProducts.get(0);
+		firstProduct.click();
+		return new ProductDetailsPage(driver);
+		
+	}
+	public ProductDetailsPage selectSecondProduct() {
+		MouseActionsUtil.moveToElement(driver, womenMenu);
+		MouseActionsUtil.moveToElement(driver, womenKurties);
+		Elements.doClick(driver, womenKurties);
+		List<WebElement> allProducts = driver.findElements(productTitles);
+		WebElement firstProduct = allProducts.get(1);
+		firstProduct.click();
+		return new ProductDetailsPage(driver);
+	}
+	public void selectProductFromWomensCategeory() {
 
-	public ProductDetailsPage selectProductFromWomensCategeory() throws InterruptedException {
+		MouseActionsUtil.moveToElement(driver, womenMenu);
+		MouseActionsUtil.moveToElement(driver, womenKurties);
+		Elements.doClick(driver, womenKurties);
+		for (int i = 0; i < 2; i++) {
+			List<WebElement> allProducts = driver.findElements(productTitles);
+			int count = 0;
+			WebElement product = allProducts.get(i);
+			product.click();
+			Elements.doClick(driver, addToCartBtn);
+			
+			if (count != 2) {
+				driver.navigate().back();
+				count++;
+			} else {
+				Elements.doClick(driver, viewCartBtn);
+				break;
+			}
+
+		}
+
+	}
+
+	public void selectProductFromWomensCategeory1() throws InterruptedException {
 
 		MouseActionsUtil.moveToElement(driver, womenMenu);
 		MouseActionsUtil.moveToElement(driver, womenKurties);
 		Elements.doClick(driver, womenKurties);
 
 		List<WebElement> allProducts = driver.findElements(productTitles);
-
-		for (int i = 0; i < 2; i++) {
-
-			WebElement product = allProducts.get(i);
+		int count = 1;
+		for (WebElement product : allProducts) {
 			product.click();
 			Elements.doClick(driver, addToCartBtn);
-			Elements.doClick(driver, viewCartBtn);
-			driver.navigate().back();
-			driver.navigate().back();
-	break;
+
+			if (count != 2) {
+				driver.navigate().back();
+				count++;
+			} else {
+				Elements.doClick(driver, viewCartBtn);
+				break;
+			}
+
 		}
 
-		return new ProductDetailsPage(driver);
 	}
 
-	public ProductDetailsPage selectFirstProduct() {
+	public ProductDetailsPage selectFirstProduct1() {
 		MouseActionsUtil.moveToElement(driver, womenMenu);
 		MouseActionsUtil.moveToElement(driver, womenKurties);
 		Elements.doClick(driver, womenKurties);
@@ -78,7 +126,7 @@ public class ProductPage {
 		return new ProductDetailsPage(driver);
 	}
 
-	public ProductDetailsPage selectSecondProduct() {
+	public ProductDetailsPage selectSecondProduct2() {
 
 		Elements.doClick(driver, secondproduct);
 		return new ProductDetailsPage(driver);
