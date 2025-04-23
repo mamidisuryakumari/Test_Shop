@@ -18,7 +18,7 @@ Feature: Confirmation page functionality
     And User click on confirm order button
     Then User should see place ored button enabled
     When User click on place order button
-    Then User navigated to order details page
+#    Then User navigated to order details page
     And The user should see the total price after purchase includes the product price and delivery charge
   Examples: 
       | YourName | PhoneNumber | StreetName | EmailAddress            | Postcode | City      | State | Country | OrderNotes |

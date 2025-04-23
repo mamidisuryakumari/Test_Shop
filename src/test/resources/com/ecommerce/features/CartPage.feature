@@ -67,3 +67,5 @@ Feature: Cart page functionality
     Then User again navigated to the product details page
     When User click on add to cart button
     Then User should see two items added to cart
+    
+  

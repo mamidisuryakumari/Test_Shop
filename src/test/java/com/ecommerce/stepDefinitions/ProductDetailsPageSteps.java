@@ -90,4 +90,6 @@ public class ProductDetailsPageSteps {
 	public void user_click_on_navigate_back_button() {
     driver.navigate().back();
 	}
+	
+	
 }
