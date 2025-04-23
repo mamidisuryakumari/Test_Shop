@@ -1,6 +1,6 @@
 Feature: Advanced registration form
 
-@form1
+@registerform
   Scenario: Verify advanced registration form  
   Given I am on advanced registration form page
     When I add below values in advanced registration form

@@ -35,7 +35,7 @@
 <a href="#"><span class="badge badge-primary">Automation Test Execution Report</span></a>
 </li>
 <li class="m-r-10">
-<a href="#"><span class="badge badge-primary">2025-04-11 11:17:15</span></a>
+<a href="#"><span class="badge badge-primary">2025-04-19 15:50:13</span></a>
 </li>
 </ul>
 </div>
@@ -79,7 +79,7 @@
 <li class="dropdown">
 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-tag"></i></a>
 <ul id="tag-toggle" class="dropdown-menu dropdown-md p-v-0">
-<a class="dropdown-item" href="#">@form</a>
+<a class="dropdown-item" href="#">@addmultipleproducts1</a>
 </ul>
 </li>
 </ul>
@@ -90,9 +90,9 @@
           tag=""
           device="">
           <div class="test-detail">
-            <p class="name">Advanced registration form</p>
+            <p class="name">Cart Page Functionality</p>
             <p class="text-sm">
-              <span>11:17:16 am</span> / <span>00:00:10:228</span>
+              <span>3:50:14 pm</span> / <span>00:00:22:535</span>
               <span class="badge pass-bg log float-right">Pass</span>
             </p>
           </div>
@@ -100,10 +100,10 @@
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-pass">Advanced registration form</h5>
-<span class='badge badge-success'>04.11.2025 11:17:16 am</span>
-<span class='badge badge-danger'>04.11.2025 11:17:26 am</span>
-<span class='badge badge-default'>00:00:10:228</span>
+<h5 class="test-status text-pass">Cart Page Functionality</h5>
+<span class='badge badge-success'>04.19.2025 3:50:14 pm</span>
+<span class='badge badge-danger'>04.19.2025 3:50:37 pm</span>
+<span class='badge badge-default'>00:00:22:535</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
 <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
 <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
@@ -116,29 +116,62 @@
   <div class="card">
     <div class="card-header" role="tab">
       <div class="card-title">
-        <div class="node" id="2"><span class="badge log pass-bg mr-2">Pass</span>Verify advanced registration form</div>
+        <div class="node" id="2"><span class="badge log pass-bg mr-2">Pass</span>Add multiple products to the cart</div>
       </div>
     </div>
-        <div class="scenario_outline collapse">
-            <div class="card-body l1">
-              <div class="card-header">
-                <div class="card-title outline-child">
-                  <div class="node" id="3"><span class="badge log pass-bg mr-2">Pass</span>Verify advanced registration form</div>
-                </div>
-              </div>
-              <div class="card-body mt-3 collapse">
-                  <div class="step pass-bg">
-                    <span>Given I am on advanced registration form</span>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="com.ecommerce.stepDefinitions.ProductPageSteps.i_am_on_the_product_page()">
+                <span>Given I am on the product page</span>
       <div>
       </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>When I enter "surya","kumari" and "kumari.mudila@gmail.com"</span>
+              </div>
+              <div class="step pass-bg" title="com.ecommerce.stepDefinitions.ProductPageSteps.i_select_first_product_from_the_women_s_category()">
+                <span>When I select first product</span>
       <div>
       </div>
-                  </div>
               </div>
-            </div>
+              <div class="step pass-bg" title="com.ecommerce.stepDefinitions.ProductDetailsPageSteps.i_should_be_navigated_to_product_details_page()">
+                <span>Then I should be navigated to product details page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.ecommerce.stepDefinitions.ProductDetailsPageSteps.i_add_the_first_product_to_the_cart()">
+                <span>When I add the first product to the cart</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.ecommerce.stepDefinitions.CartPageSteps.i_should_see_the_product_added_to_the_cart_successfully()">
+                <span>Then I should see the product added to the cart successfully</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.ecommerce.stepDefinitions.ProductPageSteps.i_navigate_back_to_product_page()">
+                <span>When I navigate back to product page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.ecommerce.stepDefinitions.ProductPageSteps.i_should_be_navigated_to_product_page()">
+                <span>Then I should be navigated to product page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.ecommerce.stepDefinitions.ProductPageSteps.i_select_second_product()">
+                <span>When I select second product</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.ecommerce.stepDefinitions.ProductDetailsPageSteps.i_add_the_second_product_to_the_cart()">
+                <span>When I add the second product to the cart</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.ecommerce.stepDefinitions.CartPageSteps.i_should_see_the_products_added_to_the_cart_successfully(java.lang.Integer)">
+                <span>Then I should see the 2 products added to the cart successfully</span>
+      <div>
+      </div>
+              </div>
+          </div>
         </div>
   </div>
 </div>
@@ -166,12 +199,12 @@
 <span class="meta">
 <span class='badge log pass-bg'>1</span>
 </span>
-<p class="name">@form</p>
+<p class="name">@addmultipleproducts1</p>
 <p class="duration text-sm">1 tests</p>
 </div>
 <div class="test-contents d-none">
 <div class="info">
-<h4>@form</h4>
+<h4>@addmultipleproducts1</h4>
 <span status="pass" class='badge log pass-bg'>1 passed</span>
 </div>
 <table class='table table-sm mt-4'>
@@ -185,11 +218,11 @@
 <tbody>
 <tr class="tag-test-status" status="pass">
 <td><span class="badge log pass-bg">Pass</span></td>
-<td>11:17:16 am</td>
+<td>15:50:14 pm</td>
 <td>
-<a href="#" class="linked" test-id='1' id='3'>Verify advanced registration form</a>
+<a href="#" class="linked" test-id='1' id='2'>Add multiple products to the cart</a>
 <div class="">
-<span class="badge badge-default">Advanced registration form.Verify advanced registration form</span>
+<span class="badge badge-default">Cart Page Functionality.Add multiple products to the cart</span>
 </div>
 </td>
 </tr>
@@ -210,13 +243,13 @@
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Started</p>
-<h3>2025-04-11 11:17:15</h3>
+<h3>2025-04-19 15:50:13</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Ended</p>
-<h3>2025-04-11 11:17:26</h3>
+<h3>2025-04-19 15:50:37</h3>
 </div></div>
 </div>
 <div class="col-md-3">
@@ -287,7 +320,7 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='100%'><b>2</b> steps passed</small></div>
+<div><small data-tooltip='100%'><b>10</b> steps passed</small></div>
 <div>
 <small data-tooltip='0%'><b>0</b> steps failed,
 <b>0</b> skipped, <b data-tooltip='%'>0</b> others
@@ -306,7 +339,7 @@
 </div></div>
 <script>
 var timeline = {
-"Advanced registration form":10.228
+"Cart Page Functionality":22.535
 };
 </script>
 <div class="row">
@@ -316,7 +349,7 @@ var timeline = {
 <div class="card-body pb-0 pt-0"><table class="table table-sm table-bordered">
 <thead><tr class="bg-gray"><th>Name</th><th>Passed</th><th>Failed</th><th>Skipped</th><th>Others</th><th>Passed %</th></tr></thead><tbody>
 <tr>
-<td>@form</td>
+<td>@addmultipleproducts1</td>
 <td>1</td>
 <td>0</td>
 <td>0</td>
@@ -343,7 +376,7 @@ warningChild: 0,
 skipChild: 0,
 infoChild: 0,
 grandChildCount: 5,
-passGrandChild: 2,
+passGrandChild: 10,
 failGrandChild: 0,
 warningGrandChild: 0,
 skipGrandChild: 0,

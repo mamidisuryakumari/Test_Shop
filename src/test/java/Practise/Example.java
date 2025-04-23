@@ -52,6 +52,7 @@ public class Example {
         
         System.out.println(driver.getTitle());
         
+        
 	}
 
 }

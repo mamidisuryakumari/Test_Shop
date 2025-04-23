@@ -17,15 +17,22 @@ public class Table {
 	driver.get("https://www.w3schools.com/html/html_tables.asp");
 	
 	driver.manage().window().maximize();
-	List <WebElement> rows = driver.findElements(By.xpath("//tbody/tr/td[3]"));
-
 	
-	for (WebElement row : rows) {
-		
+     List<WebElement>  rows = driver.findElements(By.xpath("//tbody/tr/td[2]"));
+     
+     
+     List<WebElement>   columns=driver.findElements(By.xpath("//tbody/tr[1]/th"));
+     
+     
+     
+     for (WebElement column : columns) {
+    	 System.out.println(column.getText());
+	}
+     
+    
+	
 	
 	
 	}
-	
-	}
 
-}
+} 
