@@ -42,7 +42,7 @@ Examples:
   | Gown            |
   | Anarkali kurta  |
 
-<<<<<<< HEAD
+
  @Regression
   Scenario: Decrease product quantity at cart page
     When User click on product link
@@ -70,6 +70,4 @@ Examples:
     When User click on add to cart button
     Then User should see two items added to cart
     
-  
-=======
->>>>>>> 68b15eb9b983fba655368dc7c87dbc4b77c2530b
+

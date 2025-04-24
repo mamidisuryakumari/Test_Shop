@@ -69,9 +69,7 @@ public class ProductDetailsPageSteps {
 	  prodcuDetailsPage.addAndViewProductToCart();
 	}
 	
-<<<<<<< HEAD
-	
-=======
+
 	@Then("I should be navigated to the product details page")
 	public void i_should_be_navigated_to_the_product_details_page() {
 	  String exceptedProducttext = "Xonique Fashion Women's Georgette Traditional Ethnic Long Sequins Embroidered Anarkali Gown";
@@ -105,5 +103,5 @@ public class ProductDetailsPageSteps {
 	}
 
 
->>>>>>> 68b15eb9b983fba655368dc7c87dbc4b77c2530b
+
 }
